@@ -6,3 +6,4 @@
   sections:
     - file: markdown
     - file: notebooks
+    - file: 12_peak.ipynb
