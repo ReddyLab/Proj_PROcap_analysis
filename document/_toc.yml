@@ -1,9 +1,10 @@
 # Table of content
 # Learn more at https://jupyterbook.org/customize/toc.html
 #
+
 - file: intro
 - file: content
   sections:
     - file: markdown
     - file: notebooks
-    - file: 12_peak.ipynb
+    - file: notebooks/12_peak.ipynb
