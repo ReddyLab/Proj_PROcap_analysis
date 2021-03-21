@@ -1,10 +1,15 @@
 # Table of content
 # Learn more at https://jupyterbook.org/customize/toc.html
 #
-
 - file: intro
-- file: content
-  sections:
-    - file: markdown
-    - file: notebooks
-    - file: notebooks/12_peak.ipynb
+
+- part: Example
+  chapters:
+  - file: content
+    sections:
+      - file: markdown
+      - file: notebooks
+      
+- part: Peak calling of PRO-cap data
+  chapters:
+  - file: notebooks/12_peak.ipynb
