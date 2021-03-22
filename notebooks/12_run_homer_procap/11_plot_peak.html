@@ -1,0 +1,709 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; My sample book</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">My sample book</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Example
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../content.html">
+   Content in Jupyter Book
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../markdown.html">
+     Markdown Files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../notebooks.html">
+     Content with notebooks
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Peak calling of PRO-cap data
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../11_prep_procap/01_prep_files.html">
+   1. PRO-cap Data description and preparation
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="00_homer_intro.html">
+   2. Run Homer Analysis on PRO-cap Data
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_prep_files.html">
+     2.1. Check the file paths for the data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_homer_tag.html">
+     2.2. Run HOMER makeTagDirectory of PRO-cap and RNA-seq data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_homer_vis.html">
+     2.3. Create Genome Browser Visualization Files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_homer_findPeaks.html">
+     2.4. HOMER FindPeaks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_homer_findTSS.html">
+     2.5. HOMER FindcsRNATSS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_homer_merge_peak.html">
+     2.6. Merge Peak output from HOMER findPeaks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_homer_merge_tss.html">
+     2.7. Merge TSS output from HOMER findcsRNATSS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06_homer_annot_peak.html">
+     2.8. Get the count using HOMER annotatePeaks.pl
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06_homer_annot_tss.html">
+     2.9. Get the count using HOMER annotatePeaks.pl
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12_peak_PER1.html">
+     2.10. Summarize and visualize peaks from HOMER pipeline
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/notebooks/12_run_homer_procap/11_plot_peak.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnotebooks/12_run_homer_procap/11_plot_peak.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/notebooks/12_run_homer_procap/11_plot_peak.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="simple nav section-nav flex-column">
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">suppressMessages</span><span class="p">(</span><span class="nf">suppressWarnings</span><span class="p">(</span><span class="nf">source</span><span class="p">(</span><span class="s">&quot;config.R&quot;</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">gene_sel</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span>
+    <span class="s">&quot;CIDEC&quot;</span><span class="p">,</span> <span class="s">&quot;PER1&quot;</span><span class="p">,</span> <span class="s">&quot;ANGPTL4&quot;</span><span class="p">,</span> <span class="s">&quot;TSC22D3&quot;</span><span class="p">,</span> <span class="s">&quot;STOM&quot;</span><span class="p">,</span> <span class="s">&quot;ZFP36&quot;</span><span class="p">,</span> <span class="s">&quot;NFKBIA&quot;</span><span class="p">,</span>
+    <span class="s">&quot;JUN&quot;</span><span class="p">,</span> <span class="s">&quot;FOSL1&quot;</span><span class="p">,</span>  <span class="s">&quot;CCL2&quot;</span><span class="p">,</span> <span class="s">&quot;IL11&quot;</span><span class="p">)</span>
+<span class="nf">length</span><span class="p">(</span><span class="n">gene_sel</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">11</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">gene_pos</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span>
+    <span class="s">&quot;CIDEC&quot;</span><span class="p">,</span> 
+    <span class="s">&quot;PER1&quot;</span><span class="p">,</span> 
+    <span class="s">&quot;EKI2&quot;</span><span class="p">,</span> <span class="s">&quot;ETNK2&quot;</span><span class="p">,</span>
+    <span class="s">&quot;ANGPTL4&quot;</span><span class="p">,</span>
+    <span class="s">&quot;TSC22D3&quot;</span><span class="p">,</span>
+    <span class="s">&quot;RGS2&quot;</span><span class="p">,</span>
+    <span class="s">&quot;CDC42EP3&quot;</span><span class="p">,</span>
+    <span class="s">&quot;STOM&quot;</span><span class="p">,</span>
+    <span class="s">&quot;THBD&quot;</span><span class="p">,</span>
+    <span class="s">&quot;DUSP1&quot;</span><span class="p">,</span>
+    <span class="s">&quot;GADD45A&quot;</span><span class="p">,</span>
+    <span class="s">&quot;KLF4&quot;</span><span class="p">,</span>
+    <span class="s">&quot;ZFP36&quot;</span><span class="p">,</span>
+    <span class="s">&quot;ERRFI1&quot;</span><span class="p">,</span>
+    <span class="s">&quot;SDPR&quot;</span><span class="p">,</span>
+    <span class="s">&quot;CTGF&quot;</span><span class="p">,</span>
+    <span class="s">&quot;NFKBIA&quot;</span><span class="p">,</span>
+    <span class="s">&quot;BIPARP&quot;</span><span class="p">,</span>
+    <span class="s">&quot;BIRC3&quot;</span><span class="p">,</span>
+    <span class="s">&quot;BCL6&quot;</span><span class="p">,</span>
+    <span class="s">&quot;ELL2&quot;</span><span class="p">,</span>
+    <span class="s">&quot;CEBPB&quot;</span><span class="p">,</span>
+    <span class="s">&quot;CEBPD&quot;</span><span class="p">,</span>
+    <span class="s">&quot;CITED2&quot;</span><span class="p">,</span>
+    <span class="s">&quot;ARL4D&quot;</span><span class="p">,</span>
+    <span class="s">&quot;GALNT4&quot;</span><span class="p">,</span>
+    <span class="s">&quot;KLF6&quot;</span><span class="p">,</span>
+    <span class="s">&quot;ZC3H12A&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">gene_neg</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span>
+    <span class="s">&quot;IL11&quot;</span><span class="p">,</span>
+    <span class="s">&quot;RND1&quot;</span><span class="p">,</span>
+    <span class="s">&quot;CCL2&quot;</span><span class="p">,</span>
+    <span class="s">&quot;MAP3K14&quot;</span><span class="p">,</span>
+    <span class="s">&quot;SNKPLK2&quot;</span><span class="p">,</span>
+    <span class="s">&quot;GEM&quot;</span><span class="p">,</span>
+    <span class="s">&quot;IER3&quot;</span><span class="p">,</span>
+    <span class="s">&quot;IER2&quot;</span><span class="p">,</span>
+    <span class="s">&quot;ELF3&quot;</span><span class="p">,</span>
+    <span class="s">&quot;IER5L&quot;</span><span class="p">,</span>
+    <span class="s">&quot;FOSL1&quot;</span><span class="p">,</span>
+    <span class="s">&quot;JUN&quot;</span><span class="p">,</span>
+    <span class="s">&quot;HES1&quot;</span><span class="p">,</span>
+    <span class="s">&quot;ENC1&quot;</span><span class="p">,</span>
+    <span class="s">&quot;SERTAD3&quot;</span><span class="p">,</span>
+    <span class="s">&quot;BHLHE40&quot;</span><span class="p">,</span>
+    <span class="s">&quot;BCL3&quot;</span><span class="p">,</span>
+    <span class="s">&quot;KLF10&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fpath</span> <span class="o">=</span> <span class="s">&quot;/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_annotate/annoTSS/tss_count_raw.txt&quot;</span>
+<span class="n">dat_raw</span> <span class="o">=</span> <span class="nf">read_tsv</span><span class="p">(</span><span class="n">fpath</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">dat_raw</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parsed with column specification:
+cols(
+  .default = col_character(),
+  Start = col_double(),
+  End = col_double(),
+  `Peak Score` = col_double(),
+  `Distance to TSS` = col_double(),
+  `Entrez ID` = col_double(),
+  `/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t00/ Tag Count in given bp (9384553.0 Total, normalization factor = 1, effective total = 10000000)` = col_double(),
+  `/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t15/ Tag Count in given bp (9252351.5 Total, normalization factor = 1, effective total = 10000000)` = col_double(),
+  `/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t60/ Tag Count in given bp (13741782.5 Total, normalization factor = 1, effective total = 10000000)` = col_double()
+)
+See spec(...) for full column specifications.
+</pre></div>
+</div>
+<div class="output text_html"><table>
+<thead><tr><th scope=col>PeakID (cmd=annotatePeaks.pl /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_merge/mergeTSS/tss_merge.txt hg38 -strand + -fragLength 1 -raw -d /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t00/ /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t15/ /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t60/)</th><th scope=col>Chr</th><th scope=col>Start</th><th scope=col>End</th><th scope=col>Strand</th><th scope=col>Peak Score</th><th scope=col>Focus Ratio/Region Size</th><th scope=col>Annotation</th><th scope=col>Detailed Annotation</th><th scope=col>Distance to TSS</th><th scope=col>...</th><th scope=col>Nearest Unigene</th><th scope=col>Nearest Refseq</th><th scope=col>Nearest Ensembl</th><th scope=col>Gene Name</th><th scope=col>Gene Alias</th><th scope=col>Gene Description</th><th scope=col>Gene Type</th><th scope=col>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t00/ Tag Count in given bp (9384553.0 Total, normalization factor = 1, effective total = 10000000)</th><th scope=col>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t15/ Tag Count in given bp (9252351.5 Total, normalization factor = 1, effective total = 10000000)</th><th scope=col>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t60/ Tag Count in given bp (13741782.5 Total, normalization factor = 1, effective total = 10000000)</th></tr></thead>
+<tbody>
+	<tr><td>Merged-chr14-49862550-3                                                                                                                                                                                                                                    </td><td>chr14                                                                                                                                                                                                                                                      </td><td>49862475                                                                                                                                                                                                                                                   </td><td>49862625                                                                                                                                                                                                                                                   </td><td>+                                                                                                                                                                                                                                                          </td><td>5036.000                                                                                                                                                                                                                                                   </td><td>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_cap00/out.tss.txt|/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_cap15/out.tss.txt|/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_cap60/out.tss.txt</td><td>TTS (NR_027260)                                                                                                                                                                                                                                            </td><td>TTS (NR_027260)                                                                                                                                                                                                                                            </td><td>299                                                                                                                                                                                                                                                        </td><td>...                                                                                                                                                                                                                                                        </td><td>NA                                                                                                                                                                                                                                                         </td><td>NR_027260                                                                                                                                                                                                                                                  </td><td>ENSG00000274012                                                                                                                                                                                                                                            </td><td>RN7SL2                                                                                                                                                                                                                                                     </td><td>7L1C|7L30.1|7SL1c|RNSRP2                                                                                                                                                                                                                                   </td><td>RNA component of signal recognition particle 7SL2                                                                                                                                                                                                          </td><td>scRNA                                                                                                                                                                                                                                                      </td><td>6259                                                                                                                                                                                                                                                       </td><td>4545.5                                                                                                                                                                                                                                                     </td><td>4832.5                                                                                                                                                                                                                                                     </td></tr>
+	<tr><td>Merged-chr14-49862849-3                                                                                                                                                                                                                                    </td><td>chr14                                                                                                                                                                                                                                                      </td><td>49862774                                                                                                                                                                                                                                                   </td><td>49862924                                                                                                                                                                                                                                                   </td><td>-                                                                                                                                                                                                                                                          </td><td>4960.967                                                                                                                                                                                                                                                   </td><td>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_cap00/out.tss.txt|/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_cap15/out.tss.txt|/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_cap60/out.tss.txt</td><td>promoter-TSS (NR_027260)                                                                                                                                                                                                                                   </td><td>promoter-TSS (NR_027260)                                                                                                                                                                                                                                   </td><td>  0                                                                                                                                                                                                                                                        </td><td>...                                                                                                                                                                                                                                                        </td><td>NA                                                                                                                                                                                                                                                         </td><td>NR_027260                                                                                                                                                                                                                                                  </td><td>ENSG00000274012                                                                                                                                                                                                                                            </td><td>RN7SL2                                                                                                                                                                                                                                                     </td><td>7L1C|7L30.1|7SL1c|RNSRP2                                                                                                                                                                                                                                   </td><td>RNA component of signal recognition particle 7SL2                                                                                                                                                                                                          </td><td>scRNA                                                                                                                                                                                                                                                      </td><td>4608                                                                                                                                                                                                                                                       </td><td>3442.5                                                                                                                                                                                                                                                     </td><td>4541.0                                                                                                                                                                                                                                                     </td></tr>
+	<tr><td>Merged-chr17-19188010-3                                                                                                                                                                                                                                    </td><td>chr17                                                                                                                                                                                                                                                      </td><td>19187935                                                                                                                                                                                                                                                   </td><td>19188085                                                                                                                                                                                                                                                   </td><td>+                                                                                                                                                                                                                                                          </td><td>3358.767                                                                                                                                                                                                                                                   </td><td>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_cap00/out.tss.txt|/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_cap15/out.tss.txt|/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_cap60/out.tss.txt</td><td>promoter-TSS (NR_006880)                                                                                                                                                                                                                                   </td><td>promoter-TSS (NR_006880)                                                                                                                                                                                                                                   </td><td> -6                                                                                                                                                                                                                                                        </td><td>...                                                                                                                                                                                                                                                        </td><td>NA                                                                                                                                                                                                                                                         </td><td>NR_006880                                                                                                                                                                                                                                                  </td><td>ENSG00000263934                                                                                                                                                                                                                                            </td><td>SNORD3A                                                                                                                                                                                                                                                    </td><td>RNU3|U3                                                                                                                                                                                                                                                    </td><td>small nucleolar RNA, C/D box 3A                                                                                                                                                                                                                            </td><td>snoRNA                                                                                                                                                                                                                                                     </td><td>4068                                                                                                                                                                                                                                                       </td><td>3830.5                                                                                                                                                                                                                                                     </td><td>2131.5                                                                                                                                                                                                                                                     </td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fpath</span> <span class="o">=</span> <span class="s">&quot;/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_annotate/annoTSS/tss_count_rlg.txt&quot;</span>
+<span class="n">dat_rlg</span> <span class="o">=</span> <span class="nf">read_tsv</span><span class="p">(</span><span class="n">fpath</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">dat_rlg</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parsed with column specification:
+cols(
+  .default = col_character(),
+  Start = col_double(),
+  End = col_double(),
+  `Peak Score` = col_double(),
+  `Distance to TSS` = col_double(),
+  `Entrez ID` = col_double(),
+  `/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t00/ Tag Count in given bp (9384553.0 Total, normalization factor = 1, effective total = 10000000)` = col_double(),
+  `/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t15/ Tag Count in given bp (9252351.5 Total, normalization factor = 1, effective total = 10000000)` = col_double(),
+  `/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t60/ Tag Count in given bp (13741782.5 Total, normalization factor = 1, effective total = 10000000)` = col_double()
+)
+See spec(...) for full column specifications.
+</pre></div>
+</div>
+<div class="output text_html"><table>
+<thead><tr><th scope=col>PeakID (cmd=annotatePeaks.pl /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_merge/mergeTSS/tss_merge.txt hg38 -strand + -fragLength 1 -rlog -d /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t00/ /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t15/ /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t60/)</th><th scope=col>Chr</th><th scope=col>Start</th><th scope=col>End</th><th scope=col>Strand</th><th scope=col>Peak Score</th><th scope=col>Focus Ratio/Region Size</th><th scope=col>Annotation</th><th scope=col>Detailed Annotation</th><th scope=col>Distance to TSS</th><th scope=col>...</th><th scope=col>Nearest Unigene</th><th scope=col>Nearest Refseq</th><th scope=col>Nearest Ensembl</th><th scope=col>Gene Name</th><th scope=col>Gene Alias</th><th scope=col>Gene Description</th><th scope=col>Gene Type</th><th scope=col>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t00/ Tag Count in given bp (9384553.0 Total, normalization factor = 1, effective total = 10000000)</th><th scope=col>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t15/ Tag Count in given bp (9252351.5 Total, normalization factor = 1, effective total = 10000000)</th><th scope=col>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t60/ Tag Count in given bp (13741782.5 Total, normalization factor = 1, effective total = 10000000)</th></tr></thead>
+<tbody>
+	<tr><td>Merged-chr14-49862550-3                                                                                                                                                                                                                                    </td><td>chr14                                                                                                                                                                                                                                                      </td><td>49862475                                                                                                                                                                                                                                                   </td><td>49862625                                                                                                                                                                                                                                                   </td><td>+                                                                                                                                                                                                                                                          </td><td>5036.000                                                                                                                                                                                                                                                   </td><td>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_cap00/out.tss.txt|/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_cap15/out.tss.txt|/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_cap60/out.tss.txt</td><td>TTS (NR_027260)                                                                                                                                                                                                                                            </td><td>TTS (NR_027260)                                                                                                                                                                                                                                            </td><td>299                                                                                                                                                                                                                                                        </td><td>...                                                                                                                                                                                                                                                        </td><td>NA                                                                                                                                                                                                                                                         </td><td>NR_027260                                                                                                                                                                                                                                                  </td><td>ENSG00000274012                                                                                                                                                                                                                                            </td><td>RN7SL2                                                                                                                                                                                                                                                     </td><td>7L1C|7L30.1|7SL1c|RNSRP2                                                                                                                                                                                                                                   </td><td>RNA component of signal recognition particle 7SL2                                                                                                                                                                                                          </td><td>scRNA                                                                                                                                                                                                                                                      </td><td>12.64921                                                                                                                                                                                                                                                   </td><td>12.18962                                                                                                                                                                                                                                                   </td><td>12.15269                                                                                                                                                                                                                                                   </td></tr>
+	<tr><td>Merged-chr14-49862849-3                                                                                                                                                                                                                                    </td><td>chr14                                                                                                                                                                                                                                                      </td><td>49862774                                                                                                                                                                                                                                                   </td><td>49862924                                                                                                                                                                                                                                                   </td><td>-                                                                                                                                                                                                                                                          </td><td>4960.967                                                                                                                                                                                                                                                   </td><td>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_cap00/out.tss.txt|/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_cap15/out.tss.txt|/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_cap60/out.tss.txt</td><td>promoter-TSS (NR_027260)                                                                                                                                                                                                                                   </td><td>promoter-TSS (NR_027260)                                                                                                                                                                                                                                   </td><td>  0                                                                                                                                                                                                                                                        </td><td>...                                                                                                                                                                                                                                                        </td><td>NA                                                                                                                                                                                                                                                         </td><td>NR_027260                                                                                                                                                                                                                                                  </td><td>ENSG00000274012                                                                                                                                                                                                                                            </td><td>RN7SL2                                                                                                                                                                                                                                                     </td><td>7L1C|7L30.1|7SL1c|RNSRP2                                                                                                                                                                                                                                   </td><td>RNA component of signal recognition particle 7SL2                                                                                                                                                                                                          </td><td>scRNA                                                                                                                                                                                                                                                      </td><td>12.20911                                                                                                                                                                                                                                                   </td><td>11.79050                                                                                                                                                                                                                                                   </td><td>12.05929                                                                                                                                                                                                                                                   </td></tr>
+	<tr><td>Merged-chr17-19188010-3                                                                                                                                                                                                                                    </td><td>chr17                                                                                                                                                                                                                                                      </td><td>19187935                                                                                                                                                                                                                                                   </td><td>19188085                                                                                                                                                                                                                                                   </td><td>+                                                                                                                                                                                                                                                          </td><td>3358.767                                                                                                                                                                                                                                                   </td><td>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_cap00/out.tss.txt|/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_cap15/out.tss.txt|/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_cap60/out.tss.txt</td><td>promoter-TSS (NR_006880)                                                                                                                                                                                                                                   </td><td>promoter-TSS (NR_006880)                                                                                                                                                                                                                                   </td><td> -6                                                                                                                                                                                                                                                        </td><td>...                                                                                                                                                                                                                                                        </td><td>NA                                                                                                                                                                                                                                                         </td><td>NR_006880                                                                                                                                                                                                                                                  </td><td>ENSG00000263934                                                                                                                                                                                                                                            </td><td>SNORD3A                                                                                                                                                                                                                                                    </td><td>RNU3|U3                                                                                                                                                                                                                                                    </td><td>small nucleolar RNA, C/D box 3A                                                                                                                                                                                                                            </td><td>snoRNA                                                                                                                                                                                                                                                     </td><td>12.02521                                                                                                                                                                                                                                                   </td><td>11.93491                                                                                                                                                                                                                                                   </td><td>10.98238                                                                                                                                                                                                                                                   </td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">dat</span> <span class="o">=</span> <span class="n">dat_raw</span> <span class="o">%&gt;%</span> <span class="n">dplyr</span><span class="o">::</span><span class="nf">filter</span><span class="p">(</span><span class="n">`Gene Name`</span><span class="o">==</span><span class="s">&quot;PER1&quot;</span><span class="p">,</span> <span class="nf">grepl</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">`Detailed Annotation`</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="s">&quot;promoter&quot;</span><span class="p">))</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead><tr><th scope=col>PeakID (cmd=annotatePeaks.pl /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_merge/mergeTSS/tss_merge.txt hg38 -strand + -fragLength 1 -raw -d /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t00/ /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t15/ /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t60/)</th><th scope=col>Chr</th><th scope=col>Start</th><th scope=col>End</th><th scope=col>Strand</th><th scope=col>Peak Score</th><th scope=col>Focus Ratio/Region Size</th><th scope=col>Annotation</th><th scope=col>Detailed Annotation</th><th scope=col>Distance to TSS</th><th scope=col>...</th><th scope=col>Nearest Unigene</th><th scope=col>Nearest Refseq</th><th scope=col>Nearest Ensembl</th><th scope=col>Gene Name</th><th scope=col>Gene Alias</th><th scope=col>Gene Description</th><th scope=col>Gene Type</th><th scope=col>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t00/ Tag Count in given bp (9384553.0 Total, normalization factor = 1, effective total = 10000000)</th><th scope=col>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t15/ Tag Count in given bp (9252351.5 Total, normalization factor = 1, effective total = 10000000)</th><th scope=col>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t60/ Tag Count in given bp (13741782.5 Total, normalization factor = 1, effective total = 10000000)</th></tr></thead>
+<tbody>
+	<tr><td>Merged-chr17-8152395-3                                                                                                                                                                                                                                     </td><td>chr17                                                                                                                                                                                                                                                      </td><td>8152319                                                                                                                                                                                                                                                    </td><td>8152471                                                                                                                                                                                                                                                    </td><td>-                                                                                                                                                                                                                                                          </td><td>187.0333                                                                                                                                                                                                                                                   </td><td>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_cap00/out.tss.txt|/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_cap15/out.tss.txt|/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_cap60/out.tss.txt</td><td>promoter-TSS (NM_002616)                                                                                                                                                                                                                                   </td><td>promoter-TSS (NM_002616)                                                                                                                                                                                                                                   </td><td> 9                                                                                                                                                                                                                                                         </td><td>...                                                                                                                                                                                                                                                        </td><td>Hs.445534                                                                                                                                                                                                                                                  </td><td>NM_002616                                                                                                                                                                                                                                                  </td><td>ENSG00000179094                                                                                                                                                                                                                                            </td><td>PER1                                                                                                                                                                                                                                                       </td><td>PER|RIGUI|hPER                                                                                                                                                                                                                                             </td><td>period circadian regulator 1                                                                                                                                                                                                                               </td><td>protein-coding                                                                                                                                                                                                                                             </td><td>270.0                                                                                                                                                                                                                                                      </td><td>157                                                                                                                                                                                                                                                        </td><td>142.5                                                                                                                                                                                                                                                      </td></tr>
+	<tr><td>Merged-chr17-8152344-3                                                                                                                                                                                                                                     </td><td>chr17                                                                                                                                                                                                                                                      </td><td>8152268                                                                                                                                                                                                                                                    </td><td>8152421                                                                                                                                                                                                                                                    </td><td>+                                                                                                                                                                                                                                                          </td><td>184.5333                                                                                                                                                                                                                                                   </td><td>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_cap00/out.tss.txt|/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_cap15/out.tss.txt|/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_cap60/out.tss.txt</td><td>promoter-TSS (NM_002616)                                                                                                                                                                                                                                   </td><td>promoter-TSS (NM_002616)                                                                                                                                                                                                                                   </td><td>60                                                                                                                                                                                                                                                         </td><td>...                                                                                                                                                                                                                                                        </td><td>Hs.445534                                                                                                                                                                                                                                                  </td><td>NM_002616                                                                                                                                                                                                                                                  </td><td>ENSG00000179094                                                                                                                                                                                                                                            </td><td>PER1                                                                                                                                                                                                                                                       </td><td>PER|RIGUI|hPER                                                                                                                                                                                                                                             </td><td>period circadian regulator 1                                                                                                                                                                                                                               </td><td>protein-coding                                                                                                                                                                                                                                             </td><td>267.5                                                                                                                                                                                                                                                      </td><td>153                                                                                                                                                                                                                                                        </td><td>142.5                                                                                                                                                                                                                                                      </td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">dat</span> <span class="o">=</span> <span class="n">dat_raw</span>
+<span class="n">dat</span> <span class="o">=</span> <span class="n">dat</span> <span class="o">%&gt;%</span> <span class="n">dplyr</span><span class="o">::</span><span class="nf">filter</span><span class="p">(</span><span class="n">`Gene Name`</span> <span class="o">%in%</span> <span class="n">gene_pos</span><span class="p">,</span> <span class="nf">grepl</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">`Detailed Annotation`</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="s">&quot;promoter&quot;</span><span class="p">))</span>
+<span class="n">dat</span> <span class="o">=</span> <span class="n">dat</span> <span class="o">%&gt;%</span> <span class="n">dplyr</span><span class="o">::</span><span class="nf">select</span><span class="p">(</span>
+    <span class="n">Chr</span><span class="p">,</span> <span class="n">Start</span><span class="p">,</span> <span class="n">End</span><span class="p">,</span> <span class="n">Strand</span><span class="p">,</span> <span class="n">`Gene Name`</span><span class="p">,</span> 
+    <span class="nf">starts_with</span><span class="p">(</span><span class="s">&quot;/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span>
+    <span class="nf">unite</span><span class="p">(</span><span class="s">&quot;loc&quot;</span><span class="p">,</span> <span class="n">Chr</span><span class="o">:</span><span class="n">Strand</span><span class="p">)</span>
+<span class="nf">colnames</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;loc&quot;</span><span class="p">,</span> <span class="s">&quot;gene&quot;</span><span class="p">,</span> <span class="s">&quot;t00&quot;</span><span class="p">,</span> <span class="s">&quot;t15&quot;</span><span class="p">,</span> <span class="s">&quot;t60&quot;</span><span class="p">)</span>
+
+<span class="n">dat</span> <span class="o">=</span> <span class="n">dat</span> <span class="o">%&gt;%</span> <span class="nf">gather</span><span class="p">(</span><span class="n">time_point</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span> <span class="o">-</span><span class="n">gene</span><span class="p">,</span> <span class="o">-</span><span class="n">loc</span><span class="p">)</span>
+<span class="n">dat</span><span class="o">$</span><span class="n">gene</span> <span class="o">=</span> <span class="nf">factor</span><span class="p">(</span><span class="n">dat</span><span class="o">$</span><span class="n">gene</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">gene_pos</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead><tr><th scope=col>loc</th><th scope=col>gene</th><th scope=col>time_point</th><th scope=col>count</th></tr></thead>
+<tbody>
+	<tr><td>chr10_3785473_3785623_+  </td><td>KLF6                     </td><td>t00                      </td><td>1777.0                   </td></tr>
+	<tr><td>chr10_3785565_3785715_-  </td><td>KLF6                     </td><td>t00                      </td><td>1709.0                   </td></tr>
+	<tr><td>chr1_8026234_8026384_-   </td><td>ERRFI1                   </td><td>t00                      </td><td>1886.0                   </td></tr>
+	<tr><td>chr1_8026190_8026357_+   </td><td>ERRFI1                   </td><td>t00                      </td><td>1640.5                   </td></tr>
+	<tr><td>chr20_50190749_50190902_+</td><td>CEBPB                    </td><td>t00                      </td><td> 824.0                   </td></tr>
+	<tr><td>chr20_50190790_50190940_-</td><td>CEBPB                    </td><td>t00                      </td><td> 784.0                   </td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.height</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">repr.plot.width</span><span class="o">=</span><span class="m">7</span><span class="p">)</span>
+<span class="n">gpt</span> <span class="o">=</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">time_point</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">count</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">gene</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="n">loc</span><span class="p">))</span> <span class="o">+</span> 
+    <span class="nf">geom_line</span><span class="p">()</span> <span class="o">+</span>
+    <span class="nf">theme_bw</span><span class="p">()</span> <span class="o">+</span> 
+    <span class="nf">labs</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s">&quot;Time Point&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">&quot;Peak Count (raw)&quot;</span><span class="p">)</span>
+    
+<span class="nf">print</span><span class="p">(</span><span class="n">gpt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/11_plot_peak_10_0.png" src="../../_images/11_plot_peak_10_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">dat</span> <span class="o">=</span> <span class="n">dat_rlg</span>
+<span class="n">dat</span> <span class="o">=</span> <span class="n">dat</span> <span class="o">%&gt;%</span> <span class="n">dplyr</span><span class="o">::</span><span class="nf">filter</span><span class="p">(</span><span class="n">`Gene Name`</span> <span class="o">%in%</span> <span class="n">gene_pos</span><span class="p">,</span> <span class="nf">grepl</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">`Detailed Annotation`</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="s">&quot;promoter&quot;</span><span class="p">))</span>
+<span class="n">dat</span> <span class="o">=</span> <span class="n">dat</span> <span class="o">%&gt;%</span> <span class="n">dplyr</span><span class="o">::</span><span class="nf">select</span><span class="p">(</span>
+    <span class="n">Chr</span><span class="p">,</span> <span class="n">Start</span><span class="p">,</span> <span class="n">End</span><span class="p">,</span> <span class="n">Strand</span><span class="p">,</span> <span class="n">`Gene Name`</span><span class="p">,</span> 
+    <span class="nf">starts_with</span><span class="p">(</span><span class="s">&quot;/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span>
+    <span class="nf">unite</span><span class="p">(</span><span class="s">&quot;loc&quot;</span><span class="p">,</span> <span class="n">Chr</span><span class="o">:</span><span class="n">Strand</span><span class="p">)</span>
+<span class="nf">colnames</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;loc&quot;</span><span class="p">,</span> <span class="s">&quot;gene&quot;</span><span class="p">,</span> <span class="s">&quot;t00&quot;</span><span class="p">,</span> <span class="s">&quot;t15&quot;</span><span class="p">,</span> <span class="s">&quot;t60&quot;</span><span class="p">)</span>
+
+<span class="n">dat</span> <span class="o">=</span> <span class="n">dat</span> <span class="o">%&gt;%</span> <span class="nf">gather</span><span class="p">(</span><span class="n">time_point</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span> <span class="o">-</span><span class="n">gene</span><span class="p">,</span> <span class="o">-</span><span class="n">loc</span><span class="p">)</span>
+<span class="n">dat</span><span class="o">$</span><span class="n">gene</span> <span class="o">=</span> <span class="nf">factor</span><span class="p">(</span><span class="n">dat</span><span class="o">$</span><span class="n">gene</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">gene_pos</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead><tr><th scope=col>loc</th><th scope=col>gene</th><th scope=col>time_point</th><th scope=col>count</th></tr></thead>
+<tbody>
+	<tr><td>chr10_3785473_3785623_+  </td><td>KLF6                     </td><td>t00                      </td><td>10.829829                </td></tr>
+	<tr><td>chr10_3785565_3785715_-  </td><td>KLF6                     </td><td>t00                      </td><td>10.774159                </td></tr>
+	<tr><td>chr1_8026234_8026384_-   </td><td>ERRFI1                   </td><td>t00                      </td><td>10.909581                </td></tr>
+	<tr><td>chr1_8026190_8026357_+   </td><td>ERRFI1                   </td><td>t00                      </td><td>10.708823                </td></tr>
+	<tr><td>chr20_50190749_50190902_+</td><td>CEBPB                    </td><td>t00                      </td><td> 9.733247                </td></tr>
+	<tr><td>chr20_50190790_50190940_-</td><td>CEBPB                    </td><td>t00                      </td><td> 9.662392                </td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.height</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">repr.plot.width</span><span class="o">=</span><span class="m">7</span><span class="p">)</span>
+<span class="n">gpt</span> <span class="o">=</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">time_point</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">count</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">gene</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="n">loc</span><span class="p">))</span> <span class="o">+</span> 
+    <span class="nf">geom_line</span><span class="p">()</span> <span class="o">+</span>
+    <span class="nf">theme_bw</span><span class="p">()</span> <span class="o">+</span> 
+    <span class="nf">labs</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s">&quot;Time Point&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">&quot;Peak Count (rlg)&quot;</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">gpt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/11_plot_peak_12_0.png" src="../../_images/11_plot_peak_12_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">gene</span> <span class="o">=</span> <span class="n">gene_neg</span>
+<span class="n">dat</span> <span class="o">=</span> <span class="n">dat_raw</span>
+
+<span class="n">dat</span> <span class="o">=</span> <span class="n">dat</span> <span class="o">%&gt;%</span> <span class="n">dplyr</span><span class="o">::</span><span class="nf">filter</span><span class="p">(</span><span class="n">`Gene Name`</span> <span class="o">%in%</span> <span class="n">gene</span><span class="p">,</span> <span class="nf">grepl</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">`Detailed Annotation`</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="s">&quot;promoter&quot;</span><span class="p">))</span>
+<span class="n">dat</span> <span class="o">=</span> <span class="n">dat</span> <span class="o">%&gt;%</span> <span class="n">dplyr</span><span class="o">::</span><span class="nf">select</span><span class="p">(</span>
+    <span class="n">Chr</span><span class="p">,</span> <span class="n">Start</span><span class="p">,</span> <span class="n">End</span><span class="p">,</span> <span class="n">Strand</span><span class="p">,</span> <span class="n">`Gene Name`</span><span class="p">,</span> 
+    <span class="nf">starts_with</span><span class="p">(</span><span class="s">&quot;/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span>
+    <span class="nf">unite</span><span class="p">(</span><span class="s">&quot;loc&quot;</span><span class="p">,</span> <span class="n">Chr</span><span class="o">:</span><span class="n">Strand</span><span class="p">)</span>
+<span class="nf">colnames</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;loc&quot;</span><span class="p">,</span> <span class="s">&quot;gene&quot;</span><span class="p">,</span> <span class="s">&quot;t00&quot;</span><span class="p">,</span> <span class="s">&quot;t15&quot;</span><span class="p">,</span> <span class="s">&quot;t60&quot;</span><span class="p">)</span>
+
+<span class="n">dat</span> <span class="o">=</span> <span class="n">dat</span> <span class="o">%&gt;%</span> <span class="nf">gather</span><span class="p">(</span><span class="n">time_point</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span> <span class="o">-</span><span class="n">gene</span><span class="p">,</span> <span class="o">-</span><span class="n">loc</span><span class="p">)</span>
+<span class="n">dat</span><span class="o">$</span><span class="n">gene</span> <span class="o">=</span> <span class="nf">factor</span><span class="p">(</span><span class="n">dat</span><span class="o">$</span><span class="n">gene</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">gene</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead><tr><th scope=col>loc</th><th scope=col>gene</th><th scope=col>time_point</th><th scope=col>count</th></tr></thead>
+<tbody>
+	<tr><td>chr1_58783969_58784119_-  </td><td>JUN                       </td><td>t00                       </td><td>1147.5                    </td></tr>
+	<tr><td>chr1_202010502_202010656_+</td><td>ELF3                      </td><td>t00                       </td><td> 863.0                    </td></tr>
+	<tr><td>chr1_202010555_202010705_-</td><td>ELF3                      </td><td>t00                       </td><td> 851.5                    </td></tr>
+	<tr><td>chr3_194136067_194136217_+</td><td>HES1                      </td><td>t00                       </td><td> 700.5                    </td></tr>
+	<tr><td>chr3_194136098_194136258_-</td><td>HES1                      </td><td>t00                       </td><td> 700.0                    </td></tr>
+	<tr><td>chr1_58783921_58784071_+  </td><td>JUN                       </td><td>t00                       </td><td> 960.5                    </td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.height</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">repr.plot.width</span><span class="o">=</span><span class="m">6</span><span class="p">)</span>
+<span class="n">gpt</span> <span class="o">=</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">time_point</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">count</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">gene</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="n">loc</span><span class="p">))</span> <span class="o">+</span> 
+    <span class="nf">geom_line</span><span class="p">()</span> <span class="o">+</span>
+    <span class="nf">theme_bw</span><span class="p">()</span> <span class="o">+</span> 
+    <span class="nf">labs</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s">&quot;Time Point&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">&quot;Peak Count (raw)&quot;</span><span class="p">)</span>
+    
+<span class="nf">print</span><span class="p">(</span><span class="n">gpt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/11_plot_peak_14_0.png" src="../../_images/11_plot_peak_14_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">gene</span> <span class="o">=</span> <span class="n">gene_neg</span>
+<span class="n">dat</span> <span class="o">=</span> <span class="n">dat_rlg</span>
+
+<span class="n">dat</span> <span class="o">=</span> <span class="n">dat</span> <span class="o">%&gt;%</span> <span class="n">dplyr</span><span class="o">::</span><span class="nf">filter</span><span class="p">(</span><span class="n">`Gene Name`</span> <span class="o">%in%</span> <span class="n">gene</span><span class="p">,</span> <span class="nf">grepl</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">`Detailed Annotation`</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="s">&quot;promoter&quot;</span><span class="p">))</span>
+<span class="n">dat</span> <span class="o">=</span> <span class="n">dat</span> <span class="o">%&gt;%</span> <span class="n">dplyr</span><span class="o">::</span><span class="nf">select</span><span class="p">(</span>
+    <span class="n">Chr</span><span class="p">,</span> <span class="n">Start</span><span class="p">,</span> <span class="n">End</span><span class="p">,</span> <span class="n">Strand</span><span class="p">,</span> <span class="n">`Gene Name`</span><span class="p">,</span> 
+    <span class="nf">starts_with</span><span class="p">(</span><span class="s">&quot;/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span>
+    <span class="nf">unite</span><span class="p">(</span><span class="s">&quot;loc&quot;</span><span class="p">,</span> <span class="n">Chr</span><span class="o">:</span><span class="n">Strand</span><span class="p">)</span>
+<span class="nf">colnames</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;loc&quot;</span><span class="p">,</span> <span class="s">&quot;gene&quot;</span><span class="p">,</span> <span class="s">&quot;t00&quot;</span><span class="p">,</span> <span class="s">&quot;t15&quot;</span><span class="p">,</span> <span class="s">&quot;t60&quot;</span><span class="p">)</span>
+
+<span class="n">dat</span> <span class="o">=</span> <span class="n">dat</span> <span class="o">%&gt;%</span> <span class="nf">gather</span><span class="p">(</span><span class="n">time_point</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span> <span class="o">-</span><span class="n">gene</span><span class="p">,</span> <span class="o">-</span><span class="n">loc</span><span class="p">)</span>
+<span class="n">dat</span><span class="o">$</span><span class="n">gene</span> <span class="o">=</span> <span class="nf">factor</span><span class="p">(</span><span class="n">dat</span><span class="o">$</span><span class="n">gene</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">gene</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead><tr><th scope=col>loc</th><th scope=col>gene</th><th scope=col>time_point</th><th scope=col>count</th></tr></thead>
+<tbody>
+	<tr><td>chr1_58783969_58784119_-  </td><td>JUN                       </td><td>t00                       </td><td>10.165230                 </td></tr>
+	<tr><td>chr1_202010502_202010656_+</td><td>ELF3                      </td><td>t00                       </td><td> 9.776913                 </td></tr>
+	<tr><td>chr1_202010555_202010705_-</td><td>ELF3                      </td><td>t00                       </td><td> 9.758447                 </td></tr>
+	<tr><td>chr3_194136067_194136217_+</td><td>HES1                      </td><td>t00                       </td><td> 9.487573                 </td></tr>
+	<tr><td>chr3_194136098_194136258_-</td><td>HES1                      </td><td>t00                       </td><td> 9.485529                 </td></tr>
+	<tr><td>chr1_58783921_58784071_+  </td><td>JUN                       </td><td>t00                       </td><td> 9.906729                 </td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.height</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">repr.plot.width</span><span class="o">=</span><span class="m">6</span><span class="p">)</span>
+<span class="n">gpt</span> <span class="o">=</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">time_point</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">count</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">gene</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="n">loc</span><span class="p">))</span> <span class="o">+</span> 
+    <span class="nf">geom_line</span><span class="p">()</span> <span class="o">+</span>
+    <span class="nf">theme_bw</span><span class="p">()</span> <span class="o">+</span> 
+    <span class="nf">labs</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s">&quot;Time Point&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">&quot;Peak Count (rlg)&quot;</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">gpt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/11_plot_peak_16_0.png" src="../../_images/11_plot_peak_16_0.png" />
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "ir_alex_py3"
+        },
+        kernelOptions: {
+            kernelName: "ir_alex_py3",
+            path: "./notebooks/12_run_homer_procap"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir_alex_py3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book Community<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

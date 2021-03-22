@@ -1,0 +1,1056 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2.1. Check the file paths for the data &#8212; My sample book</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2.2. Run HOMER makeTagDirectory of PRO-cap and RNA-seq data" href="02_homer_tag.html" />
+    <link rel="prev" title="2. Run Homer Analysis on PRO-cap Data" href="00_homer_intro.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">My sample book</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Example
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../content.html">
+   Content in Jupyter Book
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../markdown.html">
+     Markdown Files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../notebooks.html">
+     Content with notebooks
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Peak calling of PRO-cap data
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../11_prep_procap/01_prep_files.html">
+   1. PRO-cap Data description and preparation
+  </a>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="00_homer_intro.html">
+   2. Run Homer Analysis on PRO-cap Data
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.1. Check the file paths for the data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_homer_tag.html">
+     2.2. Run HOMER makeTagDirectory of PRO-cap and RNA-seq data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_homer_vis.html">
+     2.3. Create Genome Browser Visualization Files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_homer_findPeaks.html">
+     2.4. HOMER FindPeaks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_homer_findTSS.html">
+     2.5. HOMER FindcsRNATSS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_homer_merge_peak.html">
+     2.6. Merge Peak output from HOMER findPeaks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_homer_merge_tss.html">
+     2.7. Merge TSS output from HOMER findcsRNATSS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06_homer_annot_peak.html">
+     2.8. Get the count using HOMER annotatePeaks.pl
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06_homer_annot_tss.html">
+     2.9. Get the count using HOMER annotatePeaks.pl
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12_peak_PER1.html">
+     2.10. Summarize and visualize peaks from HOMER pipeline
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/notebooks/12_run_homer_procap/01_prep_files.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnotebooks/12_run_homer_procap/01_prep_files.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/notebooks/12_run_homer_procap/01_prep_files.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rna-seq-of-long-term-dex-treatment">
+   2.1.1. RNA-seq of long term Dex treatment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rna-seq-of-short-term-dex-treatment">
+   2.1.2. RNA-seq of short term Dex treatment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#genome-file">
+   2.1.3. Genome file
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="check-the-file-paths-for-the-data">
+<h1><span class="section-number">2.1. </span>Check the file paths for the data<a class="headerlink" href="#check-the-file-paths-for-the-data" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>PRO-cap</p>
+<ul>
+<li><p>0, 15, 30 min Dex treatment</p></li>
+</ul>
+</li>
+<li><p>RNA-seq</p>
+<ul>
+<li><p>short term Dex treatment 0, 5, 10, 15,…, 25 min</p></li>
+<li><p>long term Dex treatment 0,</p></li>
+<li><p>/data/reddylab/projects/GGR/results/rna_seq/checkpoints/iter0/accepted_samples.txt</p></li>
+<li><p>/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/*/STAR_2pass_featurecounts/Aligned.out.sorted.bam</p></li>
+<li></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">FP_GEN</span><span class="o">=</span>/data/reddylab/Kuei/annotation/gencode.v34.annotation.gtf
+<span class="nv">FD_CAP</span><span class="o">=</span>/data/reddylab/Kuei/Dex_ProCap
+<span class="nv">FD_GGR</span><span class="o">=</span>/data/reddylab/projects/GGR/
+<span class="nv">FD_RNA_ALIGN</span><span class="o">=</span><span class="nv">$FD_GGR</span>/data/rna_seq/mapped_reads
+
+<span class="nv">FP_BAM_CAP_T00m</span><span class="o">=</span><span class="nv">$FD_CAP</span>/new_files/A549_control_alignments/A549_untreated_merged.bam
+<span class="nv">FP_BAM_CAP_T15m</span><span class="o">=</span><span class="nv">$FD_CAP</span>/new_files/A549_15min_Dexamethasone_alignments/A549_15min_Dexamethasone_merged.bam
+<span class="nv">FP_BAM_CAP_T60m</span><span class="o">=</span><span class="nv">$FD_CAP</span>/new_files/A549_1hr_Dexamethasone_alignments/A549_1h_Dexamethasone_merged.bam
+
+<span class="nv">FP_BAM_RNA_T00m_rep1</span><span class="o">=</span><span class="nv">$FD_RNA_ALIGN</span>/iter_short/t00m_rep1.star2.Aligned.out.sorted.bam
+<span class="nv">FP_BAM_RNA_T00m_rep2</span><span class="o">=</span><span class="nv">$FD_RNA_ALIGN</span>/iter_short/t00m_rep2.star2.Aligned.out.sorted.bam
+<span class="nv">FP_BAM_RNA_T00m_rep3</span><span class="o">=</span><span class="nv">$FD_RNA_ALIGN</span>/iter_short/t00m_rep3.star2.Aligned.out.sorted.bam
+
+<span class="nv">FP_BAM_RNA_T15m_rep1</span><span class="o">=</span><span class="nv">$FD_RNA_ALIGN</span>/iter_short/t15m_rep1.star2.Aligned.out.sorted.bam
+<span class="nv">FP_BAM_RNA_T15m_rep2</span><span class="o">=</span><span class="nv">$FD_RNA_ALIGN</span>/iter_short/t15m_rep2.star2.Aligned.out.sorted.bam
+<span class="nv">FP_BAM_RNA_T15m_rep3</span><span class="o">=</span><span class="nv">$FD_RNA_ALIGN</span>/iter_short/t15m_rep3.star2.Aligned.out.sorted.bam
+
+<span class="nv">FP_BAM_RNA_T60m_rep1</span><span class="o">=</span><span class="nv">$FD_RNA_ALIGN</span>/iter0/t1_rep1/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+<span class="nv">FP_BAM_RNA_T60m_rep2</span><span class="o">=</span><span class="nv">$FD_RNA_ALIGN</span>/iter0/t1_rep2/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+<span class="nv">FP_BAM_RNA_T60m_rep3</span><span class="o">=</span><span class="nv">$FD_RNA_ALIGN</span>/iter0/t1_rep3/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+<span class="nv">FP_BAM_RNA_T60m_rep4</span><span class="o">=</span><span class="nv">$FD_RNA_ALIGN</span>/iter0/t1_rep4/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls <span class="nv">$FP_GEN</span>
+<span class="nb">echo</span> <span class="o">==================</span>
+ls <span class="nv">$FD_CAP</span>
+<span class="nb">echo</span> <span class="o">==================</span>
+ls <span class="nv">$FD_GGR</span>
+<span class="nb">echo</span> <span class="o">==================</span>
+ls <span class="nv">$FD_RNA_ALIGN</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/data/reddylab/Kuei/annotation/gencode.v34.annotation.gtf
+==================
+new_files  new_files.tar.gz  out_new_files  run_homer
+==================
+analyses  auxiliary  data  results  subprojects
+==================
+dex_depletion		    iter-1			 iter_dex_depletion
+iter0			    iter-1_cell_line_comparison  iter_hCas9_puro
+iter0_cell_line_comparison  iter-1_HDAC_inhibitors	 iter_over
+iter0_HDAC_inhibitors	    iter_dCas9_krab_puro	 iter_short
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls <span class="nv">$FP_BAM_CAP_T00m</span>
+ls <span class="nv">$FP_BAM_CAP_T15m</span>
+ls <span class="nv">$FP_BAM_CAP_T60m</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/data/reddylab/Kuei/Dex_ProCap/new_files/A549_control_alignments/A549_untreated_merged.bam
+/data/reddylab/Kuei/Dex_ProCap/new_files/A549_15min_Dexamethasone_alignments/A549_15min_Dexamethasone_merged.bam
+/data/reddylab/Kuei/Dex_ProCap/new_files/A549_1hr_Dexamethasone_alignments/A549_1h_Dexamethasone_merged.bam
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls <span class="nv">$FP_BAM_RNA_T00m_rep1</span>
+ls <span class="nv">$FP_BAM_RNA_T00m_rep2</span>
+ls <span class="nv">$FP_BAM_RNA_T00m_rep3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/data/reddylab/projects/GGR//data/rna_seq/mapped_reads/iter_short/t00m_rep1.star2.Aligned.out.sorted.bam
+/data/reddylab/projects/GGR//data/rna_seq/mapped_reads/iter_short/t00m_rep2.star2.Aligned.out.sorted.bam
+/data/reddylab/projects/GGR//data/rna_seq/mapped_reads/iter_short/t00m_rep3.star2.Aligned.out.sorted.bam
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls <span class="nv">$FP_BAM_RNA_T15m_rep1</span>
+ls <span class="nv">$FP_BAM_RNA_T15m_rep2</span>
+ls <span class="nv">$FP_BAM_RNA_T15m_rep3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/data/reddylab/projects/GGR//data/rna_seq/mapped_reads/iter_short/t15m_rep1.star2.Aligned.out.sorted.bam
+/data/reddylab/projects/GGR//data/rna_seq/mapped_reads/iter_short/t15m_rep2.star2.Aligned.out.sorted.bam
+/data/reddylab/projects/GGR//data/rna_seq/mapped_reads/iter_short/t15m_rep3.star2.Aligned.out.sorted.bam
+</pre></div>
+</div>
+</div>
+</div>
+<p>/data/reddylab/projects/ggr/data/rna_seq/expression/A549.rnaseq.dex.featurecounts.genes.TPM.selected_samples.txt</p>
+<p>/data/reddylab/projects/ggr/data/rna_seq/expression/A549.rnaseq.dex.rsem.transcripts.TPM.txt</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">FD_ggr</span><span class="o">=</span>/data/reddylab/projects/ggr
+<span class="nv">FD_GGR_RES</span><span class="o">=</span>/data/reddylab/projects/GGR
+<span class="nv">FD_CHECKPOINTS</span><span class="o">=</span>/data/reddylab/projects/GGR/results/rna_seq/checkpoints
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/data/reddylab/projects/ggr/data/rna_seq/expression
+/data/reddylab/projects/GGR/results/rna_seq/checkpoints/iter0/accepted_samples.txt
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0
+/data/reddylab/projects/GGR/results/rna_seq/checkpoints/iter_short/accepted_samples.txt
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter_short
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>head -1 /data/reddylab/projects/ggr/data/rna_seq/expression/A549.rnaseq.dex.featurecounts.genes.TPM.selected_samples.txt 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene	A549.rnaseq.dex.00h00m.rep1	A549.rnaseq.dex.00h00m.rep2	A549.rnaseq.dex.00h00m.rep3	A549.rnaseq.dex.00h05m.rep1	A549.rnaseq.dex.00h05m.rep3	A549.rnaseq.dex.00h10m.rep1	A549.rnaseq.dex.00h10m.rep2	A549.rnaseq.dex.00h10m.rep3	A549.rnaseq.dex.00h15m.rep1	A549.rnaseq.dex.00h15m.rep2	A549.rnaseq.dex.00h15m.rep3	A549.rnaseq.dex.00h20m.rep1	A549.rnaseq.dex.00h20m.rep2	A549.rnaseq.dex.00h20m.rep3	A549.rnaseq.dex.00h25m.rep1	A549.rnaseq.dex.00h25m.rep2	A549.rnaseq.dex.00h25m.rep3	A549.rnaseq.dex.00h30m.rep1	A549.rnaseq.dex.00h30m.rep2	A549.rnaseq.dex.00h30m.rep3	A549.rnaseq.dex.00h30m.rep4	A549.rnaseq.dex.00h.rep1	A549.rnaseq.dex.00h.rep2plusextra	A549.rnaseq.dex.00h.rep3plusextra	A549.rnaseq.dex.00h.rep4	A549.rnaseq.dex.01h.rep1	A549.rnaseq.dex.01h.rep2	A549.rnaseq.dex.01h.rep3	A549.rnaseq.dex.01h.rep4	A549.rnaseq.dex.02h.rep1	A549.rnaseq.dex.02h.rep2	A549.rnaseq.dex.02h.rep3	A549.rnaseq.dex.02h.rep4	A549.rnaseq.dex.03h.rep1	A549.rnaseq.dex.03h.rep2	A549.rnaseq.dex.03h.rep3	A549.rnaseq.dex.03h.rep3redo	A549.rnaseq.dex.03h.rep4	A549.rnaseq.dex.04h.rep1	A549.rnaseq.dex.04h.rep2	A549.rnaseq.dex.04h.rep3	A549.rnaseq.dex.04h.rep4	A549.rnaseq.dex.05h.rep2	A549.rnaseq.dex.05h.rep3	A549.rnaseq.dex.05h.rep4	A549.rnaseq.dex.06h.rep2	A549.rnaseq.dex.06h.rep3	A549.rnaseq.dex.06h.rep4	A549.rnaseq.dex.07h.rep1	A549.rnaseq.dex.07h.rep2	A549.rnaseq.dex.07h.rep3	A549.rnaseq.dex.07h.rep4	A549.rnaseq.dex.08h.rep1	A549.rnaseq.dex.08h.rep2	A549.rnaseq.dex.08h.rep3	A549.rnaseq.dex.08h.rep4	A549.rnaseq.dex.10h.rep1	A549.rnaseq.dex.10h.rep2	A549.rnaseq.dex.10h.rep3	A549.rnaseq.dex.10h.rep4	A549.rnaseq.dex.12h.rep1	A549.rnaseq.dex.12h.rep2	A549.rnaseq.dex.12h.rep3	A549.rnaseq.dex.12h.rep4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls <span class="nv">$FD_CHECKPOINTS</span>/iter0/accepted_samples.txt
+ls <span class="nv">$FD_CHECKPOINTS</span>/iter_short/accepted_samples.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/data/reddylab/projects/GGR/results/rna_seq/checkpoints/iter0/accepted_samples.txt
+/data/reddylab/projects/GGR/results/rna_seq/checkpoints/iter_short/accepted_samples.txt
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">FP_SAMPLES_LONG</span><span class="o">=</span><span class="nv">$FD_GGR</span>/results/rna_seq/checkpoints/iter0/accepted_samples.txt
+<span class="nv">FP_SAMPLES_SHORT</span><span class="o">=</span><span class="nv">$FD_GGR</span>/results/rna_seq/checkpoints/iter_short/accepted_samples.txt
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">FD_CAP</span><span class="o">=</span>/data/reddylab/Kuei/Dex_ProCap
+ls <span class="nv">$FD_CAP</span>/new_files
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A549_15min_Dexamethasone_alignments  A549_1hr_Dexamethasone_peaks
+A549_15min_Dexamethasone_peaks	     A549_control_alignments
+A549_1hr_Dexamethasone_alignments    A549_control_peaks
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls <span class="nv">$FD_CAP</span>/new_files/A549_control_alignments
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A549_control_alignments.txt  A549_untreated_merged_with_dup.bam
+A549_untreated_merged.bam
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls -1 <span class="nv">$FD_CAP</span>/new_files/A549_15min_Dexamethasone_alignments
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A549_15min_Dexamethasone_alignments.txt
+A549_15min_Dexamethasone_merged.bam
+A549_15min_Dexamethasone_merged_with_dup.bam
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls -1 <span class="nv">$FD_CAP</span>/new_files/A549_1hr_Dexamethasone_alignments
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A549_1h_Dexamethasone_merged.bam
+A549_1h_Dexamethasone_merged_with_dup.bam
+A549_1hr_Dexamethasone_alignments.txt
+</pre></div>
+</div>
+</div>
+</div>
+<p>/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t00_rep1/STAR_2pass_featurecounts/Aligned.out.sorted.bam</p>
+<p>/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter_short/t00m_rep1.star2.Aligned.out.sorted.bam</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">FD_GGR</span><span class="o">=</span>/data/reddylab/projects/GGR/
+<span class="nv">FD_RNA_ALIGN</span><span class="o">=</span><span class="nv">$FD_GGR</span>/data/rna_seq/mapped_reads
+ls <span class="nv">$FD_RNA_ALIGN</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dex_depletion		    iter-1			 iter_dex_depletion
+iter0			    iter-1_cell_line_comparison  iter_hCas9_puro
+iter0_cell_line_comparison  iter-1_HDAC_inhibitors	 iter_over
+iter0_HDAC_inhibitors	    iter_dCas9_krab_puro	 iter_short
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter_short/t00m_rep1.star2.Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter_short/t00m_rep2.star2.Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter_short/t00m_rep3.star2.Aligned.out.sorted.bam
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter_short/t15m_rep1.star2.Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter_short/t15m_rep2.star2.Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter_short/t15m_rep3.star2.Aligned.out.sorted.bam
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">FD_CAP</span><span class="o">=</span>/data/reddylab/Kuei/Dex_ProCap
+<span class="nv">FD_GGR</span><span class="o">=</span>/data/reddylab/projects/GGR/
+<span class="nv">FD_RNA_ALIGN</span><span class="o">=</span><span class="nv">$FD_GGR</span>/data/rna_seq/mapped_reads
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">FD_CAP</span><span class="o">=</span>/data/reddylab/Kuei/Dex_ProCap
+<span class="nv">FD_GGR</span><span class="o">=</span>/data/reddylab/projects/GGR/
+<span class="nv">FD_RNA_ALIGN</span><span class="o">=</span><span class="nv">$FD_GGR</span>/data/rna_seq/mapped_reads
+
+<span class="nv">FP_BAM_CAP_T00m</span><span class="o">=</span><span class="nv">$FD_CAP</span>/new_files/A549_control_alignments/A549_untreated_merged.bam
+<span class="nv">FP_BAM_CAP_T15m</span><span class="o">=</span><span class="nv">$FD_CAP</span>/new_files/A549_15min_Dexamethasone_alignments/A549_15min_Dexamethasone_merged.bam
+<span class="nv">FP_BAM_CAP_T60m</span><span class="o">=</span><span class="nv">$FD_CAP</span>/new_files/A549_1hr_Dexamethasone_aFD_RNA_LONG_ALIGN<span class="o">=</span>data/rna_seq/mapped_reads/iter0lignments/A549_1h_Dexamethasone_merged.bam
+
+<span class="nv">FP_BAM_RNA_T00m_rep1</span><span class="o">=</span><span class="nv">$FD_RNA_ALIGN</span>/iter_short/t00m_rep1.star2.Aligned.out.sorted.bam
+<span class="nv">FP_BAM_RNA_T00m_rep2</span><span class="o">=</span><span class="nv">$FD_RNA_ALIGN</span>/iter_short/t00m_rep2.star2.Aligned.out.sorted.bam
+<span class="nv">FP_BAM_RNA_T00m_rep3</span><span class="o">=</span><span class="nv">$FD_RNA_ALIGN</span>/iter_short/t00m_rep3.star2.Aligned.out.sorted.bam
+
+<span class="nv">FP_BAM_RNA_T15m_rep1</span><span class="o">=</span><span class="nv">$FD_RNA_ALIGN</span>/iter_short/t15m_rep1.star2.Aligned.out.sorted.bam
+<span class="nv">FP_BAM_RNA_T15m_rep2</span><span class="o">=</span><span class="nv">$FD_RNA_ALIGN</span>/iter_short/t15m_rep2.star2.Aligned.out.sorted.bam
+<span class="nv">FP_BAM_RNA_T15m_rep3</span><span class="o">=</span><span class="nv">$FD_RNA_ALIGN</span>/iter_short/t15m_rep3.star2.Aligned.out.sorted.bam
+
+<span class="nv">FP_BAM_RNA_T60m_rep1</span><span class="o">=</span><span class="nv">$FD_RNA_ALIGN</span>/iter0/t1_rep1/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+<span class="nv">FP_BAM_RNA_T60m_rep2</span><span class="o">=</span><span class="nv">$FD_RNA_ALIGN</span>/iter0/t1_rep2/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+<span class="nv">FP_BAM_RNA_T60m_rep3</span><span class="o">=</span><span class="nv">$FD_RNA_ALIGN</span>/iter0/t1_rep3/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+<span class="nv">FP_BAM_RNA_T60m_rep4</span><span class="o">=</span><span class="nv">$FD_RNA_ALIGN</span>/iter0/t1_rep4/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">FP_BAM_RNA_T60m_rep1</span><span class="o">=</span><span class="nv">$FD_RNA_ALIGN</span>/
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t00_rep1/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls /data/reddylab/Kuei/Dex_ProCap
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>new_files  new_files.tar.gz  out_new_files
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t1_rep1/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t1_rep2/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t1_rep3/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t1_rep4/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="rna-seq-of-long-term-dex-treatment">
+<h2><span class="section-number">2.1.1. </span>RNA-seq of long term Dex treatment<a class="headerlink" href="#rna-seq-of-long-term-dex-treatment" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#cat /data/reddylab/projects/GGR/results/rna_seq/checkpoints/iter0/accepted_samples.txt</span>
+cat <span class="nv">$FP_SAMPLES_LONG</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>t00_rep1
+t00_rep2plusextra
+t00_rep3plusextra
+t00_rep4
+t05_rep1
+t05_rep2
+t05_rep3
+t05_rep4
+t1_rep1
+t1_rep2
+t1_rep3
+t1_rep4
+t2_rep1
+t2_rep2
+t2_rep3
+t2_rep4
+t3_rep1
+t3_rep2
+t3_rep3
+t3_rep4
+t4_rep1
+t4_rep2
+t4_rep3
+t4_rep4
+t5_rep2
+t5_rep3
+t5_rep4
+t6_rep2
+t6_rep3
+t6_rep4
+t7_rep1
+t7_rep2
+t7_rep3
+t7_rep4
+t8_rep1
+t8_rep2
+t8_rep3
+t8_rep4
+t10_rep1
+t10_rep2
+t10_rep3
+t10_rep4
+t12_rep1
+t12_rep2
+t12_rep3
+t12_rep4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls -h /data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/*/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t00_rep1/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t00_rep2extra/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t00_rep2plusextra/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t00_rep2/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t00_rep3extra/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t00_rep3plusextra/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t00_rep3/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t00_rep4/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t05_rep1redo/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t05_rep1/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t05_rep2/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t05_rep3/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t05_rep4/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t10_rep1/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t10_rep2/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t10_rep3/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t10_rep4/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t12_rep1/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t12_rep2/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t12_rep3/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t12_rep4/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t1_rep1/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t1_rep2/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t1_rep3/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t1_rep4/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t2_rep1/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t2_rep2/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t2_rep3/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t2_rep4/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t3_rep1/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t3_rep2/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t3_rep3redo/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t3_rep3/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t3_rep4/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t4_rep1/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t4_rep2/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t4_rep3/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t4_rep4/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t5_rep1redo/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t5_rep1/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t5_rep2/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t5_rep3/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t5_rep4/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t6_rep1/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t6_rep2/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t6_rep3/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t6_rep4/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t7_rep1/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t7_rep2/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t7_rep3/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t7_rep4/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t8_rep1/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t8_rep2/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t8_rep3/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter0/t8_rep4/STAR_2pass_featurecounts/Aligned.out.sorted.bam
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="rna-seq-of-short-term-dex-treatment">
+<h2><span class="section-number">2.1.2. </span>RNA-seq of short term Dex treatment<a class="headerlink" href="#rna-seq-of-short-term-dex-treatment" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#cat /data/reddylab/projects/GGR/results/rna_seq/checkpoints/iter_short/accepted_samples.txt</span>
+cat <span class="nv">$FD_CHECKPOINTS</span>/iter_short/accepted_samples.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>t00m_rep1
+t00m_rep2
+t00m_rep3
+t05m_rep1
+t05m_rep3
+t15m_rep1
+t15m_rep2
+t15m_rep3
+t20m_rep1
+t20m_rep2
+t20m_rep3
+t25m_rep1
+t25m_rep2
+t25m_rep3
+t10m_rep1
+t10m_rep2
+t10m_rep3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls /data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter_short/*.Aligned.out.sorted.bam
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter_short/t00m_rep1.star2.Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter_short/t00m_rep2.star2.Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter_short/t00m_rep3.star2.Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter_short/t05m_rep1.star2.Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter_short/t05m_rep2.star2.Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter_short/t05m_rep3.star2.Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter_short/t10m_rep1.star2.Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter_short/t10m_rep2.star2.Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter_short/t10m_rep3.star2.Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter_short/t15m_rep1.star2.Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter_short/t15m_rep2.star2.Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter_short/t15m_rep3.star2.Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter_short/t20m_rep1.star2.Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter_short/t20m_rep2.star2.Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter_short/t20m_rep3.star2.Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter_short/t25m_rep1.star2.Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter_short/t25m_rep2.star2.Aligned.out.sorted.bam
+/data/reddylab/projects/GGR/data/rna_seq/mapped_reads/iter_short/t25m_rep3.star2.Aligned.out.sorted.bam
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="genome-file">
+<h2><span class="section-number">2.1.3. </span>Genome file<a class="headerlink" href="#genome-file" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>URL=ftp://ftp.ensembl.org/pub/release-102/fasta/homo_sapiens/dna
+FNAME=Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
+wget $URL/$FNAME -P /gpfs/fs1/data/reddylab/Kuei/annotation
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls -l /gpfs/fs1/data/reddylab/Kuei/annotation
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>total 5312640
+-rw-rw-r-- 1 kk319 reddylab 1340598822 Jun  4  2020 gencode.v34.annotation.gtf
+-rw-rw-r-- 1 kk319 reddylab   43164654 Jun  3  2020 gencode.v34.annotation.gtf.gz
+-rw-rw-r-- 1 kk319 reddylab   23411110 Jul 16  2020 gencode_v34_transcript.tsv
+-rw-rw-r-- 1 kk319 reddylab 3151425857 Feb 14 15:45 Homo_sapiens.GRCh38.dna.primary_assembly.fa
+-rw-rw-r-- 1 kk319 reddylab  881211416 Feb 13 20:28 Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">FD_GEN</span><span class="o">=</span>/gpfs/fs1/data/reddylab/Kuei/annotation
+gunzip -c <span class="nv">$FD_GEN</span>/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz &gt; <span class="nv">$FD_GEN</span>/Homo_sapiens.GRCh38.dna.primary_assembly.fa
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls -l /gpfs/fs1/data/reddylab/Kuei/annotation
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>total 5312640
+-rw-rw-r-- 1 kk319 reddylab 1340598822 Jun  4  2020 gencode.v34.annotation.gtf
+-rw-rw-r-- 1 kk319 reddylab   43164654 Jun  3  2020 gencode.v34.annotation.gtf.gz
+-rw-rw-r-- 1 kk319 reddylab   23411110 Jul 16  2020 gencode_v34_transcript.tsv
+-rw-rw-r-- 1 kk319 reddylab 3151425857 Feb 14 15:45 Homo_sapiens.GRCh38.dna.primary_assembly.fa
+-rw-rw-r-- 1 kk319 reddylab  881211416 Feb 13 20:28 Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">FD_GEN</span><span class="o">=</span>/gpfs/fs1/data/reddylab/Kuei/annotation
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>head <span class="nv">$FD_GEN</span>/Homo_sapiens.GRCh38.dna.primary_assembly.fa
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;1 dna:chromosome chromosome:GRCh38:1:1:248956422:1 REF
+NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>head -180 <span class="nv">$FD_GEN</span>/Homo_sapiens.GRCh38.dna.primary_assembly.fa <span class="p">|</span> tail -30
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNTAACCCTAACCCTAACCCTA
+ACCCTAACCCTAACCCTAACCCTAACCCTAACCCTAACCCTAACCCTAACCCTAACCCTA
+ACCCTAACCCTAACCCTAACCCTAACCCAACCCTAACCCTAACCCTAACCCTAACCCTAA
+CCCTAACCCCTAACCCTAACCCTAACCCTAACCCTAACCTAACCCTAACCCTAACCCTAA
+CCCTAACCCTAACCCTAACCCTAACCCTAACCCCTAACCCTAACCCTAAACCCTAAACCC
+TAACCCTAACCCTAACCCTAACCCTAACCCCAACCCCAACCCCAACCCCAACCCCAACCC
+CAACCCTAACCCCTAACCCTAACCCTAACCCTACCCTAACCCTAACCCTAACCCTAACCC
+TAACCCTAACCCCTAACCCCTAACCCTAACCCTAACCCTAACCCTAACCCTAACCCTAAC
+CCCTAACCCTAACCCTAACCCTAACCCTCGCGGTACCCTCAGCCGGCCCGCCCGCCCGGG
+TCTGACCTGAGGAGAACTGTGCTCCGCCTTCAGAGTACCACCGAAATCTGTGCAGAGGAC
+AACGCAGCTCCGCCCTCGCGGTGCTCTCCGGGTCTGTGCTGAGGAGAACGCAACTCCGCC
+GTTGCAAAGGCGCGCCGCGCCGGCGCAGGCGCAGAGAGGCGCGCCGCGCCGGCGCAGGCG
+CAGAGAGGCGCGCCGCGCCGGCGCAGGCGCAGAGAGGCGCGCCGCGCCGGCGCAGGCGCA
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tail <span class="nv">$FD_GEN</span>/Homo_sapiens.GRCh38.dna.primary_assembly.fa
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AACTTCTCTGCGATGTTTGCATTCAACTCATAGAGTTGAACACTTCCTTTCATAGAGCTG
+GTTTGAAATACTCTTTTTGTAATATTTGGAAGTGGACATTGGCAGCGCTTTGAAGCCTAT
+GTTGAAAATGGAAATATCTTCTCCTAAAAACCAGACAGAAGCATTCTCAGAAACTTCCTT
+GTGATGTGTGTACTCAAGTAACAGAGTTGAACCTTACTTTTGACAGAGCCGTTTTGAAAC
+AGTCTTTTTGTAGAATCTGGAAGTAGATATTTGGATACCTTTGAGGATTTCTTTGGAAAC
+GGGATATCTTCATATAAAATCTAGACAGAAGCATTCTCAGAAACTTCTTTGTGCTGTATG
+TCCTCAATTAACAGAGTTGAACCTTTGTGTGGATACAGCATTTTGGAAACACTCCTTTAG
+TAGAATCTGCAAGTTGATACTTAGATAGGAAGATTTCCTTGGAAACGGGAATATCTTCAT
+ATAAAATCTAGACGGAAGCATTCTCGGAAACTTCTTTGTGCTGTATGTCCTCAATAACAG
+AGTTGAACCT
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>%%bash
+<span class="nv">URL</span><span class="o">=</span>ftp://ftp.ensembl.org/pub/release-102/fasta/homo_sapiens/dna
+<span class="nv">FNAME</span><span class="o">=</span>Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
+wget <span class="nv">$URL</span>/<span class="nv">$FNAME</span> -P /gpfs/fs1/data/reddylab/Kuei/annotation
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "bash"
+        },
+        kernelOptions: {
+            kernelName: "bash",
+            path: "./notebooks/12_run_homer_procap"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'bash'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="00_homer_intro.html" title="previous page"><span class="section-number">2. </span>Run Homer Analysis on PRO-cap Data</a>
+    <a class='right-next' id="next-link" href="02_homer_tag.html" title="next page"><span class="section-number">2.2. </span>Run HOMER makeTagDirectory of PRO-cap and RNA-seq data</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book Community<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
