@@ -1,3 +1,5 @@
+# Summarize and visualize peaks from HOMER pipeline
+
 suppressMessages(suppressWarnings(source("config.R")))
 
 FD_OUT

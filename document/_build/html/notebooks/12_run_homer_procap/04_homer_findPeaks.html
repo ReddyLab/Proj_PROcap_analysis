@@ -181,12 +181,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12_peak_PER1.html">
-     2.10. Summarize Annotation across the peaks
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="12_peak_PER1.html#visualize">
-     2.11. Visualize
+     2.10. Summarize and visualize peaks from HOMER pipeline
     </a>
    </li>
   </ul>
@@ -529,7 +524,7 @@ EOF
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24852977
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24751135
 </pre></div>
 </div>
 </div>
@@ -570,7 +565,7 @@ EOF
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24852978
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24751136
 </pre></div>
 </div>
 </div>
@@ -614,7 +609,7 @@ EOF
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24852979
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24751137
 </pre></div>
 </div>
 </div>
@@ -655,7 +650,7 @@ EOF
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24852980
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24751138
 </pre></div>
 </div>
 </div>
@@ -699,7 +694,7 @@ EOF
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24852981
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24751139
 </pre></div>
 </div>
 </div>
@@ -740,7 +735,7 @@ EOF
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24852982
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24751140
 </pre></div>
 </div>
 </div>
@@ -757,7 +752,46 @@ EOF
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>head: cannot open `/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findPeak/tss_cap00_rna00.txt&#39; for reading: No such file or directory
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># HOMER Peaks
+# Peak finding parameters:
+# tag directory = /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t00/
+#
+# total peaks = 55894
+# peak size = 150
+# peaks found separately for each strand
+# minimum distance between peaks = 300
+# fragment length = 0
+# genome size = 2000000000
+# Total tags = 9384553.0
+# Total tags in peaks = 4447460.5
+# Approximate IP efficiency = 47.39%
+# tags per bp = 0.004692
+# expected tags per peak = 0.352
+# maximum tags considered per bp = 0.0
+# effective number of tags used for normalization = 10000000.0
+# Peaks have been centered at maximum tag pile-up
+# FDR rate threshold = 0.001000000
+# FDR effective poisson threshold = 9.756258e-08
+# FDR tag threshold = 7.0
+# number of putative peaks = 70681
+#
+# input tag directory = /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/rnaseq_t00/
+# Fold over input required = 4.00
+# Poisson p-value over input required = 1.00e-04
+# Putative peaks filtered by input = 5853
+#
+# size of region used for local filtering = 10000
+# Fold over local region required = 4.00
+# Poisson p-value over local region required = 1.00e-04
+# Putative peaks filtered by local signal = 8934
+#
+# cmd = findPeaks /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t00/ -i /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/rnaseq_t00/ -style tss
+#
+# Column Headers:
+#PeakID	chr	start	end	strand	Normalized Tag Count	focus ratio	findPeaks Score	Total Tags	Control Tags (normalized to IP Experiment)	Fold Change vs Control	p-value vs Control	Fold Change vs Local	p-value vs Local	Dispersion Ratio	Periodic Ratio
+chr14-1	chr14	49862475	49862625	+	6671.1	0.974	6394.000000	6260.5	8.7	721.73	0.00e+00	924.87	0.00e+00	0.970764	0.513661
+chr14-2	chr14	49862774	49862924	-	6293.9	0.314	6046.000000	5906.5	6.5	906.17	0.00e+00	487.87	0.00e+00	0.368860	0.391908
+chr14-3	chr14	49586803	49586953	-	4523.4	0.887	4290.500000	4245.0	10.3	413.72	0.00e+00	640.82	0.00e+00	0.894532	0.446809
 </pre></div>
 </div>
 </div>
@@ -769,7 +803,46 @@ EOF
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>head: cannot open `/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findPeak/tss_cap00.txt&#39; for reading: No such file or directory
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># HOMER Peaks
+# Peak finding parameters:
+# tag directory = /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t00/
+#
+# total peaks = 60080
+# peak size = 150
+# peaks found separately for each strand
+# minimum distance between peaks = 300
+# fragment length = 0
+# genome size = 2000000000
+# Total tags = 9384553.0
+# Total tags in peaks = 4845493.5
+# Approximate IP efficiency = 51.63%
+# tags per bp = 0.004692
+# expected tags per peak = 0.352
+# maximum tags considered per bp = 0.0
+# effective number of tags used for normalization = 10000000.0
+# Peaks have been centered at maximum tag pile-up
+# FDR rate threshold = 0.001000000
+# FDR effective poisson threshold = 9.756258e-08
+# FDR tag threshold = 7.0
+# number of putative peaks = 70681
+#
+# size of region used for local filtering = 10000
+# Fold over local region required = 4.00
+# Poisson p-value over local region required = 1.00e-04
+# Putative peaks filtered by local signal = 10601
+#
+# cmd = findPeaks /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t00/ -style tss
+#
+# Column Headers:
+#PeakID	chr	start	end	strand	Normalized Tag Count	focus ratio	findPeaks Score	Fold Change vs Local	p-value vs Local	Dispersion Ratio	Periodic Ratio
+chr14-1	chr14	49862475	49862625	+	6671.1	0.974	6394.000000	924.87	0.00e+00	0.970764	0.513661
+chr14-2	chr14	49862774	49862924	-	6293.9	0.314	6046.000000	487.87	0.00e+00	0.368860	0.391908
+chr14-3	chr14	49586803	49586953	-	4523.4	0.887	4290.500000	640.82	0.00e+00	0.894532	0.446809
+chr17-1	chr17	19187935	19188085	+	4359.3	0.945	4116.000000	1859.12	0.00e+00	0.928519	0.379074
+chr14-4	chr14	49586499	49586649	+	4258.1	0.797	4075.000000	383.07	0.00e+00	0.769666	0.488816
+chr19-1	chr19	33302460	33302610	-	4256.5	0.899	3995.500000	1686.85	0.00e+00	0.826930	0.512654
+chr19-2	chr19	33302394	33302544	+	4151.5	0.845	3939.000000	1005.25	0.00e+00	0.536833	0.502078
+chr17-2	chr17	19188157	19188307	-	3861.7	0.240	3668.000000	388.85	0.00e+00	0.259299	0.590101
 </pre></div>
 </div>
 </div>
@@ -802,56 +875,141 @@ EOF
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">13</span><span class="o">-</span><span class="mi">23102</span><span class="n">bea88ba</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">fpath</span> <span class="o">=</span> <span class="s2">&quot;/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findPeak/tss_t00.txt&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">dat</span>   <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">fpath</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">cname</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="s2">&quot;#&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">dat</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="nn">/data/reddylab/Kuei/envs/jupyterhub/lib/python3.6/site-packages/pandas/io/parsers.py</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, dialect, error_bad_lines, warn_bad_lines, delim_whitespace, low_memory, memory_map, float_precision)</span>
-<span class="g g-Whitespace">    </span><span class="mi">686</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">687</span> 
-<span class="ne">--&gt; </span><span class="mi">688</span>     <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">689</span> 
-<span class="g g-Whitespace">    </span><span class="mi">690</span> 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="nn">/data/reddylab/Kuei/envs/jupyterhub/lib/python3.6/site-packages/pandas/io/parsers.py</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">452</span> 
-<span class="g g-Whitespace">    </span><span class="mi">453</span>     <span class="c1"># Create the parser.</span>
-<span class="ne">--&gt; </span><span class="mi">454</span>     <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">fp_or_buf</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">455</span> 
-<span class="g g-Whitespace">    </span><span class="mi">456</span>     <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
-
-<span class="nn">/data/reddylab/Kuei/envs/jupyterhub/lib/python3.6/site-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, f, engine, **kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">946</span>             <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">947</span> 
-<span class="ne">--&gt; </span><span class="mi">948</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">949</span> 
-<span class="g g-Whitespace">    </span><span class="mi">950</span>     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-<span class="nn">/data/reddylab/Kuei/envs/jupyterhub/lib/python3.6/site-packages/pandas/io/parsers.py</span> in <span class="ni">_make_engine</span><span class="nt">(self, engine)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1178</span>     <span class="k">def</span> <span class="nf">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;c&quot;</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1179</span>         <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1180</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="n">CParserWrapper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1181</span>         <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1182</span>             <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;python&quot;</span><span class="p">:</span>
-
-<span class="nn">/data/reddylab/Kuei/envs/jupyterhub/lib/python3.6/site-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, src, **kwds)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2008</span>         <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;usecols&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">usecols</span>
-<span class="g g-Whitespace">   </span><span class="mi">2009</span> 
-<span class="ne">-&gt; </span><span class="mi">2010</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span> <span class="o">=</span> <span class="n">parsers</span><span class="o">.</span><span class="n">TextReader</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2011</span>         <span class="bp">self</span><span class="o">.</span><span class="n">unnamed_cols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span><span class="o">.</span><span class="n">unnamed_cols</span>
-<span class="g g-Whitespace">   </span><span class="mi">2012</span> 
-
-<span class="nn">pandas/_libs/parsers.pyx</span> in <span class="ni">pandas._libs.parsers.TextReader.__cinit__</span><span class="nt">()</span>
-
-<span class="nn">pandas/_libs/parsers.pyx</span> in <span class="ni">pandas._libs.parsers.TextReader._setup_parser_source</span><span class="nt">()</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findPeak/tss_t00.txt&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PeakID</th>
+      <th>chr</th>
+      <th>start</th>
+      <th>end</th>
+      <th>strand</th>
+      <th>Normalized Tag Count</th>
+      <th>focus ratio</th>
+      <th>findPeaks Score</th>
+      <th>Total Tags</th>
+      <th>Control Tags (normalized to IP Experiment)</th>
+      <th>Fold Change vs Control</th>
+      <th>p-value vs Control</th>
+      <th>Fold Change vs Local</th>
+      <th>p-value vs Local</th>
+      <th>Dispersion Ratio</th>
+      <th>Periodic Ratio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>chr14-1</td>
+      <td>chr14</td>
+      <td>49862475</td>
+      <td>49862625</td>
+      <td>+</td>
+      <td>6671.1</td>
+      <td>0.974</td>
+      <td>6394.0</td>
+      <td>6260.5</td>
+      <td>8.7</td>
+      <td>721.73</td>
+      <td>0.0</td>
+      <td>924.87</td>
+      <td>0.0</td>
+      <td>0.970764</td>
+      <td>0.513661</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>chr14-2</td>
+      <td>chr14</td>
+      <td>49862774</td>
+      <td>49862924</td>
+      <td>-</td>
+      <td>6293.9</td>
+      <td>0.314</td>
+      <td>6046.0</td>
+      <td>5906.5</td>
+      <td>6.5</td>
+      <td>906.17</td>
+      <td>0.0</td>
+      <td>487.87</td>
+      <td>0.0</td>
+      <td>0.368860</td>
+      <td>0.391908</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>chr14-3</td>
+      <td>chr14</td>
+      <td>49586803</td>
+      <td>49586953</td>
+      <td>-</td>
+      <td>4523.4</td>
+      <td>0.887</td>
+      <td>4290.5</td>
+      <td>4245.0</td>
+      <td>10.3</td>
+      <td>413.72</td>
+      <td>0.0</td>
+      <td>640.82</td>
+      <td>0.0</td>
+      <td>0.894532</td>
+      <td>0.446809</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>chr17-1</td>
+      <td>chr17</td>
+      <td>19187935</td>
+      <td>19188085</td>
+      <td>+</td>
+      <td>4359.3</td>
+      <td>0.945</td>
+      <td>4116.0</td>
+      <td>4091.0</td>
+      <td>0.0</td>
+      <td>165068.08</td>
+      <td>0.0</td>
+      <td>1859.12</td>
+      <td>0.0</td>
+      <td>0.928519</td>
+      <td>0.379074</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>chr14-4</td>
+      <td>chr14</td>
+      <td>49586499</td>
+      <td>49586649</td>
+      <td>+</td>
+      <td>4258.1</td>
+      <td>0.797</td>
+      <td>4075.0</td>
+      <td>3996.0</td>
+      <td>9.6</td>
+      <td>415.55</td>
+      <td>0.0</td>
+      <td>383.07</td>
+      <td>0.0</td>
+      <td>0.769666</td>
+      <td>0.488816</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

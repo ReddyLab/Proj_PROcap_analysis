@@ -181,12 +181,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12_peak_PER1.html">
-     2.10. Summarize Annotation across the peaks
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="12_peak_PER1.html#visualize">
-     2.11. Visualize
+     2.10. Summarize and visualize peaks from HOMER pipeline
     </a>
    </li>
   </ul>
@@ -382,40 +377,16 @@ ls <span class="nv">$FD_RNA_ALIGN</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ls: cannot access /data/reddylab/Kuei/annotation/gencode.v34.annotation.gtf: No such file or directory
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>==================
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ls: cannot access /data/reddylab/Kuei/Dex_ProCap: No such file or directory
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>==================
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">analyses</span>  <span class=" -Color -Color-Bold -Color-Bold-Blue">auxiliary</span>  <span class=" -Color -Color-Bold -Color-Bold-Blue">data</span>  <span class=" -Color -Color-Bold -Color-Bold-Blue">results</span>  <span class=" -Color -Color-Bold -Color-Bold-Blue">subprojects</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>==================
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">dex_depletion</span>               <span class=" -Color -Color-Bold -Color-Bold-Blue">iter-1</span>                       <span class=" -Color -Color-Bold -Color-Bold-Blue">iter_dex_depletion</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">iter0</span>                       <span class=" -Color -Color-Bold -Color-Bold-Blue">iter-1_cell_line_comparison</span>  <span class=" -Color -Color-Bold -Color-Bold-Blue">iter_hCas9_puro</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">iter0_cell_line_comparison</span>  <span class=" -Color -Color-Bold -Color-Bold-Blue">iter-1_HDAC_inhibitors</span>       <span class=" -Color -Color-Bold -Color-Bold-Blue">iter_over</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">iter0_HDAC_inhibitors</span>       <span class=" -Color -Color-Bold -Color-Bold-Blue">iter_dCas9_krab_puro</span>         <span class=" -Color -Color-Bold -Color-Bold-Blue">iter_short</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/data/reddylab/Kuei/annotation/gencode.v34.annotation.gtf
+==================
+new_files  new_files.tar.gz  out_new_files  run_homer
+==================
+analyses  auxiliary  data  results  subprojects
+==================
+dex_depletion		    iter-1			 iter_dex_depletion
+iter0			    iter-1_cell_line_comparison  iter_hCas9_puro
+iter0_cell_line_comparison  iter-1_HDAC_inhibitors	 iter_over
+iter0_HDAC_inhibitors	    iter_dCas9_krab_puro	 iter_short
 </pre></div>
 </div>
 </div>
@@ -429,16 +400,9 @@ ls <span class="nv">$FP_BAM_CAP_T60m</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ls: cannot access /data/reddylab/Kuei/Dex_ProCap/new_files/A549_control_alignments/A549_untreated_merged.bam: No such file or directory
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ls: cannot access /data/reddylab/Kuei/Dex_ProCap/new_files/A549_15min_Dexamethasone_alignments/A549_15min_Dexamethasone_merged.bam: No such file or directory
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ls: cannot access /data/reddylab/Kuei/Dex_ProCap/new_files/A549_1hr_Dexamethasone_alignments/A549_1h_Dexamethasone_merged.bam: No such file or directory
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/data/reddylab/Kuei/Dex_ProCap/new_files/A549_control_alignments/A549_untreated_merged.bam
+/data/reddylab/Kuei/Dex_ProCap/new_files/A549_15min_Dexamethasone_alignments/A549_15min_Dexamethasone_merged.bam
+/data/reddylab/Kuei/Dex_ProCap/new_files/A549_1hr_Dexamethasone_alignments/A549_1h_Dexamethasone_merged.bam
 </pre></div>
 </div>
 </div>
