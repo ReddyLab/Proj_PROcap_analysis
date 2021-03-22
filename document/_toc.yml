@@ -12,4 +12,16 @@
       
 - part: Peak calling of PRO-cap data
   chapters:
-  - file: notebooks/12_peak.ipynb
+  - file: notebooks/11_prep_procap/01_prep_files.ipynb
+    sections:
+      - file: notebooks/12_run_homer_procap/01_prep_files.ipynb
+      - file: notebooks/12_run_homer_procap/02_homer_tag.ipynb
+      - file: notebooks/12_run_homer_procap/03_homer_vis.ipynb
+      - file: notebooks/12_run_homer_procap/04_homer_findPeaks.ipynb
+      - file: notebooks/12_run_homer_procap/04_homer_findTSS.ipynb
+      - file: notebooks/12_run_homer_procap/05_homer_merge_peak.ipynb
+      - file: notebooks/12_run_homer_procap/05_homer_merge_tss.ipynb
+      - file: notebooks/12_run_homer_procap/06_homer_annot_peak.ipynb
+      - file: notebooks/12_run_homer_procap/06_homer_annot_tss.ipynb
+      - file: notebooks/12_run_homer_procap/07_homer_motif.ipynb
+      - file: notebooks/12_run_homer_procap/12_peak_PER1.ipynb

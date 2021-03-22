@@ -1,0 +1,1759 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get the count using HOMER annotatePeaks.pl &#8212; My sample book</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="07_homer_motif.html" />
+    <link rel="prev" title="Get the count using HOMER annotatePeaks.pl" href="06_homer_annot_peak.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">My sample book</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Example
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../content.html">
+   Content in Jupyter Book
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../markdown.html">
+     Markdown Files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../notebooks.html">
+     Content with notebooks
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Peak calling of PRO-cap data
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="../11_prep_procap/01_prep_files.html">
+   PRO-cap Data description and preparation
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_prep_files.html">
+     Check the file paths for the data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_homer_tag.html">
+     Run HOMER makeTagDirectory of PRO-cap and RNA-seq data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_homer_vis.html">
+     Create Genome Browser Visualization Files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_homer_findPeaks.html">
+     HOMER FindPeaks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_homer_findTSS.html">
+     HOMER FindcsRNATSS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_homer_merge_peak.html">
+     Merge Peak output from HOMER findPeaks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_homer_merge_tss.html">
+     Merge TSS output from HOMER findcsRNATSS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06_homer_annot_peak.html">
+     Get the count using HOMER annotatePeaks.pl
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Get the count using HOMER annotatePeaks.pl
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12_peak_PER1.html">
+     Summarize Annotation across the peaks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12_peak_PER1.html#visualize">
+     Visualize
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/notebooks/12_run_homer_procap/06_homer_annot_tss.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnotebooks/12_run_homer_procap/06_homer_annot_tss.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/notebooks/12_run_homer_procap/06_homer_annot_tss.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="get-the-count-using-homer-annotatepeaks-pl">
+<h1>Get the count using HOMER <a class="reference external" href="http://annotatePeaks.pl">annotatePeaks.pl</a><a class="headerlink" href="#get-the-count-using-homer-annotatepeaks-pl" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+FD_WRK=/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer
+ls $FD_WRK/out_merge
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ls: cannot access /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_merge: No such file or directory
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">CalledProcessError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">9</span><span class="n">df6e3407904</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_cell_magic</span><span class="p">(</span><span class="s1">&#39;bash&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;FD_WRK=/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer</span><span class="se">\n</span><span class="s1">ls $FD_WRK/out_merge</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nn">/data/reddylab/Kuei/envs/jupyterhub/lib/python3.6/site-packages/IPython/core/interactiveshell.py</span> in <span class="ni">run_cell_magic</span><span class="nt">(self, magic_name, line, cell)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2369</span>             <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2370</span>                 <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">magic_arg_s</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2371</span>                 <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2372</span>             <span class="k">return</span> <span class="n">result</span>
+<span class="g g-Whitespace">   </span><span class="mi">2373</span> 
+
+<span class="nn">/data/reddylab/Kuei/envs/jupyterhub/lib/python3.6/site-packages/IPython/core/magics/script.py</span> in <span class="ni">named_script_magic</span><span class="nt">(line, cell)</span>
+<span class="g g-Whitespace">    </span><span class="mi">140</span>             <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">141</span>                 <span class="n">line</span> <span class="o">=</span> <span class="n">script</span>
+<span class="ne">--&gt; </span><span class="mi">142</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shebang</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">143</span> 
+<span class="g g-Whitespace">    </span><span class="mi">144</span>         <span class="c1"># write a basic docstring:</span>
+
+<span class="nn">&lt;decorator-gen-110&gt;</span> in <span class="ni">shebang</span><span class="nt">(self, line, cell)</span>
+
+<span class="nn">/data/reddylab/Kuei/envs/jupyterhub/lib/python3.6/site-packages/IPython/core/magic.py</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(f, *a, **k)</span>
+<span class="g g-Whitespace">    </span><span class="mi">185</span>     <span class="c1"># but it&#39;s overkill for just that one bit of state.</span>
+<span class="g g-Whitespace">    </span><span class="mi">186</span>     <span class="k">def</span> <span class="nf">magic_deco</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">187</span>         <span class="n">call</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">f</span><span class="p">,</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">k</span><span class="p">:</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">k</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">188</span> 
+<span class="g g-Whitespace">    </span><span class="mi">189</span>         <span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+
+<span class="nn">/data/reddylab/Kuei/envs/jupyterhub/lib/python3.6/site-packages/IPython/core/magics/script.py</span> in <span class="ni">shebang</span><span class="nt">(self, line, cell)</span>
+<span class="g g-Whitespace">    </span><span class="mi">243</span>             <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">244</span>         <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">raise_error</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">245</span>             <span class="k">raise</span> <span class="n">CalledProcessError</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">returncode</span><span class="p">,</span> <span class="n">cell</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="n">out</span><span class="p">,</span> <span class="n">stderr</span><span class="o">=</span><span class="n">err</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">246</span> 
+<span class="g g-Whitespace">    </span><span class="mi">247</span>     <span class="k">def</span> <span class="nf">_run_script</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">cell</span><span class="p">,</span> <span class="n">to_close</span><span class="p">):</span>
+
+<span class="ne">CalledProcessError</span>: Command &#39;b&#39;FD_WRK=/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer\nls $FD_WRK/out_merge\n&#39;&#39; returned non-zero exit status 2.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+FD_WRK=/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer
+ls $FD_WRK/out_merge/mergeTSS
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tss_merge.txt
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+module load perl
+module load gcc
+source /data/reddylab/software/miniconda2/bin/activate alex_dev
+export PATH=/data/reddylab/software/homer/bin/:$PATH
+sbatch -pnew,all \
+    --mem 24G \
+    -o /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/log/annotateTSS.txt \
+    &lt;&lt;&#39;EOF&#39;
+#!/bin/bash
+
+### set directories
+FD_OUT=/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer
+
+FD_TAG_CAP_T00=$FD_OUT/tags/procap_t00
+FD_TAG_CAP_T15=$FD_OUT/tags/procap_t15
+FD_TAG_CAP_T60=$FD_OUT/tags/procap_t60
+
+FD_MERGE=$FD_OUT/out_merge/mergeTSS
+FP_TSS_MERGE=${FD_MERGE}/tss_merge.txt
+
+FD_ANNOT=$FD_OUT/out_annotate/annoTSS
+FP_TSS_COUNT_RAW=$FD_ANNOT/tss_count_raw.txt
+FP_TSS_COUNT_RLG=$FD_ANNOT/tss_count_rlg.txt
+
+### 7. Quantifying TSS cluster strength and calculating differential expression
+### When using csRNA-seq, be sure to specify &quot;-strand + -fragLength 1&quot; to ensure that 
+### the program quantifies the reads based on their 5&#39; ends (initiation sites).
+#annotatePeaks.pl merged.tss.txt hg38 -strand + -fragLength 1 -raw -d Exp1-tagDir/ Exp2-tagDir/ &gt; counts.txt
+annotatePeaks.pl \
+    $FP_TSS_MERGE \
+    hg38 \
+    -strand + -fragLength 1 \
+    -raw -d $FD_TAG_CAP_T00/ $FD_TAG_CAP_T15/ $FD_TAG_CAP_T60/ &gt; $FP_TSS_COUNT_RAW
+
+annotatePeaks.pl \
+    $FP_TSS_MERGE \
+    hg38 \
+    -strand + -fragLength 1 \
+    -rlog -d $FD_TAG_CAP_T00/ $FD_TAG_CAP_T15/ $FD_TAG_CAP_T60/ &gt; $FP_TSS_COUNT_RLG
+
+EOF
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24751352
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+module load perl
+module load gcc
+source /data/reddylab/software/miniconda2/bin/activate alex_dev
+export PATH=/data/reddylab/software/homer/bin/:$PATH
+sbatch -pnew,all \
+    --mem 24G \
+    -o /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/log/annotateTSS_rna.txt \
+    &lt;&lt;&#39;EOF&#39;
+#!/bin/bash
+
+### set directories
+FD_OUT=/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer
+
+FD_TAG_CAP_T00=$FD_OUT/tags/procap_t00
+FD_TAG_CAP_T15=$FD_OUT/tags/procap_t15
+FD_TAG_CAP_T60=$FD_OUT/tags/procap_t60
+
+FD_MERGE=$FD_OUT/out_merge/mergeTSS
+FP_TSS_MERGE=${FD_MERGE}/tss_merge_rna.txt
+
+FD_ANNOT=$FD_OUT/out_annotate/annoTSS_rna
+FP_TSS_COUNT_RAW=$FD_ANNOT/tss_count_raw.txt
+FP_TSS_COUNT_RLG=$FD_ANNOT/tss_count_rlg.txt
+
+### 7. Quantifying TSS cluster strength and calculating differential expression
+### When using csRNA-seq, be sure to specify &quot;-strand + -fragLength 1&quot; to ensure that 
+### the program quantifies the reads based on their 5&#39; ends (initiation sites).
+#annotatePeaks.pl merged.tss.txt hg38 -strand + -fragLength 1 -raw -d Exp1-tagDir/ Exp2-tagDir/ &gt; counts.txt
+annotatePeaks.pl \
+    $FP_TSS_MERGE \
+    hg38 \
+    -strand + -fragLength 1 \
+    -raw -d $FD_TAG_CAP_T00/ $FD_TAG_CAP_T15/ $FD_TAG_CAP_T60/ &gt; $FP_TSS_COUNT_RAW
+
+annotatePeaks.pl \
+    $FP_TSS_MERGE \
+    hg38 \
+    -strand + -fragLength 1 \
+    -rlog -d $FD_TAG_CAP_T00/ $FD_TAG_CAP_T15/ $FD_TAG_CAP_T60/ &gt; $FP_TSS_COUNT_RLG
+
+EOF
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24751362
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+ls -l /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_annotate/annoTSS/tss_count_raw.txt
+head -2 /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_annotate/annoTSS/tss_count_raw.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-rw-r-- 1 kk319 reddylab 32367970 Mar  3 12:07 /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_annotate/annoTSS/tss_count_raw.txt
+PeakID (cmd=annotatePeaks.pl /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_merge/mergeTSS/tss_merge.txt hg38 -strand + -fragLength 1 -raw -d /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t00/ /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t15/ /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t60/)	Chr	Start	End	Strand	Peak Score	Focus Ratio/Region Size	Annotation	Detailed Annotation	Distance to TSS	Nearest PromoterID	Entrez ID	Nearest Unigene	Nearest Refseq	Nearest Ensembl	Gene Name	Gene Alias	Gene Description	Gene Type	/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t00/ Tag Count in given bp (9384553.0 Total, normalization factor = 1, effective total = 10000000)	/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t15/ Tag Count in given bp (9252351.5 Total, normalization factor = 1, effective total = 10000000)	/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t60/ Tag Count in given bp (13741782.5 Total, normalization factor = 1, effective total = 10000000)
+Merged-chr14-49862550-3	chr14	49862475	49862625	+	5036.000000	/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_cap00/out.tss.txt|/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_cap15/out.tss.txt|/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_cap60/out.tss.txt	TTS (NR_027260)	TTS (NR_027260)	299	NR_027260	378706		NR_027260	ENSG00000274012	RN7SL2	7L1C|7L30.1|7SL1c|RNSRP2	RNA component of signal recognition particle 7SL2	scRNA	6259.00	4545.50	4832.50
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+ls -l /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_annotate/annoTSS/tss_count_rlg.txt
+head -2 /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_annotate/annoTSS/tss_count_rlg.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-rw-r-- 1 kk319 reddylab 34980075 Mar  3 12:09 /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_annotate/annoTSS/tss_count_rlg.txt
+PeakID (cmd=annotatePeaks.pl /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_merge/mergeTSS/tss_merge.txt hg38 -strand + -fragLength 1 -rlog -d /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t00/ /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t15/ /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t60/)	Chr	Start	End	Strand	Peak Score	Focus Ratio/Region Size	Annotation	Detailed Annotation	Distance to TSS	Nearest PromoterID	Entrez ID	Nearest Unigene	Nearest Refseq	Nearest Ensembl	Gene Name	Gene Alias	Gene Description	Gene Type	/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t00/ Tag Count in given bp (9384553.0 Total, normalization factor = 1, effective total = 10000000)	/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t15/ Tag Count in given bp (9252351.5 Total, normalization factor = 1, effective total = 10000000)	/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t60/ Tag Count in given bp (13741782.5 Total, normalization factor = 1, effective total = 10000000)
+Merged-chr14-49862550-3	chr14	49862475	49862625	+	5036.000000	/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_cap00/out.tss.txt|/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_cap15/out.tss.txt|/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_cap60/out.tss.txt	TTS (NR_027260)	TTS (NR_027260)	299	NR_027260	378706		NR_027260	ENSG00000274012	RN7SL2	7L1C|7L30.1|7SL1c|RNSRP2	RNA component of signal recognition particle 7SL2	scRNA	12.649210829689	12.1896248894075	12.1526901685287
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>  <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fpath</span> <span class="o">=</span> <span class="s2">&quot;/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_annotate/annoTSS/tss_count_raw.txt&quot;</span>
+<span class="n">dat_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">fpath</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">dat_raw</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PeakID (cmd=annotatePeaks.pl /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_merge/mergeTSS/tss_merge.txt hg38 -strand + -fragLength 1 -raw -d /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t00/ /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t15/ /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t60/)</th>
+      <th>Chr</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>Strand</th>
+      <th>Peak Score</th>
+      <th>Focus Ratio/Region Size</th>
+      <th>Annotation</th>
+      <th>Detailed Annotation</th>
+      <th>Distance to TSS</th>
+      <th>...</th>
+      <th>Nearest Unigene</th>
+      <th>Nearest Refseq</th>
+      <th>Nearest Ensembl</th>
+      <th>Gene Name</th>
+      <th>Gene Alias</th>
+      <th>Gene Description</th>
+      <th>Gene Type</th>
+      <th>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t00/ Tag Count in given bp (9384553.0 Total, normalization factor = 1, effective total = 10000000)</th>
+      <th>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t15/ Tag Count in given bp (9252351.5 Total, normalization factor = 1, effective total = 10000000)</th>
+      <th>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t60/ Tag Count in given bp (13741782.5 Total, normalization factor = 1, effective total = 10000000)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Merged-chr14-49862550-3</td>
+      <td>chr14</td>
+      <td>49862475</td>
+      <td>49862625</td>
+      <td>+</td>
+      <td>5036.000000</td>
+      <td>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_ho...</td>
+      <td>TTS (NR_027260)</td>
+      <td>TTS (NR_027260)</td>
+      <td>299.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NR_027260</td>
+      <td>ENSG00000274012</td>
+      <td>RN7SL2</td>
+      <td>7L1C|7L30.1|7SL1c|RNSRP2</td>
+      <td>RNA component of signal recognition particle 7SL2</td>
+      <td>scRNA</td>
+      <td>6259.0</td>
+      <td>4545.5</td>
+      <td>4832.5</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Merged-chr14-49862849-3</td>
+      <td>chr14</td>
+      <td>49862774</td>
+      <td>49862924</td>
+      <td>-</td>
+      <td>4960.966797</td>
+      <td>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_ho...</td>
+      <td>promoter-TSS (NR_027260)</td>
+      <td>promoter-TSS (NR_027260)</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NR_027260</td>
+      <td>ENSG00000274012</td>
+      <td>RN7SL2</td>
+      <td>7L1C|7L30.1|7SL1c|RNSRP2</td>
+      <td>RNA component of signal recognition particle 7SL2</td>
+      <td>scRNA</td>
+      <td>4608.0</td>
+      <td>3442.5</td>
+      <td>4541.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Merged-chr17-19188010-3</td>
+      <td>chr17</td>
+      <td>19187935</td>
+      <td>19188085</td>
+      <td>+</td>
+      <td>3358.766602</td>
+      <td>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_ho...</td>
+      <td>promoter-TSS (NR_006880)</td>
+      <td>promoter-TSS (NR_006880)</td>
+      <td>-6.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NR_006880</td>
+      <td>ENSG00000263934</td>
+      <td>SNORD3A</td>
+      <td>RNU3|U3</td>
+      <td>small nucleolar RNA, C/D box 3A</td>
+      <td>snoRNA</td>
+      <td>4068.0</td>
+      <td>3830.5</td>
+      <td>2131.5</td>
+    </tr>
+  </tbody>
+</table>
+<p>3 rows × 22 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fpath</span> <span class="o">=</span> <span class="s2">&quot;/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_annotate/annoTSS/tss_count_rlg.txt&quot;</span>
+<span class="n">dat_rlg</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">fpath</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">dat_rlg</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PeakID (cmd=annotatePeaks.pl /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_merge/mergeTSS/tss_merge.txt hg38 -strand + -fragLength 1 -rlog -d /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t00/ /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t15/ /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t60/)</th>
+      <th>Chr</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>Strand</th>
+      <th>Peak Score</th>
+      <th>Focus Ratio/Region Size</th>
+      <th>Annotation</th>
+      <th>Detailed Annotation</th>
+      <th>Distance to TSS</th>
+      <th>...</th>
+      <th>Nearest Unigene</th>
+      <th>Nearest Refseq</th>
+      <th>Nearest Ensembl</th>
+      <th>Gene Name</th>
+      <th>Gene Alias</th>
+      <th>Gene Description</th>
+      <th>Gene Type</th>
+      <th>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t00/ Tag Count in given bp (9384553.0 Total, normalization factor = 1, effective total = 10000000)</th>
+      <th>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t15/ Tag Count in given bp (9252351.5 Total, normalization factor = 1, effective total = 10000000)</th>
+      <th>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t60/ Tag Count in given bp (13741782.5 Total, normalization factor = 1, effective total = 10000000)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Merged-chr14-49862550-3</td>
+      <td>chr14</td>
+      <td>49862475</td>
+      <td>49862625</td>
+      <td>+</td>
+      <td>5036.000000</td>
+      <td>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_ho...</td>
+      <td>TTS (NR_027260)</td>
+      <td>TTS (NR_027260)</td>
+      <td>299.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NR_027260</td>
+      <td>ENSG00000274012</td>
+      <td>RN7SL2</td>
+      <td>7L1C|7L30.1|7SL1c|RNSRP2</td>
+      <td>RNA component of signal recognition particle 7SL2</td>
+      <td>scRNA</td>
+      <td>12.649211</td>
+      <td>12.189625</td>
+      <td>12.152690</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Merged-chr14-49862849-3</td>
+      <td>chr14</td>
+      <td>49862774</td>
+      <td>49862924</td>
+      <td>-</td>
+      <td>4960.966797</td>
+      <td>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_ho...</td>
+      <td>promoter-TSS (NR_027260)</td>
+      <td>promoter-TSS (NR_027260)</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NR_027260</td>
+      <td>ENSG00000274012</td>
+      <td>RN7SL2</td>
+      <td>7L1C|7L30.1|7SL1c|RNSRP2</td>
+      <td>RNA component of signal recognition particle 7SL2</td>
+      <td>scRNA</td>
+      <td>12.209106</td>
+      <td>11.790497</td>
+      <td>12.059289</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Merged-chr17-19188010-3</td>
+      <td>chr17</td>
+      <td>19187935</td>
+      <td>19188085</td>
+      <td>+</td>
+      <td>3358.766602</td>
+      <td>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_ho...</td>
+      <td>promoter-TSS (NR_006880)</td>
+      <td>promoter-TSS (NR_006880)</td>
+      <td>-6.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NR_006880</td>
+      <td>ENSG00000263934</td>
+      <td>SNORD3A</td>
+      <td>RNU3|U3</td>
+      <td>small nucleolar RNA, C/D box 3A</td>
+      <td>snoRNA</td>
+      <td>12.025211</td>
+      <td>11.934907</td>
+      <td>10.982382</td>
+    </tr>
+  </tbody>
+</table>
+<p>3 rows × 22 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">dat_raw</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dat_rlg</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(79519, 22)
+(79519, 22)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dat</span> <span class="o">=</span> <span class="n">dat_raw</span>
+<span class="n">dat</span><span class="p">[</span><span class="n">dat</span><span class="p">[</span><span class="s2">&quot;Gene Name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;PER1&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PeakID (cmd=annotatePeaks.pl /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_merge/mergeTSS/tss_merge.txt hg38 -strand + -fragLength 1 -raw -d /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t00/ /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t15/ /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t60/)</th>
+      <th>Chr</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>Strand</th>
+      <th>Peak Score</th>
+      <th>Focus Ratio/Region Size</th>
+      <th>Annotation</th>
+      <th>Detailed Annotation</th>
+      <th>Distance to TSS</th>
+      <th>...</th>
+      <th>Nearest Unigene</th>
+      <th>Nearest Refseq</th>
+      <th>Nearest Ensembl</th>
+      <th>Gene Name</th>
+      <th>Gene Alias</th>
+      <th>Gene Description</th>
+      <th>Gene Type</th>
+      <th>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t00/ Tag Count in given bp (9384553.0 Total, normalization factor = 1, effective total = 10000000)</th>
+      <th>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t15/ Tag Count in given bp (9252351.5 Total, normalization factor = 1, effective total = 10000000)</th>
+      <th>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t60/ Tag Count in given bp (13741782.5 Total, normalization factor = 1, effective total = 10000000)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>6870</th>
+      <td>Merged-chr17-8152395-3</td>
+      <td>chr17</td>
+      <td>8152319</td>
+      <td>8152471</td>
+      <td>-</td>
+      <td>187.03334</td>
+      <td>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_ho...</td>
+      <td>promoter-TSS (NM_002616)</td>
+      <td>promoter-TSS (NM_002616)</td>
+      <td>9.0</td>
+      <td>...</td>
+      <td>Hs.445534</td>
+      <td>NM_002616</td>
+      <td>ENSG00000179094</td>
+      <td>PER1</td>
+      <td>PER|RIGUI|hPER</td>
+      <td>period circadian regulator 1</td>
+      <td>protein-coding</td>
+      <td>270.0</td>
+      <td>157.0</td>
+      <td>142.5</td>
+    </tr>
+  </tbody>
+</table>
+<p>1 rows × 22 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dat</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;PeakID (cmd=annotatePeaks.pl /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_merge/mergeTSS/tss_merge.txt hg38 -strand + -fragLength 1 -raw -d /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t00/ /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t15/ /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t60/)&#39;,
+       &#39;Chr&#39;, &#39;Start&#39;, &#39;End&#39;, &#39;Strand&#39;, &#39;Peak Score&#39;,
+       &#39;Focus Ratio/Region Size&#39;, &#39;Annotation&#39;, &#39;Detailed Annotation&#39;,
+       &#39;Distance to TSS&#39;, &#39;Nearest PromoterID&#39;, &#39;Entrez ID&#39;,
+       &#39;Nearest Unigene&#39;, &#39;Nearest Refseq&#39;, &#39;Nearest Ensembl&#39;,
+       &#39;Gene Name&#39;, &#39;Gene Alias&#39;, &#39;Gene Description&#39;, &#39;Gene Type&#39;,
+       &#39;/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t00/ Tag Count in given bp (9384553.0 Total, normalization factor = 1, effective total = 10000000)&#39;,
+       &#39;/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t15/ Tag Count in given bp (9252351.5 Total, normalization factor = 1, effective total = 10000000)&#39;,
+       &#39;/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t60/ Tag Count in given bp (13741782.5 Total, normalization factor = 1, effective total = 10000000)&#39;],
+      dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dat</span> <span class="o">=</span> <span class="n">dat_raw</span>
+<span class="n">idx</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Chr&quot;</span><span class="p">,</span> <span class="s2">&quot;Start&quot;</span><span class="p">,</span> <span class="s2">&quot;End&quot;</span><span class="p">,</span> <span class="s2">&quot;Strand&quot;</span><span class="p">,</span> <span class="s2">&quot;Peak Score&quot;</span><span class="p">,</span> <span class="s2">&quot;Detailed Annotation&quot;</span><span class="p">,</span> <span class="s2">&quot;Distance to TSS&quot;</span><span class="p">,</span> <span class="s2">&quot;Nearest Refseq&quot;</span><span class="p">,</span>
+       <span class="s1">&#39;/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t00/ Tag Count in given bp (9384553.0 Total, normalization factor = 1, effective total = 10000000)&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t15/ Tag Count in given bp (9252351.5 Total, normalization factor = 1, effective total = 10000000)&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t60/ Tag Count in given bp (13741782.5 Total, normalization factor = 1, effective total = 10000000)&#39;</span><span class="p">]</span>
+<span class="n">dat</span><span class="p">[</span><span class="n">dat</span><span class="p">[</span><span class="s2">&quot;Gene Name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;PER1&quot;</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Chr</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>Strand</th>
+      <th>Peak Score</th>
+      <th>Detailed Annotation</th>
+      <th>Distance to TSS</th>
+      <th>Nearest Refseq</th>
+      <th>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t00/ Tag Count in given bp (9384553.0 Total, normalization factor = 1, effective total = 10000000)</th>
+      <th>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t15/ Tag Count in given bp (9252351.5 Total, normalization factor = 1, effective total = 10000000)</th>
+      <th>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t60/ Tag Count in given bp (13741782.5 Total, normalization factor = 1, effective total = 10000000)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>6870</th>
+      <td>chr17</td>
+      <td>8152319</td>
+      <td>8152471</td>
+      <td>-</td>
+      <td>187.033340</td>
+      <td>promoter-TSS (NM_002616)</td>
+      <td>9.0</td>
+      <td>NM_002616</td>
+      <td>270.0</td>
+      <td>157.0</td>
+      <td>142.5</td>
+    </tr>
+    <tr>
+      <th>7067</th>
+      <td>chr17</td>
+      <td>8152268</td>
+      <td>8152421</td>
+      <td>+</td>
+      <td>184.533325</td>
+      <td>promoter-TSS (NM_002616)</td>
+      <td>60.0</td>
+      <td>NM_002616</td>
+      <td>267.5</td>
+      <td>153.0</td>
+      <td>142.5</td>
+    </tr>
+    <tr>
+      <th>9797</th>
+      <td>chr17</td>
+      <td>8156254</td>
+      <td>8156404</td>
+      <td>-</td>
+      <td>152.033325</td>
+      <td>CpG</td>
+      <td>-3925.0</td>
+      <td>NM_002616</td>
+      <td>194.0</td>
+      <td>132.5</td>
+      <td>146.0</td>
+    </tr>
+    <tr>
+      <th>10778</th>
+      <td>chr17</td>
+      <td>8156738</td>
+      <td>8156920</td>
+      <td>+</td>
+      <td>142.600006</td>
+      <td>CpG</td>
+      <td>-4425.0</td>
+      <td>NM_002616</td>
+      <td>154.5</td>
+      <td>157.0</td>
+      <td>132.0</td>
+    </tr>
+    <tr>
+      <th>10791</th>
+      <td>chr17</td>
+      <td>8156204</td>
+      <td>8156354</td>
+      <td>+</td>
+      <td>142.500000</td>
+      <td>CpG</td>
+      <td>-3875.0</td>
+      <td>NM_002616</td>
+      <td>176.5</td>
+      <td>126.0</td>
+      <td>140.5</td>
+    </tr>
+    <tr>
+      <th>13135</th>
+      <td>chr17</td>
+      <td>8156795</td>
+      <td>8156945</td>
+      <td>-</td>
+      <td>124.866669</td>
+      <td>CpG</td>
+      <td>-4466.0</td>
+      <td>NM_002616</td>
+      <td>120.0</td>
+      <td>122.5</td>
+      <td>118.5</td>
+    </tr>
+    <tr>
+      <th>19804</th>
+      <td>chr17</td>
+      <td>8154317</td>
+      <td>8154467</td>
+      <td>+</td>
+      <td>90.199997</td>
+      <td>Intergenic</td>
+      <td>-1988.0</td>
+      <td>NM_002616</td>
+      <td>2.0</td>
+      <td>5.5</td>
+      <td>124.0</td>
+    </tr>
+    <tr>
+      <th>20850</th>
+      <td>chr17</td>
+      <td>8154368</td>
+      <td>8154518</td>
+      <td>-</td>
+      <td>85.900002</td>
+      <td>Intergenic</td>
+      <td>-2039.0</td>
+      <td>NM_002616</td>
+      <td>1.5</td>
+      <td>5.0</td>
+      <td>118.0</td>
+    </tr>
+    <tr>
+      <th>29623</th>
+      <td>chr17</td>
+      <td>8151867</td>
+      <td>8152017</td>
+      <td>+</td>
+      <td>59.700001</td>
+      <td>CpG</td>
+      <td>462.0</td>
+      <td>NM_002616</td>
+      <td>57.0</td>
+      <td>17.0</td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <th>31581</th>
+      <td>chr17</td>
+      <td>8151922</td>
+      <td>8152072</td>
+      <td>-</td>
+      <td>55.400002</td>
+      <td>CpG</td>
+      <td>407.0</td>
+      <td>NM_002616</td>
+      <td>52.0</td>
+      <td>18.0</td>
+      <td>2.5</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dat</span> <span class="o">=</span> <span class="n">dat_raw</span>
+<span class="n">dat</span> <span class="o">=</span> <span class="n">dat</span><span class="p">[</span><span class="n">dat</span><span class="p">[</span><span class="s2">&quot;Gene Name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;PER1&quot;</span><span class="p">]</span>
+<span class="n">dat</span><span class="p">[</span><span class="s2">&quot;Chr&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;:&quot;</span> <span class="o">+</span> <span class="n">dat</span><span class="p">[</span><span class="s2">&quot;Start&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="n">dat</span><span class="p">[</span><span class="s2">&quot;End&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;(&quot;</span> <span class="o">+</span> <span class="n">dat</span><span class="p">[</span><span class="s2">&quot;Strand&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6870     chr17:8152319-8152471(-)
+7067     chr17:8152268-8152421(+)
+9797     chr17:8156254-8156404(-)
+10778    chr17:8156738-8156920(+)
+10791    chr17:8156204-8156354(+)
+13135    chr17:8156795-8156945(-)
+19804    chr17:8154317-8154467(+)
+20850    chr17:8154368-8154518(-)
+29623    chr17:8151867-8152017(+)
+31581    chr17:8151922-8152072(-)
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dat</span> <span class="o">=</span> <span class="n">dat_raw</span>
+<span class="n">idx</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t00/ Tag Count in given bp (9384553.0 Total, normalization factor = 1, effective total = 10000000)&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t15/ Tag Count in given bp (9252351.5 Total, normalization factor = 1, effective total = 10000000)&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t60/ Tag Count in given bp (13741782.5 Total, normalization factor = 1, effective total = 10000000)&#39;</span><span class="p">]</span>
+
+<span class="n">dat</span> <span class="o">=</span> <span class="n">dat</span><span class="p">[</span><span class="n">dat</span><span class="p">[</span><span class="s2">&quot;Gene Name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;PER1&quot;</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">dat</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="n">dat</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="n">dat</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6870     270.0-157.0-142.5
+7067     267.5-153.0-142.5
+9797     194.0-132.5-146.0
+10778    154.5-157.0-132.0
+10791    176.5-126.0-140.5
+13135    120.0-122.5-118.5
+19804        2.0-5.5-124.0
+20850        1.5-5.0-118.0
+29623        57.0-17.0-2.5
+31581        52.0-18.0-2.5
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>find region: chr17:8,154,824-8,159,095</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dat</span> <span class="o">=</span> <span class="n">dat_raw</span>
+<span class="n">dat</span><span class="p">[(</span><span class="n">dat</span><span class="p">[</span><span class="s2">&quot;Start&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">8154824</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">dat</span><span class="p">[</span><span class="s2">&quot;End&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">8159095</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PeakID (cmd=annotatePeaks.pl /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_merge/mergeTSS/tss_merge.txt hg38 -strand + -fragLength 1 -raw -d /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t00/ /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t15/ /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t60/)</th>
+      <th>Chr</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>Strand</th>
+      <th>Peak Score</th>
+      <th>Focus Ratio/Region Size</th>
+      <th>Annotation</th>
+      <th>Detailed Annotation</th>
+      <th>Distance to TSS</th>
+      <th>...</th>
+      <th>Nearest Unigene</th>
+      <th>Nearest Refseq</th>
+      <th>Nearest Ensembl</th>
+      <th>Gene Name</th>
+      <th>Gene Alias</th>
+      <th>Gene Description</th>
+      <th>Gene Type</th>
+      <th>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t00/ Tag Count in given bp (9384553.0 Total, normalization factor = 1, effective total = 10000000)</th>
+      <th>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t15/ Tag Count in given bp (9252351.5 Total, normalization factor = 1, effective total = 10000000)</th>
+      <th>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/tags/procap_t60/ Tag Count in given bp (13741782.5 Total, normalization factor = 1, effective total = 10000000)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>9797</th>
+      <td>Merged-chr17-8156329-3</td>
+      <td>chr17</td>
+      <td>8156254</td>
+      <td>8156404</td>
+      <td>-</td>
+      <td>152.033325</td>
+      <td>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_ho...</td>
+      <td>Intergenic</td>
+      <td>CpG</td>
+      <td>-3925.0</td>
+      <td>...</td>
+      <td>Hs.445534</td>
+      <td>NM_002616</td>
+      <td>ENSG00000179094</td>
+      <td>PER1</td>
+      <td>PER|RIGUI|hPER</td>
+      <td>period circadian regulator 1</td>
+      <td>protein-coding</td>
+      <td>194.0</td>
+      <td>132.5</td>
+      <td>146.0</td>
+    </tr>
+    <tr>
+      <th>10778</th>
+      <td>Merged-chr17-8156834-3</td>
+      <td>chr17</td>
+      <td>8156738</td>
+      <td>8156920</td>
+      <td>+</td>
+      <td>142.600006</td>
+      <td>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_ho...</td>
+      <td>Intergenic</td>
+      <td>CpG</td>
+      <td>-4425.0</td>
+      <td>...</td>
+      <td>Hs.445534</td>
+      <td>NM_002616</td>
+      <td>ENSG00000179094</td>
+      <td>PER1</td>
+      <td>PER|RIGUI|hPER</td>
+      <td>period circadian regulator 1</td>
+      <td>protein-coding</td>
+      <td>154.5</td>
+      <td>157.0</td>
+      <td>132.0</td>
+    </tr>
+    <tr>
+      <th>10791</th>
+      <td>Merged-chr17-8156279-3</td>
+      <td>chr17</td>
+      <td>8156204</td>
+      <td>8156354</td>
+      <td>+</td>
+      <td>142.500000</td>
+      <td>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_ho...</td>
+      <td>Intergenic</td>
+      <td>CpG</td>
+      <td>-3875.0</td>
+      <td>...</td>
+      <td>Hs.445534</td>
+      <td>NM_002616</td>
+      <td>ENSG00000179094</td>
+      <td>PER1</td>
+      <td>PER|RIGUI|hPER</td>
+      <td>period circadian regulator 1</td>
+      <td>protein-coding</td>
+      <td>176.5</td>
+      <td>126.0</td>
+      <td>140.5</td>
+    </tr>
+    <tr>
+      <th>13135</th>
+      <td>Merged-chr17-8156870-3</td>
+      <td>chr17</td>
+      <td>8156795</td>
+      <td>8156945</td>
+      <td>-</td>
+      <td>124.866669</td>
+      <td>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_ho...</td>
+      <td>Intergenic</td>
+      <td>CpG</td>
+      <td>-4466.0</td>
+      <td>...</td>
+      <td>Hs.445534</td>
+      <td>NM_002616</td>
+      <td>ENSG00000179094</td>
+      <td>PER1</td>
+      <td>PER|RIGUI|hPER</td>
+      <td>period circadian regulator 1</td>
+      <td>protein-coding</td>
+      <td>120.0</td>
+      <td>122.5</td>
+      <td>118.5</td>
+    </tr>
+    <tr>
+      <th>39068</th>
+      <td>Merged-chr4-8158804-3</td>
+      <td>chr4</td>
+      <td>8158719</td>
+      <td>8158884</td>
+      <td>-</td>
+      <td>41.966667</td>
+      <td>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_ho...</td>
+      <td>promoter-TSS (NM_001130083)</td>
+      <td>promoter-TSS (NM_001130083)</td>
+      <td>12.0</td>
+      <td>...</td>
+      <td>Hs.233404</td>
+      <td>NM_032432</td>
+      <td>ENSG00000163995</td>
+      <td>ABLIM2</td>
+      <td>-</td>
+      <td>actin binding LIM protein family member 2</td>
+      <td>protein-coding</td>
+      <td>30.5</td>
+      <td>49.0</td>
+      <td>55.5</td>
+    </tr>
+    <tr>
+      <th>39331</th>
+      <td>Merged-chr4-8158756-3</td>
+      <td>chr4</td>
+      <td>8158677</td>
+      <td>8158833</td>
+      <td>+</td>
+      <td>41.599998</td>
+      <td>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_ho...</td>
+      <td>promoter-TSS (NM_001130083)</td>
+      <td>promoter-TSS (NM_001130083)</td>
+      <td>58.0</td>
+      <td>...</td>
+      <td>Hs.233404</td>
+      <td>NM_032432</td>
+      <td>ENSG00000163995</td>
+      <td>ABLIM2</td>
+      <td>-</td>
+      <td>actin binding LIM protein family member 2</td>
+      <td>protein-coding</td>
+      <td>30.5</td>
+      <td>49.0</td>
+      <td>53.5</td>
+    </tr>
+    <tr>
+      <th>64131</th>
+      <td>Merged-dm6_X-8157629-3</td>
+      <td>dm6_X</td>
+      <td>8157554</td>
+      <td>8157704</td>
+      <td>+</td>
+      <td>20.500000</td>
+      <td>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_ho...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>16.0</td>
+      <td>22.5</td>
+      <td>27.0</td>
+    </tr>
+    <tr>
+      <th>64750</th>
+      <td>Merged-dm6_X-8157685-3</td>
+      <td>dm6_X</td>
+      <td>8157609</td>
+      <td>8157763</td>
+      <td>-</td>
+      <td>20.166666</td>
+      <td>/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_ho...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>16.0</td>
+      <td>23.0</td>
+      <td>25.5</td>
+    </tr>
+  </tbody>
+</table>
+<p>8 rows × 22 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">idx</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Chr&quot;</span><span class="p">,</span> <span class="s2">&quot;Start&quot;</span><span class="p">,</span> <span class="s2">&quot;End&quot;</span><span class="p">,</span> <span class="s2">&quot;Strand&quot;</span><span class="p">]</span>
+<span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+<span class="n">dat</span><span class="p">[</span><span class="s2">&quot;Chr&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;:&quot;</span> <span class="o">+</span> <span class="n">dat</span><span class="p">[</span><span class="s2">&quot;Start&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="n">dat</span><span class="p">[</span><span class="s2">&quot;End&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;(&quot;</span> <span class="o">+</span> <span class="n">dat</span><span class="p">[</span><span class="s2">&quot;Strand&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+module load perl
+module load gcc
+source /data/reddylab/software/miniconda2/bin/activate alex_dev
+export PATH=/data/reddylab/software/homer/bin/:$PATH
+sbatch -pnew,all \
+    --mem 16G \
+    -o /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/log/annotateTSS_rna00.txt \
+    &lt;&lt;&#39;EOF&#39;
+#!/bin/bash
+
+FD_OUT=/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer
+FD_IN=$FD_OUT/out_findTSS
+FD_OT=$FD_OUT/out_merge/mergeTSS_rna00
+
+
+cd /gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/out_findTSS/
+
+FP_TSS_T15=tss_t15v00.tss.txt
+FP_TSS_T60=tss_t60v00.tss.txt
+FP_TSS_MERGE=tss_merge.tss.txt
+FP_TSS_COUNT_RAW=tss_count_raw.tss.txt
+FP_TSS_COUNT_RLG=tss_count_rlg.tss.txt
+
+### 7. Quantifying TSS cluster strength and calculating differential expression
+#annotatePeaks.pl merged.tss.txt hg38 -strand + -fragLength 1 -raw -d Exp1-tagDir/ Exp2-tagDir/ &gt; counts.txt
+FD_OUT=/gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer
+FD_GEN=/gpfs/fs1/data/reddylab/Kuei/annotation
+
+FD_TAG_CAP_T15=$FD_OUT/tags/procap_t15
+FD_TAG_CAP_T60=$FD_OUT/tags/procap_t60
+
+annotatePeaks.pl \
+    $FP_TSS_MERGE \
+    $FD_GEN/Homo_sapiens.GRCh38.dna.primary_assembly.fa \
+    -gtf $FD_GEN/gencode.v34.annotation.gtf \
+    -strand + -fragLength 1 \
+    -raw -d $FD_TAG_CAP_T15/ $FD_TAG_CAP_T60/ &gt; $FP_TSS_COUNT_RAW
+
+annotatePeaks.pl \
+    $FP_TSS_MERGE \
+    $FD_GEN/Homo_sapiens.GRCh38.dna.primary_assembly.fa \
+    -gtf $FD_GEN/gencode.v34.annotation.gtf \
+    -strand + -fragLength 1 \
+    -rlog -d $FD_TAG_CAP_T15/ $FD_TAG_CAP_T60/ &gt; $FP_TSS_COUNT_RLG
+
+EOF
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24604944
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>ls /gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/out_findTSS/tss*.tss.txt <span class="p">|</span> cut -f1-5 <span class="p">|</span> expand -t <span class="m">15</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/out_findTSS/tss_count_raw.tss.txt
+/gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/out_findTSS/tss_count_rlg.tss.txt
+/gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/out_findTSS/tss_count.tss.txt
+/gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/out_findTSS/tss_merge.tss.txt
+/gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/out_findTSS/tss_shift.tss.txt
+/gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/out_findTSS/tss_shist.tss.txt
+/gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/out_findTSS/tss_t15v00.tss.txt
+/gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/out_findTSS/tss_t60v00.tss.txt
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>head -5 /gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/out_findTSS/tss_count_raw.tss.txt <span class="p">|</span> tail -4
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Merged-chr6-27139276-1	chr6	27139201	27139351	+	989.700012	tss_t60v00.tss.txt	exon (ENST00000615353.1, exon 1 of 1)	NA	688	ENST00000615353.1									2.00	1358.00
+Merged-chr19-33621947-1	chr19	33621872	33622022	+	974.400024	tss_t60v00.tss.txt	promoter-TSS (ENST00000434302.5)	NA	-6	ENST00000650847.1									98.00	1336.00
+Merged-chr19-33621993-1	chr19	33621918	33622068	-	965.700012	tss_t60v00.tss.txt	promoter-TSS (ENST00000434302.5)	NA	9	ENST00000604556.1									91.00	1274.50
+Merged-chr14-74302934-1	chr14	74302859	74303009	-	950.000000	tss_t60v00.tss.txt	promoter-TSS (ENST00000556971.1)	NA	0	ENST00000475240.5									324.50	1305.50
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>head -5 /gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/out_findTSS/tss_count_raw.tss.txt <span class="p">|</span> tail -4 <span class="p">|</span> cut -f1-5
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Merged-chr6-27139276-1	chr6	27139201	27139351	+
+Merged-chr19-33621947-1	chr19	33621872	33622022	+
+Merged-chr19-33621993-1	chr19	33621918	33622068	-
+Merged-chr14-74302934-1	chr14	74302859	74303009	-
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>head -5 /gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/out_findTSS/tss_count_raw.tss.txt <span class="p">|</span> cut -f2-5 <span class="p">|</span> expand -t <span class="m">10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Chr       Start     End       Strand
+chr6      27139201  27139351  +
+chr19     33621872  33622022  +
+chr19     33621918  33622068  -
+chr14     74302859  74303009  -
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>head -5 /gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/out_findTSS/tss_count_raw.tss.txt <span class="p">|</span> cut -f6-8 <span class="p">|</span> expand -t <span class="m">30</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Peak Score                    Focus Ratio/Region Size       Annotation
+989.700012                    tss_t60v00.tss.txt            exon (ENST00000615353.1, exon 1 of 1)
+974.400024                    tss_t60v00.tss.txt            promoter-TSS (ENST00000434302.5)
+965.700012                    tss_t60v00.tss.txt            promoter-TSS (ENST00000434302.5)
+950.000000                    tss_t60v00.tss.txt            promoter-TSS (ENST00000556971.1)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>head -5 /gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/out_findTSS/tss_count_raw.tss.txt <span class="p">|</span> cut -f9-11 <span class="p">|</span> expand -t <span class="m">25</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Detailed Annotation      Distance to TSS          Nearest PromoterID
+NA                       688                      ENST00000615353.1
+NA                       -6                       ENST00000650847.1
+NA                       9                        ENST00000604556.1
+NA                       0                        ENST00000475240.5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>head -5 /gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/out_findTSS/tss_count_raw.tss.txt <span class="p">|</span> cut -f12-19 <span class="p">|</span> expand -t <span class="m">15</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Entrez ID      Nearest Unigene               Nearest Refseq Nearest Ensembl               Gene Name      Gene Alias     Gene Description              Gene Type
+                                                                                                         
+                                                                                                         
+                                                                                                         
+                                                                                                         
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>head -5 /gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/out_findTSS/tss_count_raw.tss.txt <span class="p">|</span> cut -f20 <span class="p">|</span> expand -t <span class="m">25</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/tags/procap_t15/ Tag Count in given bp (9252351.5 Total, normalization factor = 1, effective total = 10000000)
+2.00
+98.00
+91.00
+324.50
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>head -5 /gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/out_findTSS/tss_count_raw.tss.txt <span class="p">|</span> cut -f21 <span class="p">|</span> expand -t <span class="m">25</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/tags/procap_t60/ Tag Count in given bp (13741782.5 Total, normalization factor = 1, effective total = 10000000)
+1358.00
+1336.00
+1274.50
+1305.50
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>head -5 /gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/out_findTSS/tss_count_rlg.tss.txt <span class="p">|</span> cut -f2-5 <span class="p">|</span> expand -t <span class="m">10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Chr       Start     End       Strand
+chr6      27139201  27139351  +
+chr19     33621872  33622022  +
+chr19     33621918  33622068  -
+chr14     74302859  74303009  -
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>head -5 /gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/out_findTSS/tss_count_rlg.tss.txt <span class="p">|</span> cut -f6-8 <span class="p">|</span> expand -t <span class="m">30</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Peak Score                    Focus Ratio/Region Size       Annotation
+989.700012                    tss_t60v00.tss.txt            exon (ENST00000615353.1, exon 1 of 1)
+974.400024                    tss_t60v00.tss.txt            promoter-TSS (ENST00000434302.5)
+965.700012                    tss_t60v00.tss.txt            promoter-TSS (ENST00000434302.5)
+950.000000                    tss_t60v00.tss.txt            promoter-TSS (ENST00000556971.1)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>head -5 /gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/out_findTSS/tss_count_rlg.tss.txt <span class="p">|</span> cut -f20 <span class="p">|</span> expand -t <span class="m">25</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/tags/procap_t15/ Tag Count in given bp (9252351.5 Total, normalization factor = 1, effective total = 10000000)
+5.16926650296166
+8.59071186022789
+8.49249562852405
+9.98580520058469
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>head -5 /gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/out_findTSS/tss_count_rlg.tss.txt <span class="p">|</span> cut -f21 <span class="p">|</span> expand -t <span class="m">25</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/tags/procap_t60/ Tag Count in given bp (13741782.5 Total, normalization factor = 1, effective total = 10000000)
+7.57152334157854
+8.41143348651917
+8.3343911959877
+8.87839512897826
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>head /gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/out_findTSS/tss_count_raw.tss.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PeakID (cmd=annotatePeaks.pl tss_merge.tss.txt /gpfs/fs1/data/reddylab/Kuei/annotation/Homo_sapiens.GRCh38.dna.primary_assembly.fa -gtf /gpfs/fs1/data/reddylab/Kuei/annotation/gencode.v34.annotation.gtf -strand + -fragLength 1 -raw -d /gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/tags/procap_t15/ /gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/tags/procap_t60/)	Chr	Start	End	Strand	Peak Score	Focus Ratio/Region Size	Annotation	Detailed Annotation	Distance to TSS	Nearest PromoterID	Entrez ID	Nearest Unigene	Nearest Refseq	Nearest Ensembl	Gene Name	Gene Alias	Gene Description	Gene Type	/gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/tags/procap_t15/ Tag Count in given bp (9252351.5 Total, normalization factor = 1, effective total = 10000000)	/gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/tags/procap_t60/ Tag Count in given bp (13741782.5 Total, normalization factor = 1, effective total = 10000000)
+Merged-chr6-27139276-1	chr6	27139201	27139351	+	989.700012	tss_t60v00.tss.txt	exon (ENST00000615353.1, exon 1 of 1)	NA	688	ENST00000615353.1									2.00	1358.00
+Merged-chr19-33621947-1	chr19	33621872	33622022	+	974.400024	tss_t60v00.tss.txt	promoter-TSS (ENST00000434302.5)	NA	-6	ENST00000650847.1									98.00	1336.00
+Merged-chr19-33621993-1	chr19	33621918	33622068	-	965.700012	tss_t60v00.tss.txt	promoter-TSS (ENST00000434302.5)	NA	9	ENST00000604556.1									91.00	1274.50
+Merged-chr14-74302934-1	chr14	74302859	74303009	-	950.000000	tss_t60v00.tss.txt	promoter-TSS (ENST00000556971.1)	NA	0	ENST00000475240.5									324.50	1305.50
+Merged-chr14-74302895-1	chr14	74302820	74302970	+	939.099976	tss_t60v00.tss.txt	promoter-TSS (ENST00000556971.1)	NA	15	ENST00000556971.1									314.50	1288.50
+Merged-chr8-135457450-1	chr8	135457375	135457525	+	933.599976	tss_t60v00.tss.txt	promoter-TSS (ENST00000355849.10)	NA	-6	ENST00000355849.10									356.00	1283.00
+Merged-chr8-135457534-1	chr8	135457459	135457609	-	932.900024	tss_t60v00.tss.txt	promoter-TSS (ENST00000355849.10)	NA	78	ENST00000355849.10									349.50	1279.00
+Merged-chr1-205632011-1	chr1	205631936	205632086	-	903.400024	tss_t60v00.tss.txt	promoter-TSS (ENST00000289703.8)	NA	0	ENST00000357992.9									402.00	1243.50
+Merged-chr1-205631936-1	chr1	205631861	205632011	+	901.299988	tss_t60v00.tss.txt	promoter-TSS (ENST00000289703.8)	NA	26	ENST00000289703.8									400.50	1239.50
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>head /gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/out_findTSS/tss_count_rlg.tss.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PeakID (cmd=annotatePeaks.pl tss_merge.tss.txt /gpfs/fs1/data/reddylab/Kuei/annotation/Homo_sapiens.GRCh38.dna.primary_assembly.fa -gtf /gpfs/fs1/data/reddylab/Kuei/annotation/gencode.v34.annotation.gtf -strand + -fragLength 1 -rlog -d /gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/tags/procap_t15/ /gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/tags/procap_t60/)	Chr	Start	End	Strand	Peak Score	Focus Ratio/Region Size	Annotation	Detailed Annotation	Distance to TSS	Nearest PromoterID	Entrez ID	Nearest Unigene	Nearest Refseq	Nearest Ensembl	Gene Name	Gene Alias	Gene Description	Gene Type	/gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/tags/procap_t15/ Tag Count in given bp (9252351.5 Total, normalization factor = 1, effective total = 10000000)	/gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/tags/procap_t60/ Tag Count in given bp (13741782.5 Total, normalization factor = 1, effective total = 10000000)
+Merged-chr6-27139276-1	chr6	27139201	27139351	+	989.700012	tss_t60v00.tss.txt	exon (ENST00000615353.1, exon 1 of 1)	NA	688	ENST00000615353.1									5.16926650296166	7.57152334157854
+Merged-chr19-33621947-1	chr19	33621872	33622022	+	974.400024	tss_t60v00.tss.txt	promoter-TSS (ENST00000434302.5)	NA	-6	ENST00000650847.1									8.59071186022789	8.41143348651917
+Merged-chr19-33621993-1	chr19	33621918	33622068	-	965.700012	tss_t60v00.tss.txt	promoter-TSS (ENST00000434302.5)	NA	9	ENST00000604556.1									8.49249562852405	8.3343911959877
+Merged-chr14-74302934-1	chr14	74302859	74303009	-	950.000000	tss_t60v00.tss.txt	promoter-TSS (ENST00000556971.1)	NA	0	ENST00000475240.5									9.98580520058469	8.87839512897826
+Merged-chr14-74302895-1	chr14	74302820	74302970	+	939.099976	tss_t60v00.tss.txt	promoter-TSS (ENST00000556971.1)	NA	15	ENST00000556971.1									9.94496922428715	8.85070825400962
+Merged-chr8-135457450-1	chr8	135457375	135457525	+	933.599976	tss_t60v00.tss.txt	promoter-TSS (ENST00000355849.10)	NA	-6	ENST00000355849.10									10.0928956015601	8.90052933242439
+Merged-chr8-135457534-1	chr8	135457459	135457609	-	932.900024	tss_t60v00.tss.txt	promoter-TSS (ENST00000355849.10)	NA	78	ENST00000355849.10									10.0715197876015	8.88928504152604
+Merged-chr1-205632011-1	chr1	205631936	205632086	-	903.400024	tss_t60v00.tss.txt	promoter-TSS (ENST00000289703.8)	NA	0	ENST00000357992.9									10.2331698949911	8.92902033364159
+Merged-chr1-205631936-1	chr1	205631861	205632011	+	901.299988	tss_t60v00.tss.txt	promoter-TSS (ENST00000289703.8)	NA	26	ENST00000289703.8									10.2294108688381	8.92474577989353
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks/12_run_homer_procap"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="06_homer_annot_peak.html" title="previous page">Get the count using HOMER annotatePeaks.pl</a>
+    <a class='right-next' id="next-link" href="07_homer_motif.html" title="next page">&lt;no title&gt;</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book Community<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

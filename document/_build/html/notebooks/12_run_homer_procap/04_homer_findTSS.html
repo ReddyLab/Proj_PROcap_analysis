@@ -1,0 +1,1506 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOMER FindcsRNATSS &#8212; My sample book</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Merge Peak output from HOMER findPeaks" href="05_homer_merge_peak.html" />
+    <link rel="prev" title="HOMER FindPeaks" href="04_homer_findPeaks.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">My sample book</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Example
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../content.html">
+   Content in Jupyter Book
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../markdown.html">
+     Markdown Files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../notebooks.html">
+     Content with notebooks
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Peak calling of PRO-cap data
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="../11_prep_procap/01_prep_files.html">
+   PRO-cap Data description and preparation
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_prep_files.html">
+     Check the file paths for the data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_homer_tag.html">
+     Run HOMER makeTagDirectory of PRO-cap and RNA-seq data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_homer_vis.html">
+     Create Genome Browser Visualization Files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_homer_findPeaks.html">
+     HOMER FindPeaks
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     HOMER FindcsRNATSS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_homer_merge_peak.html">
+     Merge Peak output from HOMER findPeaks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_homer_merge_tss.html">
+     Merge TSS output from HOMER findcsRNATSS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06_homer_annot_peak.html">
+     Get the count using HOMER annotatePeaks.pl
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06_homer_annot_tss.html">
+     Get the count using HOMER annotatePeaks.pl
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12_peak_PER1.html">
+     Summarize Annotation across the peaks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12_peak_PER1.html#visualize">
+     Visualize
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/notebooks/12_run_homer_procap/04_homer_findTSS.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnotebooks/12_run_homer_procap/04_homer_findTSS.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/notebooks/12_run_homer_procap/04_homer_findTSS.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#findcsrnatss-of-time-point-0-min">
+   FindcsRNATSS of time point 0 min
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#time-point-00-min-with-rna-control">
+     Time point 00 min with RNA control
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#time-point-00-min-without-rna-control">
+     Time point 00 min without RNA control
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#findcsrnatss-of-time-point-15-min">
+   FindcsRNATSS of time point 15 min
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#time-point-15-min-with-rna-control">
+     Time point 15 min with RNA control
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#time-point-15-min-without-rna-control">
+     Time point 15 min without RNA control
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#findcsrnatss-of-time-point-60-min">
+   FindcsRNATSS of time point 60 min
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#time-point-60-min-with-rna-control">
+     Time point 60 min with RNA control
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#time-point-60-min-without-rna-control">
+     Time point 60 min without RNA control
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#check-the-results">
+   Check the results
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="homer-findcsrnatss">
+<h1>HOMER FindcsRNATSS<a class="headerlink" href="#homer-findcsrnatss" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+	<span class="n">findcsRNATSS</span><span class="o">.</span><span class="n">pl</span> <span class="o">&lt;</span><span class="n">csRNA</span> <span class="n">tag</span> <span class="n">directory</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">options</span><span class="p">]</span>
+
+	<span class="n">Options</span><span class="p">:</span>
+		<span class="o">-</span><span class="n">o</span> <span class="o">&lt;</span><span class="n">prefix</span><span class="o">&gt;</span> 
+		<span class="o">-</span><span class="n">i</span> <span class="o">&lt;</span><span class="n">csRNA</span> <span class="nb">input</span> <span class="n">tag</span> <span class="n">directory</span><span class="o">&gt;</span>
+		<span class="o">-</span><span class="n">rna</span> <span class="o">&lt;</span><span class="n">RNAseq</span> <span class="n">tag</span> <span class="n">directory</span><span class="o">&gt;</span>
+		<span class="o">-</span><span class="n">gtf</span> <span class="o">&lt;</span><span class="n">gtf</span> <span class="n">file</span><span class="o">&gt;</span>
+		<span class="o">-</span><span class="n">genome</span> <span class="o">&lt;</span><span class="n">genome</span><span class="o">&gt;</span>
+		<span class="o">-</span><span class="n">cpu</span> <span class="o">&lt;</span><span class="c1">#&gt; (max CPUs)</span>
+		<span class="o">-</span><span class="n">minDistDiff</span> <span class="o">&lt;</span><span class="c1">#&gt; (default: 0.15)</span>
+		<span class="o">-</span><span class="n">defaultLog2Fold</span> <span class="o">&lt;</span><span class="c1">#&gt; (default: 1)</span>
+		<span class="o">-</span><span class="n">maxInputLog2Fold</span> <span class="o">&lt;</span><span class="c1">#&gt; (maximum log2 fold enrichment vs. input or RNA, default: 3)</span>
+		<span class="o">-</span><span class="n">maxRNALog2Fold</span> <span class="o">&lt;</span><span class="c1">#&gt; (maximum log2 fold enrichment vs. input or RNA, default: 3)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+module load perl
+module load gcc
+source /data/reddylab/software/miniconda2/bin/activate alex_dev
+export PATH=/data/reddylab/software/homer/bin/:$PATH
+findcsRNATSS.pl
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	findcsRNATSS.pl &lt;csRNA tag directory&gt; [options]
+
+	Options:
+		-o &lt;prefix&gt; 
+		-i &lt;csRNA input tag directory&gt;
+		-rna &lt;RNAseq tag directory&gt;
+		-gtf &lt;gtf file&gt;
+		-genome &lt;genome&gt;
+		-cpu &lt;#&gt; (max CPUs)
+		-minDistDiff &lt;#&gt; (default: 0.15)
+		-defaultLog2Fold &lt;#&gt; (default: 1)
+		-maxInputLog2Fold &lt;#&gt; (maximum log2 fold enrichment vs. input or RNA, default: 3)
+		-maxRNALog2Fold &lt;#&gt; (maximum log2 fold enrichment vs. input or RNA, default: 3)
+</pre></div>
+</div>
+</div>
+</div>
+<p>test if I did not provide input</p>
+<div class="section" id="findcsrnatss-of-time-point-0-min">
+<h2>FindcsRNATSS of time point 0 min<a class="headerlink" href="#findcsrnatss-of-time-point-0-min" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="time-point-00-min-with-rna-control">
+<h3>Time point 00 min with RNA control<a class="headerlink" href="#time-point-00-min-with-rna-control" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+module load perl
+module load gcc
+source /data/reddylab/software/miniconda2/bin/activate alex_dev
+export PATH=/data/reddylab/software/homer/bin/:$PATH
+sbatch -pnew,all \
+    --mem 24G \
+    -o /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/log/findcsRNATSS_cap00_rna00.txt \
+    &lt;&lt;&#39;EOF&#39;
+#!/bin/bash
+
+### Set Directories
+FD_OUT=/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer
+FD_TAG_CAP_T60=$FD_OUT/tags/procap_t60
+FD_TAG_CAP_T15=$FD_OUT/tags/procap_t15
+FD_TAG_CAP_T00=$FD_OUT/tags/procap_t00
+FD_TAG_RNA_T60=$FD_OUT/tags/rnaseq_t60
+FD_TAG_RNA_T15=$FD_OUT/tags/rnaseq_t15
+FD_TAG_RNA_T00=$FD_OUT/tags/rnaseq_t00
+
+
+#findcsRNATSS.pl Exp1-csRNA-TagDir/ 
+#    -o      outputPrefix 
+#    -i      Exp1-input-TagDir/ 
+#    -rna    Exp1-totalRNAseq-TagDir 
+#    -gtf    genes.gtf 
+#    -genome genome.fasta
+PREFIX=$FD_OUT/out_findTSS/tss_cap00_rna00/out
+
+findcsRNATSS.pl   $FD_TAG_CAP_T00/ \
+        -rna      $FD_TAG_RNA_T00/ \
+        -o        $PREFIX \
+        -genome   hg38
+
+EOF
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24852952
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="time-point-00-min-without-rna-control">
+<h3>Time point 00 min without RNA control<a class="headerlink" href="#time-point-00-min-without-rna-control" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+module load perl
+module load gcc
+source /data/reddylab/software/miniconda2/bin/activate alex_dev
+export PATH=/data/reddylab/software/homer/bin/:$PATH
+sbatch -pnew,all \
+    --mem 24G \
+    -o /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/log/findcsRNATSS_cap00.txt \
+    &lt;&lt;&#39;EOF&#39;
+#!/bin/bash
+
+### Set Directories
+FD_OUT=/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer
+FD_TAG_CAP_T60=$FD_OUT/tags/procap_t60
+FD_TAG_CAP_T15=$FD_OUT/tags/procap_t15
+FD_TAG_CAP_T00=$FD_OUT/tags/procap_t00
+FD_TAG_RNA_T60=$FD_OUT/tags/rnaseq_t60
+FD_TAG_RNA_T15=$FD_OUT/tags/rnaseq_t15
+FD_TAG_RNA_T00=$FD_OUT/tags/rnaseq_t00
+
+
+#findcsRNATSS.pl Exp1-csRNA-TagDir/ 
+#    -o      outputPrefix 
+#    -i      Exp1-input-TagDir/ 
+#    -rna    Exp1-totalRNAseq-TagDir 
+#    -gtf    genes.gtf 
+#    -genome genome.fasta
+PREFIX=$FD_OUT/out_findTSS/tss_cap00/out
+
+findcsRNATSS.pl   $FD_TAG_CAP_T00/ \
+        -o        $PREFIX \
+        -genome   hg38
+
+EOF
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24852953
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="findcsrnatss-of-time-point-15-min">
+<h2>FindcsRNATSS of time point 15 min<a class="headerlink" href="#findcsrnatss-of-time-point-15-min" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="time-point-15-min-with-rna-control">
+<h3>Time point 15 min with RNA control<a class="headerlink" href="#time-point-15-min-with-rna-control" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+module load perl
+module load gcc
+source /data/reddylab/software/miniconda2/bin/activate alex_dev
+export PATH=/data/reddylab/software/homer/bin/:$PATH
+sbatch -pnew,all \
+    --mem 24G \
+    -o /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/log/findcsRNATSS_cap15_rna15.txt \
+    &lt;&lt;&#39;EOF&#39;
+#!/bin/bash
+
+### Set Directories
+FD_OUT=/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer
+FD_TAG_CAP_T60=$FD_OUT/tags/procap_t60
+FD_TAG_CAP_T15=$FD_OUT/tags/procap_t15
+FD_TAG_CAP_T00=$FD_OUT/tags/procap_t00
+FD_TAG_RNA_T60=$FD_OUT/tags/rnaseq_t60
+FD_TAG_RNA_T15=$FD_OUT/tags/rnaseq_t15
+FD_TAG_RNA_T00=$FD_OUT/tags/rnaseq_t00
+
+
+#findcsRNATSS.pl Exp1-csRNA-TagDir/ 
+#    -o      outputPrefix 
+#    -i      Exp1-input-TagDir/ 
+#    -rna    Exp1-totalRNAseq-TagDir 
+#    -gtf    genes.gtf 
+#    -genome genome.fasta
+PREFIX=$FD_OUT/out_findTSS/tss_cap15_rna15/out
+
+findcsRNATSS.pl   $FD_TAG_CAP_T15/ \
+        -rna      $FD_TAG_RNA_T15/ \
+        -o        $PREFIX \
+        -genome   hg38
+
+EOF
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24852954
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="time-point-15-min-without-rna-control">
+<h3>Time point 15 min without RNA control<a class="headerlink" href="#time-point-15-min-without-rna-control" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+module load perl
+module load gcc
+source /data/reddylab/software/miniconda2/bin/activate alex_dev
+export PATH=/data/reddylab/software/homer/bin/:$PATH
+sbatch -pnew,all \
+    --mem 24G \
+    -o /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/log/findcsRNATSS_cap15.txt \
+    &lt;&lt;&#39;EOF&#39;
+#!/bin/bash
+
+### Set Directories
+FD_OUT=/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer
+FD_TAG_CAP_T60=$FD_OUT/tags/procap_t60
+FD_TAG_CAP_T15=$FD_OUT/tags/procap_t15
+FD_TAG_CAP_T00=$FD_OUT/tags/procap_t00
+FD_TAG_RNA_T60=$FD_OUT/tags/rnaseq_t60
+FD_TAG_RNA_T15=$FD_OUT/tags/rnaseq_t15
+FD_TAG_RNA_T00=$FD_OUT/tags/rnaseq_t00
+
+
+#findcsRNATSS.pl Exp1-csRNA-TagDir/ 
+#    -o      outputPrefix 
+#    -i      Exp1-input-TagDir/ 
+#    -rna    Exp1-totalRNAseq-TagDir 
+#    -gtf    genes.gtf 
+#    -genome genome.fasta
+PREFIX=$FD_OUT/out_findTSS/tss_cap15/out
+
+findcsRNATSS.pl   $FD_TAG_CAP_T15/ \
+        -o        $PREFIX \
+        -genome   hg38
+
+EOF
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24852955
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="findcsrnatss-of-time-point-60-min">
+<h2>FindcsRNATSS of time point 60 min<a class="headerlink" href="#findcsrnatss-of-time-point-60-min" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="time-point-60-min-with-rna-control">
+<h3>Time point 60 min with RNA control<a class="headerlink" href="#time-point-60-min-with-rna-control" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+module load perl
+module load gcc
+source /data/reddylab/software/miniconda2/bin/activate alex_dev
+export PATH=/data/reddylab/software/homer/bin/:$PATH
+sbatch -pnew,all \
+    --mem 24G \
+    -o /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/log/findcsRNATSS_cap60_rna60.txt \
+    &lt;&lt;&#39;EOF&#39;
+#!/bin/bash
+
+### Set Directories
+FD_OUT=/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer
+FD_TAG_CAP_T60=$FD_OUT/tags/procap_t60
+FD_TAG_CAP_T15=$FD_OUT/tags/procap_t15
+FD_TAG_CAP_T00=$FD_OUT/tags/procap_t00
+FD_TAG_RNA_T60=$FD_OUT/tags/rnaseq_t60
+FD_TAG_RNA_T15=$FD_OUT/tags/rnaseq_t15
+FD_TAG_RNA_T00=$FD_OUT/tags/rnaseq_t00
+
+
+#findcsRNATSS.pl Exp1-csRNA-TagDir/ 
+#    -o      outputPrefix 
+#    -i      Exp1-input-TagDir/ 
+#    -rna    Exp1-totalRNAseq-TagDir 
+#    -gtf    genes.gtf 
+#    -genome genome.fasta
+PREFIX=$FD_OUT/out_findTSS/tss_cap60_rna60/out
+
+findcsRNATSS.pl   $FD_TAG_CAP_T60/ \
+        -rna      $FD_TAG_RNA_T60/ \
+        -o        $PREFIX \
+        -genome   hg38
+
+EOF
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24852956
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="time-point-60-min-without-rna-control">
+<h3>Time point 60 min without RNA control<a class="headerlink" href="#time-point-60-min-without-rna-control" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+module load perl
+module load gcc
+source /data/reddylab/software/miniconda2/bin/activate alex_dev
+export PATH=/data/reddylab/software/homer/bin/:$PATH
+sbatch -pnew,all \
+    --mem 24G \
+    -o /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/log/findcsRNATSS_cap60.txt \
+    &lt;&lt;&#39;EOF&#39;
+#!/bin/bash
+
+### Set Directories
+FD_OUT=/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer
+FD_TAG_CAP_T60=$FD_OUT/tags/procap_t60
+FD_TAG_CAP_T15=$FD_OUT/tags/procap_t15
+FD_TAG_CAP_T00=$FD_OUT/tags/procap_t00
+FD_TAG_RNA_T60=$FD_OUT/tags/rnaseq_t60
+FD_TAG_RNA_T15=$FD_OUT/tags/rnaseq_t15
+FD_TAG_RNA_T00=$FD_OUT/tags/rnaseq_t00
+
+
+#findcsRNATSS.pl Exp1-csRNA-TagDir/ 
+#    -o      outputPrefix 
+#    -i      Exp1-input-TagDir/ 
+#    -rna    Exp1-totalRNAseq-TagDir 
+#    -gtf    genes.gtf 
+#    -genome genome.fasta
+PREFIX=$FD_OUT/out_findTSS/tss_cap60/out
+
+findcsRNATSS.pl   $FD_TAG_CAP_T60/ \
+        -o        $PREFIX \
+        -genome   hg38
+
+EOF
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24852957
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="check-the-results">
+<h2>Check the results<a class="headerlink" href="#check-the-results" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+for FP in $(ls /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/log/findcsRNATSS_cap*.txt); do
+    ls $FP
+    #cat $FP | grep Difference
+done
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ls: cannot access /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/log/findcsRNATSS_cap*.txt: No such file or directory
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>head /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/log/findcsRNATSS_cap60.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>head: cannot open `/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/log/findcsRNATSS_cap60.txt&#39; for reading: No such file or directory
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tail /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/log/findcsRNATSS_cap60.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tail: cannot open `/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/log/findcsRNATSS_cap60.txt&#39; for reading: No such file or directory
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">d</span> <span class="o">/</span><span class="n">gpfs</span><span class="o">/</span><span class="n">fs1</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">reddylab</span><span class="o">/</span><span class="n">Kuei</span><span class="o">/</span><span class="n">Dex_PROcap</span><span class="o">/</span><span class="n">run_homer</span><span class="o">/</span><span class="n">out_findTSS</span><span class="o">/</span><span class="n">tss_cap</span><span class="o">*</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ls: cannot access /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_cap*: No such file or directory
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">/</span><span class="n">gpfs</span><span class="o">/</span><span class="n">fs1</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">reddylab</span><span class="o">/</span><span class="n">Kuei</span><span class="o">/</span><span class="n">Dex_PROcap</span><span class="o">/</span><span class="n">run_homer</span><span class="o">/</span><span class="n">out_findTSS</span><span class="o">/</span><span class="n">tss_cap00</span><span class="o">/*</span><span class="n">tsv</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ls: cannot access /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_cap00/*tsv: No such file or directory
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">/</span><span class="n">gpfs</span><span class="o">/</span><span class="n">fs1</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">reddylab</span><span class="o">/</span><span class="n">Kuei</span><span class="o">/</span><span class="n">Dex_PROcap</span><span class="o">/</span><span class="n">run_homer</span><span class="o">/</span><span class="n">out_findTSS</span><span class="o">/</span><span class="n">tss_cap00</span><span class="o">/*</span><span class="n">txt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ls: cannot access /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_cap00/*txt: No such file or directory
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+ls /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss*/out.inputDistribution.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ls: cannot access /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss*/out.inputDistribution.txt: No such file or directory
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">CalledProcessError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">15</span><span class="o">-</span><span class="mf">224049e840</span><span class="n">f3</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_cell_magic</span><span class="p">(</span><span class="s1">&#39;bash&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;ls /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss*/out.inputDistribution.txt</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nn">/data/reddylab/Kuei/envs/jupyterhub/lib/python3.6/site-packages/IPython/core/interactiveshell.py</span> in <span class="ni">run_cell_magic</span><span class="nt">(self, magic_name, line, cell)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2369</span>             <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2370</span>                 <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">magic_arg_s</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2371</span>                 <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2372</span>             <span class="k">return</span> <span class="n">result</span>
+<span class="g g-Whitespace">   </span><span class="mi">2373</span> 
+
+<span class="nn">/data/reddylab/Kuei/envs/jupyterhub/lib/python3.6/site-packages/IPython/core/magics/script.py</span> in <span class="ni">named_script_magic</span><span class="nt">(line, cell)</span>
+<span class="g g-Whitespace">    </span><span class="mi">140</span>             <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">141</span>                 <span class="n">line</span> <span class="o">=</span> <span class="n">script</span>
+<span class="ne">--&gt; </span><span class="mi">142</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shebang</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">143</span> 
+<span class="g g-Whitespace">    </span><span class="mi">144</span>         <span class="c1"># write a basic docstring:</span>
+
+<span class="nn">&lt;decorator-gen-110&gt;</span> in <span class="ni">shebang</span><span class="nt">(self, line, cell)</span>
+
+<span class="nn">/data/reddylab/Kuei/envs/jupyterhub/lib/python3.6/site-packages/IPython/core/magic.py</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(f, *a, **k)</span>
+<span class="g g-Whitespace">    </span><span class="mi">185</span>     <span class="c1"># but it&#39;s overkill for just that one bit of state.</span>
+<span class="g g-Whitespace">    </span><span class="mi">186</span>     <span class="k">def</span> <span class="nf">magic_deco</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">187</span>         <span class="n">call</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">f</span><span class="p">,</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">k</span><span class="p">:</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">k</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">188</span> 
+<span class="g g-Whitespace">    </span><span class="mi">189</span>         <span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+
+<span class="nn">/data/reddylab/Kuei/envs/jupyterhub/lib/python3.6/site-packages/IPython/core/magics/script.py</span> in <span class="ni">shebang</span><span class="nt">(self, line, cell)</span>
+<span class="g g-Whitespace">    </span><span class="mi">243</span>             <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">244</span>         <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">raise_error</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">245</span>             <span class="k">raise</span> <span class="n">CalledProcessError</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">returncode</span><span class="p">,</span> <span class="n">cell</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="n">out</span><span class="p">,</span> <span class="n">stderr</span><span class="o">=</span><span class="n">err</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">246</span> 
+<span class="g g-Whitespace">    </span><span class="mi">247</span>     <span class="k">def</span> <span class="nf">_run_script</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">cell</span><span class="p">,</span> <span class="n">to_close</span><span class="p">):</span>
+
+<span class="ne">CalledProcessError</span>: Command &#39;b&#39;ls /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss*/out.inputDistribution.txt\n&#39;&#39; returned non-zero exit status 2.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+head /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss*/out.inputDistribution.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>==&gt; /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_t15v00_rna00_maxlen/out.inputDistribution.txt &lt;==
+
+==&gt; /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_t15v00_rna00/out.inputDistribution.txt &lt;==
+
+==&gt; /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_t60v00_rna00_maxlen/out.inputDistribution.txt &lt;==
+
+==&gt; /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_t60v00_rna00/out.inputDistribution.txt &lt;==
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert-danger">
+The problem I encounter here is that all out.inputDistribution.txt is empty. My guess: the reason might be: `Difference in distributions is too small`
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+head /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss*/out.rnaDistribution.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>==&gt; /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_t15v00_rna00_maxlen/out.rnaDistribution.txt &lt;==
+
+==&gt; /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_t15v00_rna00/out.rnaDistribution.txt &lt;==
+
+==&gt; /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_t60v00_rna00_maxlen/out.rnaDistribution.txt &lt;==
+
+==&gt; /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_t60v00_rna00/out.rnaDistribution.txt &lt;==
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+head -3 /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss*/out.stats.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>==&gt; /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_t15v00_rna00_maxlen/out.stats.txt &lt;==
+Set	Total TSS
+total	52038
+valid TSS	1074
+
+==&gt; /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_t15v00_rna00/out.stats.txt &lt;==
+Set	Total TSS
+total	49006
+valid TSS	594
+
+==&gt; /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_t60v00_rna00_maxlen/out.stats.txt &lt;==
+Set	Total TSS
+total	58065
+valid TSS	26732
+
+==&gt; /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_t60v00_rna00/out.stats.txt &lt;==
+Set	Total TSS
+total	55174
+valid TSS	23771
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">/</span><span class="n">gpfs</span><span class="o">/</span><span class="n">fs1</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">reddylab</span><span class="o">/</span><span class="n">Kuei</span><span class="o">/</span><span class="n">Dex_PROcap</span><span class="o">/</span><span class="n">run_homer</span><span class="o">/</span><span class="n">out_findTSS</span><span class="o">/</span><span class="n">tss_t15v00_rna00_maxlen</span><span class="o">/</span><span class="n">out</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Set	Total TSS
+total	52038
+valid TSS	1074
+total over input	1088
+ under RNA	14
+ valid Annotation: 1088
+ exon Annotation: 0
+Total input	50950
+log2 fold vs. input: 1
+log2 fold vs. rna: 1
+Number of TSS regions for foldChange Calculation: 0
+Number of exon regions for foldChange Calculation: 0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+head -3 /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss*/out.tss.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>==&gt; /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_t15v00_rna00_maxlen/out.tss.txt &lt;==
+#tssID	chr	start	end	strand	score	focusRatio	csRNA	csRNAinput	rnaseq	annotation	Log2Ratio vs. Input	Log2Ratio vs. RNA	rev-csRNA	rev-csRNAinput	rev-RNA	BidirectionalRatio
+chr8-54	chr8	23068947	23069097	-	401.6	0.871	401.61	188.71	97.69	na	1.05818063625913	1.95441205628819	145.28	124.90	0.90	1.41808147076813
+chr8-53	chr8	23068918	23069068	+	400.8	0.833	400.78	190.53	6.97	na	1.04196758215362	4.77117848609078	58.45	35.55	67.82	2.62098350798566
+
+==&gt; /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_t15v00_rna00/out.tss.txt &lt;==
+#tssID	chr	start	end	strand	score	focusRatio	csRNA	csRNAinput	rnaseq	annotation	Log2Ratio vs. Input	Log2Ratio vs. RNA	rev-csRNA	rev-csRNAinput	rev-RNA	BidirectionalRatio
+chr8-102	chr8	23068909	23069059	-	316.7	0.578	312.35	145.98	102.10	na	1.0569060147418	1.54083452159989	355.59	212.05	1.24	-0.182663530402777
+chr8-148	chr8	23068918	23069068	+	271.3	0.795	271.28	122.54	6.97	na	1.09722031758872	4.22156613549434	79.44	53.28	67.82	1.67534695588085
+
+==&gt; /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_t60v00_rna00_maxlen/out.tss.txt &lt;==
+#tssID	chr	start	end	strand	score	focusRatio	csRNA	csRNAinput	rnaseq	annotation	Log2Ratio vs. Input	Log2Ratio vs. RNA	rev-csRNA	rev-csRNAinput	rev-RNA	BidirectionalRatio
+chr14-1	chr14	74302820	74302970	+	1257.0	0.900	1257.02	567.05	0.32	na	1.13740088668881	7.24836095044276	22.41	10.94	0.42	5.37847056755305
+chr14-2	chr14	74302859	74303009	-	1254.3	0.945	1254.29	567.96	12.57	na	1.13200286872183	5.93935779077944	8.20	36.47	0.03	6.28390577153239
+
+==&gt; /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_t60v00_rna00/out.tss.txt &lt;==
+#tssID	chr	start	end	strand	score	focusRatio	csRNA	csRNAinput	rnaseq	annotation	Log2Ratio vs. Input	Log2Ratio vs. RNA	rev-csRNA	rev-csRNAinput	rev-RNA	BidirectionalRatio
+chr6-4	chr6	27139201	27139351	+	989.7	0.925	988.23	1.60	0.63	na	6.69730064024309	6.85097448667265	4.73	0.53	0.50	6.29017453195025
+chr19-7	chr19	33621872	33622022	+	974.4	0.977	972.22	120.94	0.03	na	2.92640569459631	6.93156178522793	28.38	0.53	0.00	4.75188813509376
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>head /gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_t60v00_rna00/out.tss.txt <span class="p">|</span> cut -f11-15 <span class="p">|</span> expand -t <span class="m">20</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>annotation          Log2Ratio vs. Input Log2Ratio vs. RNA   rev-csRNA           rev-csRNAinput
+na                  6.69730064024309    6.85097448667265    4.73                0.53
+na                  2.92640569459631    6.93156178522793    28.38               0.53
+na                  1.32440745147403    5.54144207556596    5.46                27.71
+na                  1.34228540855552    6.8285789795433     21.83               10.12
+na                  1.03751421782274    6.85047796462051    11.64               36.23
+na                  1.04650882619672    6.86022653108661    5.82                3.73
+na                  2.98994890572271    6.86953215533549    13.46               1.07
+na                  1.13162085447592    6.76392369645699    145.18              252.54
+na                  1.13625477183514    6.79760603804027    85.87               93.77
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>  <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seq</span> <span class="o">-&gt;</span> <span class="n">fastq</span> <span class="o">-&gt;</span> <span class="n">trim</span><span class="o">/</span><span class="n">align</span> <span class="o">-&gt;</span> <span class="n">BAM</span> <span class="o">-&gt;</span> <span class="n">filtering</span> <span class="p">(</span><span class="n">mapping</span> <span class="n">quality</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fpath</span> <span class="o">=</span> <span class="s2">&quot;/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_t00/out.tss.txt&quot;</span>
+<span class="n">dat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">fpath</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">dat</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>#tssID</th>
+      <th>chr</th>
+      <th>start</th>
+      <th>end</th>
+      <th>strand</th>
+      <th>score</th>
+      <th>focusRatio</th>
+      <th>csRNA</th>
+      <th>csRNAinput</th>
+      <th>rnaseq</th>
+      <th>annotation</th>
+      <th>Log2Ratio vs. Input</th>
+      <th>Log2Ratio vs. RNA</th>
+      <th>rev-csRNA</th>
+      <th>rev-csRNAinput</th>
+      <th>rev-RNA</th>
+      <th>BidirectionalRatio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>chr14-1</td>
+      <td>chr14</td>
+      <td>49862475</td>
+      <td>49862625</td>
+      <td>+</td>
+      <td>6671.1</td>
+      <td>0.974</td>
+      <td>6669.47</td>
+      <td>na</td>
+      <td>9.24</td>
+      <td>na</td>
+      <td>na</td>
+      <td>8.597398</td>
+      <td>0.00</td>
+      <td>na</td>
+      <td>0.16</td>
+      <td>9.705086</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>chr14-2</td>
+      <td>chr14</td>
+      <td>49862774</td>
+      <td>49862924</td>
+      <td>-</td>
+      <td>6293.9</td>
+      <td>0.314</td>
+      <td>4910.20</td>
+      <td>na</td>
+      <td>4.73</td>
+      <td>na</td>
+      <td>na</td>
+      <td>8.593754</td>
+      <td>47.95</td>
+      <td>na</td>
+      <td>0.26</td>
+      <td>6.457848</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>chr14-3</td>
+      <td>chr14</td>
+      <td>49586803</td>
+      <td>49586953</td>
+      <td>-</td>
+      <td>4523.4</td>
+      <td>0.887</td>
+      <td>4511.14</td>
+      <td>na</td>
+      <td>10.88</td>
+      <td>na</td>
+      <td>na</td>
+      <td>7.903046</td>
+      <td>0.00</td>
+      <td>na</td>
+      <td>0.00</td>
+      <td>9.141833</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>chr17-1</td>
+      <td>chr17</td>
+      <td>19187935</td>
+      <td>19188085</td>
+      <td>+</td>
+      <td>4359.3</td>
+      <td>0.945</td>
+      <td>4334.78</td>
+      <td>na</td>
+      <td>0.03</td>
+      <td>na</td>
+      <td>na</td>
+      <td>9.079003</td>
+      <td>0.00</td>
+      <td>na</td>
+      <td>0.00</td>
+      <td>9.084403</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>chr19-1</td>
+      <td>chr19</td>
+      <td>33302460</td>
+      <td>33302610</td>
+      <td>-</td>
+      <td>4256.5</td>
+      <td>0.899</td>
+      <td>4254.86</td>
+      <td>na</td>
+      <td>1.77</td>
+      <td>na</td>
+      <td>na</td>
+      <td>8.769247</td>
+      <td>55.41</td>
+      <td>na</td>
+      <td>0.90</td>
+      <td>6.070967</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fpath</span> <span class="o">=</span> <span class="s2">&quot;/gpfs/fs1/data/reddylab/Kuei/Dex_PROcap/run_homer/out_findTSS/tss_t60v00_rna00/out.tss.txt&quot;</span>
+<span class="n">dat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">fpath</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">dat</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>#tssID</th>
+      <th>chr</th>
+      <th>start</th>
+      <th>end</th>
+      <th>strand</th>
+      <th>score</th>
+      <th>focusRatio</th>
+      <th>csRNA</th>
+      <th>csRNAinput</th>
+      <th>rnaseq</th>
+      <th>annotation</th>
+      <th>Log2Ratio vs. Input</th>
+      <th>Log2Ratio vs. RNA</th>
+      <th>rev-csRNA</th>
+      <th>rev-csRNAinput</th>
+      <th>rev-RNA</th>
+      <th>BidirectionalRatio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>chr6-4</td>
+      <td>chr6</td>
+      <td>27139201</td>
+      <td>27139351</td>
+      <td>+</td>
+      <td>989.7</td>
+      <td>0.925</td>
+      <td>988.23</td>
+      <td>1.60</td>
+      <td>0.63</td>
+      <td>na</td>
+      <td>6.697301</td>
+      <td>6.850974</td>
+      <td>4.73</td>
+      <td>0.53</td>
+      <td>0.50</td>
+      <td>6.290175</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>chr19-7</td>
+      <td>chr19</td>
+      <td>33621872</td>
+      <td>33622022</td>
+      <td>+</td>
+      <td>974.4</td>
+      <td>0.977</td>
+      <td>972.22</td>
+      <td>120.94</td>
+      <td>0.03</td>
+      <td>na</td>
+      <td>2.926406</td>
+      <td>6.931562</td>
+      <td>28.38</td>
+      <td>0.53</td>
+      <td>0.00</td>
+      <td>4.751888</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>chr14-6</td>
+      <td>chr14</td>
+      <td>74302859</td>
+      <td>74303009</td>
+      <td>-</td>
+      <td>950.0</td>
+      <td>0.933</td>
+      <td>950.02</td>
+      <td>374.55</td>
+      <td>12.57</td>
+      <td>na</td>
+      <td>1.324407</td>
+      <td>5.541442</td>
+      <td>5.46</td>
+      <td>27.71</td>
+      <td>0.03</td>
+      <td>6.153305</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>chr14-7</td>
+      <td>chr14</td>
+      <td>74302820</td>
+      <td>74302970</td>
+      <td>+</td>
+      <td>939.1</td>
+      <td>0.908</td>
+      <td>937.65</td>
+      <td>364.96</td>
+      <td>0.32</td>
+      <td>na</td>
+      <td>1.342285</td>
+      <td>6.828579</td>
+      <td>21.83</td>
+      <td>10.12</td>
+      <td>0.42</td>
+      <td>4.986470</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>chr8-1</td>
+      <td>chr8</td>
+      <td>135457375</td>
+      <td>135457525</td>
+      <td>+</td>
+      <td>933.6</td>
+      <td>0.961</td>
+      <td>933.65</td>
+      <td>450.74</td>
+      <td>0.16</td>
+      <td>na</td>
+      <td>1.037514</td>
+      <td>6.850478</td>
+      <td>11.64</td>
+      <td>36.23</td>
+      <td>0.00</td>
+      <td>5.583324</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Monday: 3pm</p>
+<p>a lot of bioinformatics post analysis on Github
+BioSTAR
+Google Group</p>
+<p>Deeptools</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dat</span><span class="p">[</span><span class="s1">&#39;annotation&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;na&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dat</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;csRNA&quot;</span><span class="p">,</span> <span class="s2">&quot;csRNAinput&quot;</span><span class="p">,</span> <span class="s2">&quot;rnaseq&quot;</span><span class="p">,</span> <span class="s2">&quot;Log2Ratio vs. Input&quot;</span><span class="p">,</span> <span class="s2">&quot;Log2Ratio vs. RNA&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>csRNA</th>
+      <th>csRNAinput</th>
+      <th>rnaseq</th>
+      <th>Log2Ratio vs. Input</th>
+      <th>Log2Ratio vs. RNA</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>972.22</td>
+      <td>120.94</td>
+      <td>0.03</td>
+      <td>2.926406</td>
+      <td>6.931562</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>950.02</td>
+      <td>374.55</td>
+      <td>12.57</td>
+      <td>1.324407</td>
+      <td>5.541442</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>937.65</td>
+      <td>364.96</td>
+      <td>0.32</td>
+      <td>1.342285</td>
+      <td>6.828579</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">dat</span><span class="p">[</span><span class="s2">&quot;csRNA&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">dat</span><span class="p">[</span><span class="s2">&quot;csRNAinput&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0        9.270631
+1        3.006991
+2        1.342800
+3        1.361311
+4        1.050586
+           ...   
+23766         inf
+23767         inf
+23768         inf
+23769         inf
+23770         inf
+Length: 23771, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dat</span><span class="p">[</span><span class="s2">&quot;Log2Ratio vs. Input&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">cumulative</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../../_images/04_homer_findTSS_49_1.png" src="../../_images/04_homer_findTSS_49_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dat</span><span class="p">[</span><span class="s2">&quot;Log2Ratio vs. RNA&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">cumulative</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../../_images/04_homer_findTSS_50_1.png" src="../../_images/04_homer_findTSS_50_1.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks/12_run_homer_procap"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="04_homer_findPeaks.html" title="previous page">HOMER FindPeaks</a>
+    <a class='right-next' id="next-link" href="05_homer_merge_peak.html" title="next page">Merge Peak output from HOMER findPeaks</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book Community<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

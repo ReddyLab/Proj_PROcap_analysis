@@ -1,0 +1,743 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; My sample book</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">My sample book</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Example
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../content.html">
+   Content in Jupyter Book
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../markdown.html">
+     Markdown Files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../notebooks.html">
+     Content with notebooks
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Peak calling of PRO-cap data
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../11_prep_procap/01_prep_files.html">
+   PRO-cap Data description and preparation
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_prep_files.html">
+     Check the file paths for the data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_homer_tag.html">
+     Run HOMER makeTagDirectory of PRO-cap and RNA-seq data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_homer_vis.html">
+     Create Genome Browser Visualization Files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_homer_findPeaks.html">
+     HOMER FindPeaks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_homer_findTSS.html">
+     HOMER FindcsRNATSS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_homer_merge_peak.html">
+     Merge Peak output from HOMER findPeaks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_homer_merge_tss.html">
+     Merge TSS output from HOMER findcsRNATSS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06_homer_annot_peak.html">
+     Get the count using HOMER annotatePeaks.pl
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06_homer_annot_tss.html">
+     Get the count using HOMER annotatePeaks.pl
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12_peak_PER1.html">
+     Summarize Annotation across the peaks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12_peak_PER1.html#visualize">
+     Visualize
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/notebooks/12_run_homer_procap/homer_config_genome.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnotebooks/12_run_homer_procap/homer_config_genome.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/notebooks/12_run_homer_procap/homer_config_genome.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="simple nav section-nav flex-column">
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p>Hi Alex, I was following the HOMER analysis scripts from this tutorial <a class="reference external" href="http://homer.ucsd.edu/homer/ngs/csRNAseq/index.html">http://homer.ucsd.edu/homer/ngs/csRNAseq/index.html</a></p>
+<p>I am running into some problems and I was wondering if you could give me a hand.</p>
+<p>At several points, the script requires HOMER to download the genome information from UCSC into the HOMER data folder. Therefore, I got the permission denied.</p>
+<p>I did try to feed in the scripts with the genome data I downloaded myself, but the output results seems weird to me.</p>
+<p>Is it possible for you to download the genome data using HOMER so that I can trouble shoot the problems I encountered by comparing the results I have with the results I will run using the default configuration in the HOMER document?</p>
+<p>I have documented the scripts to download the genome info in this attached notebook.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Note: currently there is only mouse genome under the homer data</span>
+<span class="o">!</span>ls /data/reddylab/software/homer/data/genomes/
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hg19  hg38  mm10
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>ls /data/reddylab/software/homer/data/genomes/mm10
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>annotations		 chr5_GL456354_random.fa  chrUn_GL456389.fa
+chr10.fa		 chr5_JH584296_random.fa  chrUn_GL456390.fa
+chr11.fa		 chr5_JH584297_random.fa  chrUn_GL456392.fa
+chr12.fa		 chr5_JH584298_random.fa  chrUn_GL456393.fa
+chr13.fa		 chr5_JH584299_random.fa  chrUn_GL456394.fa
+chr14.fa		 chr6.fa		  chrUn_GL456396.fa
+chr15.fa		 chr7.fa		  chrUn_JH584304.fa
+chr16.fa		 chr7_GL456219_random.fa  chrX.fa
+chr17.fa		 chr8.fa		  chrX_GL456233_random.fa
+chr18.fa		 chr9.fa		  chrY.fa
+chr19.fa		 chrM.fa		  chrY_JH584300_random.fa
+chr1.fa			 chrom.sizes		  chrY_JH584301_random.fa
+chr1_GL456210_random.fa  chrUn_GL456239.fa	  chrY_JH584302_random.fa
+chr1_GL456211_random.fa  chrUn_GL456359.fa	  chrY_JH584303_random.fa
+chr1_GL456212_random.fa  chrUn_GL456360.fa	  mm10.aug
+chr1_GL456213_random.fa  chrUn_GL456366.fa	  mm10.basic.annotation
+chr1_GL456221_random.fa  chrUn_GL456367.fa	  mm10.full.annotation
+chr2.fa			 chrUn_GL456368.fa	  mm10.miRNA
+chr3.fa			 chrUn_GL456370.fa	  mm10.repeats
+chr4.fa			 chrUn_GL456372.fa	  mm10.rna
+chr4_GL456216_random.fa  chrUn_GL456378.fa	  mm10.splice3p
+chr4_GL456350_random.fa  chrUn_GL456379.fa	  mm10.splice5p
+chr4_JH584292_random.fa  chrUn_GL456381.fa	  mm10.stop
+chr4_JH584293_random.fa  chrUn_GL456382.fa	  mm10.tss
+chr4_JH584294_random.fa  chrUn_GL456383.fa	  mm10.tts
+chr4_JH584295_random.fa  chrUn_GL456385.fa	  preparsed
+chr5.fa			 chrUn_GL456387.fa
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+module load perl
+module load gcc
+source /data/reddylab/software/miniconda2/bin/activate alex_dev
+export PATH=/data/reddylab/software/homer/bin/:$PATH
+export PATH=/data/reddylab/software/homer/:$PATH
+sbatch -pnew,all \
+    --mem 16G \
+    -o /gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/log/config_list.txt \
+    &lt;&lt;&#39;EOF&#39;
+#!/bin/bash
+
+### this script is to check the available genome that can be downloaded using HOMER
+perl /data/reddylab/software/homer/configureHomer.pl -list
+
+EOF
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24852965
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat /gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/log/config_list.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cat: /gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/log/config_list.txt: No such file or directory
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+module load perl
+module load gcc
+source /data/reddylab/software/miniconda2/bin/activate alex_dev
+export PATH=/data/reddylab/software/homer/bin/:$PATH
+sbatch -pnew,all \
+    --mem 16G \
+    -o /gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/log/config_hg.txt \
+    &lt;&lt;&#39;EOF&#39;
+#!/bin/bash
+
+### this script download the genome information under the folder
+### /data/reddylab/software/homer/data/genomes/
+### below I am trying to download the hg19 and hg38 genome information
+perl /data/reddylab/software/homer/configureHomer.pl -install hg19
+perl /data/reddylab/software/homer/configureHomer.pl -install hg38
+
+EOF
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24852966
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat /data/reddylab/software/homer/config.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># Homer Configuration File (automatically generated)
+#
+# This file is updated from the Homer website and contains information about data available for
+# use with the program.
+#
+# Each section has the same format, which is &lt;tab&gt; separated values specifying:
+# package name &lt;tab&gt; version &lt;tab&gt; description &lt;tab&gt; url &lt;tab&gt; optional parameters (, separated)
+#
+SOFTWARE
+homer	v4.10.3	Code/Executables, ontologies, motifs for HOMER	http://homer.ucsd.edu/homer/data/software/homer.v4.10.3.zip	./	
+ORGANISMS
+human	v6.3	Homo sapiens (human) accession and ontology information	http://homer.ucsd.edu/homer/data/organisms/human.v6.3.zip	data/accession/	9606,NCBI Gene
+mouse	v6.3	Mus musculus (mouse) accession and ontology information	http://homer.ucsd.edu/homer/data/organisms/mouse.v6.3.zip	data/accession/	10090,NCBI Gene
+PROMOTERS
+GENOMES
+hg19	v6.4	human genome and annotation for UCSC hg19	http://homer.ucsd.edu/homer/data/genomes/hg19.v6.4.zip	data/genomes/hg19/	human,default
+hg38	v6.4	human genome and annotation for UCSC hg38	http://homer.ucsd.edu/homer/data/genomes/hg38.v6.4.zip	data/genomes/hg38/	human,default
+mm10	v6.4	mouse genome and annotation for UCSC mm10	http://homer.ucsd.edu/homer/data/genomes/mm10.v6.4.zip	data/genomes/mm10/	mouse,default
+SETTINGS
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+module load perl
+module load gcc
+source /data/reddylab/software/miniconda2/bin/activate alex_dev
+export PATH=/data/reddylab/software/homer/bin/:$PATH
+export PATH=/data/reddylab/software/homer/:$PATH
+sbatch -pnew,all \
+    --mem 16G \
+    -o /gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/log/config_hg.txt \
+    &lt;&lt;&#39;EOF&#39;
+#!/bin/bash
+
+### this script is to check the available genome that can be downloaded using HOMER
+perl /data/reddylab/software/homer/configureHomer.pl -list
+
+### this script download the genome information under the folder
+### /data/reddylab/software/homer/data/genomes/
+### below I am trying to download the hg19 and hg38 genome information
+perl /data/reddylab/software/homer/.//configureHomer.pl -install hg19
+perl /data/reddylab/software/homer/.//configureHomer.pl -install hg38
+
+EOF
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24852967
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Note: currently there is only mouse genome under the homer data</span>
+<span class="o">!</span>ls /data/reddylab/software/homer/data/genomes/
+<span class="o">!</span>ls /data/reddylab/software/homer/data/genomes/mm10
+<span class="o">!</span>ls -1 /data/reddylab/software/homer/data/genomes/hg38
+<span class="o">!</span>ls -1 /data/reddylab/software/homer/data/genomes/hg19
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hg19  hg38  mm10
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>annotations		 chr5_GL456354_random.fa  chrUn_GL456389.fa
+chr10.fa		 chr5_JH584296_random.fa  chrUn_GL456390.fa
+chr11.fa		 chr5_JH584297_random.fa  chrUn_GL456392.fa
+chr12.fa		 chr5_JH584298_random.fa  chrUn_GL456393.fa
+chr13.fa		 chr5_JH584299_random.fa  chrUn_GL456394.fa
+chr14.fa		 chr6.fa		  chrUn_GL456396.fa
+chr15.fa		 chr7.fa		  chrUn_JH584304.fa
+chr16.fa		 chr7_GL456219_random.fa  chrX.fa
+chr17.fa		 chr8.fa		  chrX_GL456233_random.fa
+chr18.fa		 chr9.fa		  chrY.fa
+chr19.fa		 chrM.fa		  chrY_JH584300_random.fa
+chr1.fa			 chrom.sizes		  chrY_JH584301_random.fa
+chr1_GL456210_random.fa  chrUn_GL456239.fa	  chrY_JH584302_random.fa
+chr1_GL456211_random.fa  chrUn_GL456359.fa	  chrY_JH584303_random.fa
+chr1_GL456212_random.fa  chrUn_GL456360.fa	  mm10.aug
+chr1_GL456213_random.fa  chrUn_GL456366.fa	  mm10.basic.annotation
+chr1_GL456221_random.fa  chrUn_GL456367.fa	  mm10.full.annotation
+chr2.fa			 chrUn_GL456368.fa	  mm10.miRNA
+chr3.fa			 chrUn_GL456370.fa	  mm10.repeats
+chr4.fa			 chrUn_GL456372.fa	  mm10.rna
+chr4_GL456216_random.fa  chrUn_GL456378.fa	  mm10.splice3p
+chr4_GL456350_random.fa  chrUn_GL456379.fa	  mm10.splice5p
+chr4_JH584292_random.fa  chrUn_GL456381.fa	  mm10.stop
+chr4_JH584293_random.fa  chrUn_GL456382.fa	  mm10.tss
+chr4_JH584294_random.fa  chrUn_GL456383.fa	  mm10.tts
+chr4_JH584295_random.fa  chrUn_GL456385.fa	  preparsed
+chr5.fa			 chrUn_GL456387.fa
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>annotations
+chrom.sizes
+genome.fa
+hg38.aug
+hg38.basic.annotation
+hg38.full.annotation
+hg38.miRNA
+hg38.repeats
+hg38.rna
+hg38.splice3p
+hg38.splice5p
+hg38.stop
+hg38.tss
+hg38.tts
+preparsed
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>annotations
+chr10.fa
+chr11.fa
+chr11_gl000202_random.fa
+chr12.fa
+chr13.fa
+chr14.fa
+chr15.fa
+chr16.fa
+chr17_ctg5_hap1.fa
+chr17.fa
+chr17_gl000203_random.fa
+chr17_gl000204_random.fa
+chr17_gl000205_random.fa
+chr17_gl000206_random.fa
+chr18.fa
+chr18_gl000207_random.fa
+chr19.fa
+chr19_gl000208_random.fa
+chr19_gl000209_random.fa
+chr1.fa
+chr1_gl000191_random.fa
+chr1_gl000192_random.fa
+chr20.fa
+chr21.fa
+chr21_gl000210_random.fa
+chr22.fa
+chr2.fa
+chr3.fa
+chr4_ctg9_hap1.fa
+chr4.fa
+chr4_gl000193_random.fa
+chr4_gl000194_random.fa
+chr5.fa
+chr6_apd_hap1.fa
+chr6_cox_hap2.fa
+chr6_dbb_hap3.fa
+chr6.fa
+chr6_mann_hap4.fa
+chr6_mcf_hap5.fa
+chr6_qbl_hap6.fa
+chr6_ssto_hap7.fa
+chr7.fa
+chr7_gl000195_random.fa
+chr8.fa
+chr8_gl000196_random.fa
+chr8_gl000197_random.fa
+chr9.fa
+chr9_gl000198_random.fa
+chr9_gl000199_random.fa
+chr9_gl000200_random.fa
+chr9_gl000201_random.fa
+chrM.fa
+chrom.sizes
+chrUn_gl000211.fa
+chrUn_gl000212.fa
+chrUn_gl000213.fa
+chrUn_gl000214.fa
+chrUn_gl000215.fa
+chrUn_gl000216.fa
+chrUn_gl000217.fa
+chrUn_gl000218.fa
+chrUn_gl000219.fa
+chrUn_gl000220.fa
+chrUn_gl000221.fa
+chrUn_gl000222.fa
+chrUn_gl000223.fa
+chrUn_gl000224.fa
+chrUn_gl000225.fa
+chrUn_gl000226.fa
+chrUn_gl000227.fa
+chrUn_gl000228.fa
+chrUn_gl000229.fa
+chrUn_gl000230.fa
+chrUn_gl000231.fa
+chrUn_gl000232.fa
+chrUn_gl000233.fa
+chrUn_gl000234.fa
+chrUn_gl000235.fa
+chrUn_gl000236.fa
+chrUn_gl000237.fa
+chrUn_gl000238.fa
+chrUn_gl000239.fa
+chrUn_gl000240.fa
+chrUn_gl000241.fa
+chrUn_gl000242.fa
+chrUn_gl000243.fa
+chrUn_gl000244.fa
+chrUn_gl000245.fa
+chrUn_gl000246.fa
+chrUn_gl000247.fa
+chrUn_gl000248.fa
+chrUn_gl000249.fa
+chrX.fa
+chrY.fa
+conservation
+hg19.annotation
+hg19.aug
+hg19.basic.annotation
+hg19.full.annotation
+hg19.miRNA
+hg19.repeats
+hg19.rna
+hg19.splice3p
+hg19.splice5p
+hg19.stop
+hg19.tss
+hg19.tts
+preparsed
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">/</span><span class="n">gpfs</span><span class="o">/</span><span class="n">fs1</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">reddylab</span><span class="o">/</span><span class="n">Kuei</span><span class="o">/</span><span class="n">Dex_ProCap</span><span class="o">/</span><span class="n">run_homer</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">config_hg</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cat: /gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/log/config_hg.txt: No such file or directory
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">/</span><span class="n">gpfs</span><span class="o">/</span><span class="n">fs1</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">reddylab</span><span class="o">/</span><span class="n">Kuei</span><span class="o">/</span><span class="n">Dex_ProCap</span><span class="o">/</span><span class="n">run_homer</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">config_h38</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cat: /gpfs/fs1/data/reddylab/Kuei/Dex_ProCap/run_homer/log/config_h38.txt: No such file or directory
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks/12_run_homer_procap"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book Community<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
