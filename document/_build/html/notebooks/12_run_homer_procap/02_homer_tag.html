@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Run HOMER makeTagDirectory of PRO-cap and RNA-seq data &#8212; My sample book</title>
+    <title>2.2. Run HOMER makeTagDirectory of PRO-cap and RNA-seq data &#8212; My sample book</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -54,8 +54,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Create Genome Browser Visualization Files" href="03_homer_vis.html" />
-    <link rel="prev" title="Check the file paths for the data" href="01_prep_files.html" />
+    <link rel="next" title="2.3. Create Genome Browser Visualization Files" href="03_homer_vis.html" />
+    <link rel="prev" title="2.1. Check the file paths for the data" href="01_prep_files.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -124,64 +124,69 @@
  </span>
 </p>
 <ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active collapsible-parent">
+ <li class="toctree-l1">
   <a class="reference internal" href="../11_prep_procap/01_prep_files.html">
-   PRO-cap Data description and preparation
+   1. PRO-cap Data description and preparation
+  </a>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="00_homer_intro.html">
+   2. Run Homer Analysis on PRO-cap Data
   </a>
   <ul class="current collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="01_prep_files.html">
-     Check the file paths for the data
+     2.1. Check the file paths for the data
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Run HOMER makeTagDirectory of PRO-cap and RNA-seq data
+     2.2. Run HOMER makeTagDirectory of PRO-cap and RNA-seq data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03_homer_vis.html">
-     Create Genome Browser Visualization Files
+     2.3. Create Genome Browser Visualization Files
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_homer_findPeaks.html">
-     HOMER FindPeaks
+     2.4. HOMER FindPeaks
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_homer_findTSS.html">
-     HOMER FindcsRNATSS
+     2.5. HOMER FindcsRNATSS
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05_homer_merge_peak.html">
-     Merge Peak output from HOMER findPeaks
+     2.6. Merge Peak output from HOMER findPeaks
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05_homer_merge_tss.html">
-     Merge TSS output from HOMER findcsRNATSS
+     2.7. Merge TSS output from HOMER findcsRNATSS
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="06_homer_annot_peak.html">
-     Get the count using HOMER annotatePeaks.pl
+     2.8. Get the count using HOMER annotatePeaks.pl
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="06_homer_annot_tss.html">
-     Get the count using HOMER annotatePeaks.pl
+     2.9. Get the count using HOMER annotatePeaks.pl
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12_peak_PER1.html">
-     Summarize Annotation across the peaks
+     2.10. Summarize Annotation across the peaks
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12_peak_PER1.html#visualize">
-     Visualize
+     2.11. Visualize
     </a>
    </li>
   </ul>
@@ -294,44 +299,44 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#homer-maketagdirectory-of-single-sample-option-genome-hg38">
-   HOMER makeTagDirectory of single sample (Option: genome hg38)
+   2.2.1. HOMER makeTagDirectory of single sample (Option: genome hg38)
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#quality-control-checks">
-     Quality Control Checks
+     2.2.1.1. Quality Control Checks
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#homer-maketagdirectory-of-single-sample-option-maxlen-65">
-   HOMER makeTagDirectory of single sample (Option: maxlen 65)
+   2.2.2. HOMER makeTagDirectory of single sample (Option: maxlen 65)
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id1">
-     Quality Control Checks:
+     2.2.2.1. Quality Control Checks:
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#read-clonality-pcr-duplicates">
-       Read clonality/PCR duplicates
+       2.2.2.1.1. Read clonality/PCR duplicates
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#read-length-distribution">
-       Read length distribution
+       2.2.2.1.2. Read length distribution
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#nucleotide-preferences-near-the-5-end-of-the-read">
-       Nucleotide preferences near the 5’ end of the read
+       2.2.2.1.3. Nucleotide preferences near the 5’ end of the read
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#distribution-of-reads-relative-to-one-another">
-       Distribution of reads relative to one another
+       2.2.2.1.4. Distribution of reads relative to one another
       </a>
      </li>
     </ul>
@@ -340,54 +345,54 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#run-maketagdirectory-for-all-sample">
-   Run makeTagDirectory for all sample
+   2.2.3. Run makeTagDirectory for all sample
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#pro-cap-all-samples">
-     PRO-cap (all samples)
+     2.2.3.1. PRO-cap (all samples)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#pro-cap-all-samples-options-maxlen">
-     PRO-cap (all samples; options: maxlen)
+     2.2.3.2. PRO-cap (all samples; options: maxlen)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#rna-seq-3-time-points">
-     RNA-seq (3 time points)
+     2.2.3.3. RNA-seq (3 time points)
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#check-output-message">
-   Check output message
+   2.2.4. Check output message
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   Quality Control Checks
+   2.2.5. Quality Control Checks
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id3">
-     Read clonality/PCR duplicates
+     2.2.5.1. Read clonality/PCR duplicates
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id4">
-     Read length distribution
+     2.2.5.2. Read length distribution
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#nucleotide-preferences">
-     Nucleotide preferences
+     2.2.5.3. Nucleotide preferences
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id5">
-     Distribution of reads relative to one another
+     2.2.5.4. Distribution of reads relative to one another
     </a>
    </li>
   </ul>
@@ -405,7 +410,7 @@
               <div>
                 
   <div class="section" id="run-homer-maketagdirectory-of-pro-cap-and-rna-seq-data">
-<h1>Run HOMER makeTagDirectory of PRO-cap and RNA-seq data<a class="headerlink" href="#run-homer-maketagdirectory-of-pro-cap-and-rna-seq-data" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2.2. </span>Run HOMER makeTagDirectory of PRO-cap and RNA-seq data<a class="headerlink" href="#run-homer-maketagdirectory-of-pro-cap-and-rna-seq-data" title="Permalink to this headline">¶</a></h1>
 <p>The code is from the HOMER documentation:</p>
 <p><a class="reference external" href="http://homer.ucsd.edu/homer/ngs/csRNAseq/index.html">HOMER: csRNA-seq Analysis Tutorial</a></p>
 <div class="cell docutils container">
@@ -513,7 +518,7 @@ makeTagDirectory
 </div>
 </div>
 <div class="section" id="homer-maketagdirectory-of-single-sample-option-genome-hg38">
-<h2>HOMER makeTagDirectory of single sample (Option: genome hg38)<a class="headerlink" href="#homer-maketagdirectory-of-single-sample-option-genome-hg38" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2.1. </span>HOMER makeTagDirectory of single sample (Option: genome hg38)<a class="headerlink" href="#homer-maketagdirectory-of-single-sample-option-genome-hg38" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
@@ -549,13 +554,13 @@ EOF
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24852943
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24852974
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="quality-control-checks">
-<h3>Quality Control Checks<a class="headerlink" href="#quality-control-checks" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.2.1.1. </span>Quality Control Checks<a class="headerlink" href="#quality-control-checks" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>  <span class="k">as</span> <span class="nn">np</span>
@@ -1027,7 +1032,7 @@ EOF
 </div>
 <hr class="docutils" />
 <div class="section" id="homer-maketagdirectory-of-single-sample-option-maxlen-65">
-<h2>HOMER makeTagDirectory of single sample (Option: maxlen 65)<a class="headerlink" href="#homer-maketagdirectory-of-single-sample-option-maxlen-65" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2.2. </span>HOMER makeTagDirectory of single sample (Option: maxlen 65)<a class="headerlink" href="#homer-maketagdirectory-of-single-sample-option-maxlen-65" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
@@ -1069,7 +1074,7 @@ EOF
 </div>
 </div>
 <div class="section" id="id1">
-<h3>Quality Control Checks:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.2.2.1. </span>Quality Control Checks:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>  <span class="k">as</span> <span class="nn">np</span>
@@ -1088,7 +1093,7 @@ EOF
 </div>
 </div>
 <div class="section" id="read-clonality-pcr-duplicates">
-<h4>Read clonality/PCR duplicates<a class="headerlink" href="#read-clonality-pcr-duplicates" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">2.2.2.1.1. </span>Read clonality/PCR duplicates<a class="headerlink" href="#read-clonality-pcr-duplicates" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fdiry</span> <span class="o">=</span> <span class="n">FD_TAG</span>
@@ -1163,7 +1168,7 @@ EOF
 </div>
 </div>
 <div class="section" id="read-length-distribution">
-<h4>Read length distribution<a class="headerlink" href="#read-length-distribution" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">2.2.2.1.2. </span>Read length distribution<a class="headerlink" href="#read-length-distribution" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fdiry</span> <span class="o">=</span> <span class="n">FD_TAG</span>
@@ -1237,7 +1242,7 @@ EOF
 </div>
 </div>
 <div class="section" id="nucleotide-preferences-near-the-5-end-of-the-read">
-<h4>Nucleotide preferences near the 5’ end of the read<a class="headerlink" href="#nucleotide-preferences-near-the-5-end-of-the-read" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">2.2.2.1.3. </span>Nucleotide preferences near the 5’ end of the read<a class="headerlink" href="#nucleotide-preferences-near-the-5-end-of-the-read" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fdiry</span> <span class="o">=</span> <span class="n">FD_TAG</span>
@@ -1382,7 +1387,7 @@ EOF
 </div>
 </div>
 <div class="section" id="distribution-of-reads-relative-to-one-another">
-<h4>Distribution of reads relative to one another<a class="headerlink" href="#distribution-of-reads-relative-to-one-another" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">2.2.2.1.4. </span>Distribution of reads relative to one another<a class="headerlink" href="#distribution-of-reads-relative-to-one-another" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fdiry</span> <span class="o">=</span> <span class="n">FD_TAG</span>
@@ -1463,7 +1468,7 @@ EOF
 </div>
 <hr class="docutils" />
 <div class="section" id="run-maketagdirectory-for-all-sample">
-<h2>Run makeTagDirectory for all sample<a class="headerlink" href="#run-maketagdirectory-for-all-sample" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2.3. </span>Run makeTagDirectory for all sample<a class="headerlink" href="#run-maketagdirectory-for-all-sample" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>### set directory
 FP_GEN=/data/reddylab/Kuei/annotation/gencode.v34.annotation.gtf
 FD_CAP=/data/reddylab/Kuei/Dex_ProCap
@@ -1485,7 +1490,7 @@ makeTagDirectory $FD_TAG/ $FP_BAM -genome hg38 -checkGC
 <p>Creating Tag Directories</p>
 <p><code class="docutils literal notranslate"><span class="pre">makeTagDirectory</span> <span class="pre">&lt;Output</span> <span class="pre">Directory</span> <span class="pre">Name&gt;</span> <span class="pre">[options]</span> <span class="pre">&lt;alignment</span> <span class="pre">file1&gt;</span> <span class="pre">[alignment</span> <span class="pre">file</span> <span class="pre">2]</span> <span class="pre">...</span></code></p>
 <div class="section" id="pro-cap-all-samples">
-<h3>PRO-cap (all samples)<a class="headerlink" href="#pro-cap-all-samples" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.2.3.1. </span>PRO-cap (all samples)<a class="headerlink" href="#pro-cap-all-samples" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">reddylab</span><span class="o">/</span><span class="n">Kuei</span><span class="o">/</span><span class="n">Dex_PROcap</span>
@@ -1591,7 +1596,7 @@ EOF
 </div>
 </div>
 <div class="section" id="pro-cap-all-samples-options-maxlen">
-<h3>PRO-cap (all samples; options: maxlen)<a class="headerlink" href="#pro-cap-all-samples-options-maxlen" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.2.3.2. </span>PRO-cap (all samples; options: maxlen)<a class="headerlink" href="#pro-cap-all-samples-options-maxlen" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
@@ -1644,7 +1649,7 @@ EOF
 </div>
 </div>
 <div class="section" id="rna-seq-3-time-points">
-<h3>RNA-seq (3 time points)<a class="headerlink" href="#rna-seq-3-time-points" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.2.3.3. </span>RNA-seq (3 time points)<a class="headerlink" href="#rna-seq-3-time-points" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">reddylab</span><span class="o">/</span><span class="n">projects</span><span class="o">/</span><span class="n">GGR</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">rna_seq</span><span class="o">/</span><span class="n">mapped_reads</span>
@@ -1804,7 +1809,7 @@ averageFragmentGCcontent=0.620
 </div>
 <hr class="docutils" />
 <div class="section" id="check-output-message">
-<h2>Check output message<a class="headerlink" href="#check-output-message" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2.4. </span>Check output message<a class="headerlink" href="#check-output-message" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="mi">1</span> <span class="o">/</span><span class="n">gpfs</span><span class="o">/</span><span class="n">fs1</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">reddylab</span><span class="o">/</span><span class="n">Kuei</span><span class="o">/</span><span class="n">Dex_PROcap</span><span class="o">/</span><span class="n">run_homer</span><span class="o">/</span><span class="n">tags</span>
@@ -1869,7 +1874,7 @@ averageFragmentGCcontent=0.620
 </div>
 </div>
 <div class="section" id="id2">
-<h2>Quality Control Checks<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2.5. </span>Quality Control Checks<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>  <span class="k">as</span> <span class="nn">np</span>
@@ -1925,7 +1930,7 @@ averageFragmentGCcontent=0.620
 </div>
 </div>
 <div class="section" id="id3">
-<h3>Read clonality/PCR duplicates<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.2.5.1. </span>Read clonality/PCR duplicates<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### set file and column names</span>
@@ -2168,7 +2173,7 @@ averageFragmentGCcontent=0.620
 </div>
 </div>
 <div class="section" id="id4">
-<h3>Read length distribution<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.2.5.2. </span>Read length distribution<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### </span>
@@ -2363,7 +2368,7 @@ averageFragmentGCcontent=0.620
 <p>According to the document, most csRNA-seq reads are between 20-55 nt in length. In the PRO-cap data I have, most reads are around 140bp</p>
 </div>
 <div class="section" id="nucleotide-preferences">
-<h3>Nucleotide preferences<a class="headerlink" href="#nucleotide-preferences" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.2.5.3. </span>Nucleotide preferences<a class="headerlink" href="#nucleotide-preferences" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="s2">&quot;tagFreqUniq.txt&quot;</span>
@@ -2397,7 +2402,7 @@ averageFragmentGCcontent=0.620
 <p>According to the document:  <code class="docutils literal notranslate"><span class="pre">Most</span> <span class="pre">csRNA-seq</span> <span class="pre">data</span> <span class="pre">should</span> <span class="pre">have</span> <span class="pre">a</span> <span class="pre">strong</span> <span class="pre">preference</span> <span class="pre">for</span> <span class="pre">Initiator-like</span> <span class="pre">sequences</span> <span class="pre">near</span> <span class="pre">the</span> <span class="pre">5'</span> <span class="pre">end</span> <span class="pre">(usually</span> <span class="pre">C-1A0).</span> <span class="pre">Most</span> <span class="pre">species</span> <span class="pre">also</span> <span class="pre">show</span> <span class="pre">evidence</span> <span class="pre">for</span> <span class="pre">a</span> <span class="pre">TATA</span> <span class="pre">box</span> <span class="pre">at</span> <span class="pre">approx.</span> <span class="pre">-30</span> <span class="pre">bp</span> <span class="pre">(e.g.</span> <span class="pre">spike</span> <span class="pre">in</span> <span class="pre">A/T</span> <span class="pre">content)</span></code></p>
 </div>
 <div class="section" id="id5">
-<h3>Distribution of reads relative to one another<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.2.5.4. </span>Distribution of reads relative to one another<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="s2">&quot;tagAutocorrelation.txt&quot;</span>
@@ -2486,8 +2491,8 @@ averageFragmentGCcontent=0.620
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="01_prep_files.html" title="previous page">Check the file paths for the data</a>
-    <a class='right-next' id="next-link" href="03_homer_vis.html" title="next page">Create Genome Browser Visualization Files</a>
+    <a class='left-prev' id="prev-link" href="01_prep_files.html" title="previous page"><span class="section-number">2.1. </span>Check the file paths for the data</a>
+    <a class='right-next' id="next-link" href="03_homer_vis.html" title="next page"><span class="section-number">2.3. </span>Create Genome Browser Visualization Files</a>
 
         </div>
         

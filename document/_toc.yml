@@ -11,8 +11,10 @@
       - file: notebooks
       
 - part: Peak calling of PRO-cap data
+  numbered: true
   chapters:
   - file: notebooks/11_prep_procap/01_prep_files.ipynb
+  - file: notebooks/12_run_homer_procap/00_homer_intro.ipynb
     sections:
       - file: notebooks/12_run_homer_procap/01_prep_files.ipynb
       - file: notebooks/12_run_homer_procap/02_homer_tag.ipynb

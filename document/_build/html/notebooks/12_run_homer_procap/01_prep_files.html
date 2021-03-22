@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Check the file paths for the data &#8212; My sample book</title>
+    <title>2.1. Check the file paths for the data &#8212; My sample book</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -54,8 +54,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Run HOMER makeTagDirectory of PRO-cap and RNA-seq data" href="02_homer_tag.html" />
-    <link rel="prev" title="PRO-cap Data description and preparation" href="../11_prep_procap/01_prep_files.html" />
+    <link rel="next" title="2.2. Run HOMER makeTagDirectory of PRO-cap and RNA-seq data" href="02_homer_tag.html" />
+    <link rel="prev" title="2. Run Homer Analysis on PRO-cap Data" href="00_homer_intro.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -124,64 +124,69 @@
  </span>
 </p>
 <ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active collapsible-parent">
+ <li class="toctree-l1">
   <a class="reference internal" href="../11_prep_procap/01_prep_files.html">
-   PRO-cap Data description and preparation
+   1. PRO-cap Data description and preparation
+  </a>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="00_homer_intro.html">
+   2. Run Homer Analysis on PRO-cap Data
   </a>
   <ul class="current collapse-ul">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Check the file paths for the data
+     2.1. Check the file paths for the data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02_homer_tag.html">
-     Run HOMER makeTagDirectory of PRO-cap and RNA-seq data
+     2.2. Run HOMER makeTagDirectory of PRO-cap and RNA-seq data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03_homer_vis.html">
-     Create Genome Browser Visualization Files
+     2.3. Create Genome Browser Visualization Files
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_homer_findPeaks.html">
-     HOMER FindPeaks
+     2.4. HOMER FindPeaks
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_homer_findTSS.html">
-     HOMER FindcsRNATSS
+     2.5. HOMER FindcsRNATSS
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05_homer_merge_peak.html">
-     Merge Peak output from HOMER findPeaks
+     2.6. Merge Peak output from HOMER findPeaks
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05_homer_merge_tss.html">
-     Merge TSS output from HOMER findcsRNATSS
+     2.7. Merge TSS output from HOMER findcsRNATSS
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="06_homer_annot_peak.html">
-     Get the count using HOMER annotatePeaks.pl
+     2.8. Get the count using HOMER annotatePeaks.pl
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="06_homer_annot_tss.html">
-     Get the count using HOMER annotatePeaks.pl
+     2.9. Get the count using HOMER annotatePeaks.pl
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12_peak_PER1.html">
-     Summarize Annotation across the peaks
+     2.10. Summarize Annotation across the peaks
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12_peak_PER1.html#visualize">
-     Visualize
+     2.11. Visualize
     </a>
    </li>
   </ul>
@@ -294,17 +299,17 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#rna-seq-of-long-term-dex-treatment">
-   RNA-seq of long term Dex treatment
+   2.1.1. RNA-seq of long term Dex treatment
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#rna-seq-of-short-term-dex-treatment">
-   RNA-seq of short term Dex treatment
+   2.1.2. RNA-seq of short term Dex treatment
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#genome-file">
-   Genome file
+   2.1.3. Genome file
   </a>
  </li>
 </ul>
@@ -320,7 +325,7 @@
               <div>
                 
   <div class="section" id="check-the-file-paths-for-the-data">
-<h1>Check the file paths for the data<a class="headerlink" href="#check-the-file-paths-for-the-data" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2.1. </span>Check the file paths for the data<a class="headerlink" href="#check-the-file-paths-for-the-data" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p>PRO-cap</p>
 <ul>
@@ -691,7 +696,7 @@ iter0_HDAC_inhibitors	    iter_dCas9_krab_puro	 iter_short
 </div>
 </div>
 <div class="section" id="rna-seq-of-long-term-dex-treatment">
-<h2>RNA-seq of long term Dex treatment<a class="headerlink" href="#rna-seq-of-long-term-dex-treatment" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1.1. </span>RNA-seq of long term Dex treatment<a class="headerlink" href="#rna-seq-of-long-term-dex-treatment" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#cat /data/reddylab/projects/GGR/results/rna_seq/checkpoints/iter0/accepted_samples.txt</span>
@@ -818,7 +823,7 @@ t12_rep4
 </div>
 </div>
 <div class="section" id="rna-seq-of-short-term-dex-treatment">
-<h2>RNA-seq of short term Dex treatment<a class="headerlink" href="#rna-seq-of-short-term-dex-treatment" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1.2. </span>RNA-seq of short term Dex treatment<a class="headerlink" href="#rna-seq-of-short-term-dex-treatment" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#cat /data/reddylab/projects/GGR/results/rna_seq/checkpoints/iter_short/accepted_samples.txt</span>
@@ -879,7 +884,7 @@ t10m_rep3
 </div>
 </div>
 <div class="section" id="genome-file">
-<h2>Genome file<a class="headerlink" href="#genome-file" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1.3. </span>Genome file<a class="headerlink" href="#genome-file" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>URL=ftp://ftp.ensembl.org/pub/release-102/fasta/homo_sapiens/dna
 FNAME=Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
 wget $URL/$FNAME -P /gpfs/fs1/data/reddylab/Kuei/annotation
@@ -1055,8 +1060,8 @@ wget <span class="nv">$URL</span>/<span class="nv">$FNAME</span> -P /gpfs/fs1/da
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../11_prep_procap/01_prep_files.html" title="previous page">PRO-cap Data description and preparation</a>
-    <a class='right-next' id="next-link" href="02_homer_tag.html" title="next page">Run HOMER makeTagDirectory of PRO-cap and RNA-seq data</a>
+    <a class='left-prev' id="prev-link" href="00_homer_intro.html" title="previous page"><span class="section-number">2. </span>Run Homer Analysis on PRO-cap Data</a>
+    <a class='right-next' id="next-link" href="02_homer_tag.html" title="next page"><span class="section-number">2.2. </span>Run HOMER makeTagDirectory of PRO-cap and RNA-seq data</a>
 
         </div>
         

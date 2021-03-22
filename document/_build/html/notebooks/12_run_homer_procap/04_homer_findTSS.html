@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HOMER FindcsRNATSS &#8212; My sample book</title>
+    <title>2.5. HOMER FindcsRNATSS &#8212; My sample book</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -54,8 +54,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Merge Peak output from HOMER findPeaks" href="05_homer_merge_peak.html" />
-    <link rel="prev" title="HOMER FindPeaks" href="04_homer_findPeaks.html" />
+    <link rel="next" title="2.6. Merge Peak output from HOMER findPeaks" href="05_homer_merge_peak.html" />
+    <link rel="prev" title="2.4. HOMER FindPeaks" href="04_homer_findPeaks.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -124,64 +124,69 @@
  </span>
 </p>
 <ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active collapsible-parent">
+ <li class="toctree-l1">
   <a class="reference internal" href="../11_prep_procap/01_prep_files.html">
-   PRO-cap Data description and preparation
+   1. PRO-cap Data description and preparation
+  </a>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="00_homer_intro.html">
+   2. Run Homer Analysis on PRO-cap Data
   </a>
   <ul class="current collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="01_prep_files.html">
-     Check the file paths for the data
+     2.1. Check the file paths for the data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02_homer_tag.html">
-     Run HOMER makeTagDirectory of PRO-cap and RNA-seq data
+     2.2. Run HOMER makeTagDirectory of PRO-cap and RNA-seq data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03_homer_vis.html">
-     Create Genome Browser Visualization Files
+     2.3. Create Genome Browser Visualization Files
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_homer_findPeaks.html">
-     HOMER FindPeaks
+     2.4. HOMER FindPeaks
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     HOMER FindcsRNATSS
+     2.5. HOMER FindcsRNATSS
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05_homer_merge_peak.html">
-     Merge Peak output from HOMER findPeaks
+     2.6. Merge Peak output from HOMER findPeaks
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05_homer_merge_tss.html">
-     Merge TSS output from HOMER findcsRNATSS
+     2.7. Merge TSS output from HOMER findcsRNATSS
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="06_homer_annot_peak.html">
-     Get the count using HOMER annotatePeaks.pl
+     2.8. Get the count using HOMER annotatePeaks.pl
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="06_homer_annot_tss.html">
-     Get the count using HOMER annotatePeaks.pl
+     2.9. Get the count using HOMER annotatePeaks.pl
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12_peak_PER1.html">
-     Summarize Annotation across the peaks
+     2.10. Summarize Annotation across the peaks
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12_peak_PER1.html#visualize">
-     Visualize
+     2.11. Visualize
     </a>
    </li>
   </ul>
@@ -294,58 +299,58 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#findcsrnatss-of-time-point-0-min">
-   FindcsRNATSS of time point 0 min
+   2.5.1. FindcsRNATSS of time point 0 min
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#time-point-00-min-with-rna-control">
-     Time point 00 min with RNA control
+     2.5.1.1. Time point 00 min with RNA control
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#time-point-00-min-without-rna-control">
-     Time point 00 min without RNA control
+     2.5.1.2. Time point 00 min without RNA control
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#findcsrnatss-of-time-point-15-min">
-   FindcsRNATSS of time point 15 min
+   2.5.2. FindcsRNATSS of time point 15 min
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#time-point-15-min-with-rna-control">
-     Time point 15 min with RNA control
+     2.5.2.1. Time point 15 min with RNA control
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#time-point-15-min-without-rna-control">
-     Time point 15 min without RNA control
+     2.5.2.2. Time point 15 min without RNA control
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#findcsrnatss-of-time-point-60-min">
-   FindcsRNATSS of time point 60 min
+   2.5.3. FindcsRNATSS of time point 60 min
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#time-point-60-min-with-rna-control">
-     Time point 60 min with RNA control
+     2.5.3.1. Time point 60 min with RNA control
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#time-point-60-min-without-rna-control">
-     Time point 60 min without RNA control
+     2.5.3.2. Time point 60 min without RNA control
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#check-the-results">
-   Check the results
+   2.5.4. Check the results
   </a>
  </li>
 </ul>
@@ -361,7 +366,7 @@
               <div>
                 
   <div class="section" id="homer-findcsrnatss">
-<h1>HOMER FindcsRNATSS<a class="headerlink" href="#homer-findcsrnatss" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2.5. </span>HOMER FindcsRNATSS<a class="headerlink" href="#homer-findcsrnatss" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 	<span class="n">findcsRNATSS</span><span class="o">.</span><span class="n">pl</span> <span class="o">&lt;</span><span class="n">csRNA</span> <span class="n">tag</span> <span class="n">directory</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">options</span><span class="p">]</span>
 
@@ -421,9 +426,9 @@ findcsRNATSS.pl
 </div>
 <p>test if I did not provide input</p>
 <div class="section" id="findcsrnatss-of-time-point-0-min">
-<h2>FindcsRNATSS of time point 0 min<a class="headerlink" href="#findcsrnatss-of-time-point-0-min" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.5.1. </span>FindcsRNATSS of time point 0 min<a class="headerlink" href="#findcsrnatss-of-time-point-0-min" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="time-point-00-min-with-rna-control">
-<h3>Time point 00 min with RNA control<a class="headerlink" href="#time-point-00-min-with-rna-control" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.5.1.1. </span>Time point 00 min with RNA control<a class="headerlink" href="#time-point-00-min-with-rna-control" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
@@ -465,14 +470,14 @@ EOF
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24852952
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24852983
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="time-point-00-min-without-rna-control">
-<h3>Time point 00 min without RNA control<a class="headerlink" href="#time-point-00-min-without-rna-control" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.5.1.2. </span>Time point 00 min without RNA control<a class="headerlink" href="#time-point-00-min-without-rna-control" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
@@ -513,7 +518,7 @@ EOF
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24852953
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24852984
 </pre></div>
 </div>
 </div>
@@ -521,9 +526,9 @@ EOF
 </div>
 </div>
 <div class="section" id="findcsrnatss-of-time-point-15-min">
-<h2>FindcsRNATSS of time point 15 min<a class="headerlink" href="#findcsrnatss-of-time-point-15-min" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.5.2. </span>FindcsRNATSS of time point 15 min<a class="headerlink" href="#findcsrnatss-of-time-point-15-min" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="time-point-15-min-with-rna-control">
-<h3>Time point 15 min with RNA control<a class="headerlink" href="#time-point-15-min-with-rna-control" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.5.2.1. </span>Time point 15 min with RNA control<a class="headerlink" href="#time-point-15-min-with-rna-control" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
@@ -565,14 +570,14 @@ EOF
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24852954
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24852985
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="time-point-15-min-without-rna-control">
-<h3>Time point 15 min without RNA control<a class="headerlink" href="#time-point-15-min-without-rna-control" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.5.2.2. </span>Time point 15 min without RNA control<a class="headerlink" href="#time-point-15-min-without-rna-control" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
@@ -613,7 +618,7 @@ EOF
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24852955
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24852986
 </pre></div>
 </div>
 </div>
@@ -621,9 +626,9 @@ EOF
 </div>
 </div>
 <div class="section" id="findcsrnatss-of-time-point-60-min">
-<h2>FindcsRNATSS of time point 60 min<a class="headerlink" href="#findcsrnatss-of-time-point-60-min" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.5.3. </span>FindcsRNATSS of time point 60 min<a class="headerlink" href="#findcsrnatss-of-time-point-60-min" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="time-point-60-min-with-rna-control">
-<h3>Time point 60 min with RNA control<a class="headerlink" href="#time-point-60-min-with-rna-control" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.5.3.1. </span>Time point 60 min with RNA control<a class="headerlink" href="#time-point-60-min-with-rna-control" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
@@ -665,14 +670,14 @@ EOF
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24852956
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24852987
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="time-point-60-min-without-rna-control">
-<h3>Time point 60 min without RNA control<a class="headerlink" href="#time-point-60-min-without-rna-control" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.5.3.2. </span>Time point 60 min without RNA control<a class="headerlink" href="#time-point-60-min-without-rna-control" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
@@ -713,7 +718,7 @@ EOF
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24852957
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Submitted batch job 24852988
 </pre></div>
 </div>
 </div>
@@ -722,7 +727,7 @@ EOF
 </div>
 <hr class="docutils" />
 <div class="section" id="check-the-results">
-<h2>Check the results<a class="headerlink" href="#check-the-results" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.5.4. </span>Check the results<a class="headerlink" href="#check-the-results" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
@@ -1474,8 +1479,8 @@ Length: 23771, dtype: float64
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="04_homer_findPeaks.html" title="previous page">HOMER FindPeaks</a>
-    <a class='right-next' id="next-link" href="05_homer_merge_peak.html" title="next page">Merge Peak output from HOMER findPeaks</a>
+    <a class='left-prev' id="prev-link" href="04_homer_findPeaks.html" title="previous page"><span class="section-number">2.4. </span>HOMER FindPeaks</a>
+    <a class='right-next' id="next-link" href="05_homer_merge_peak.html" title="next page"><span class="section-number">2.6. </span>Merge Peak output from HOMER findPeaks</a>
 
         </div>
         
